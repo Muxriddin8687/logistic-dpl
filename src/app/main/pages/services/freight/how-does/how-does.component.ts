@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
 declare let Swiper: any;
 
 @Component({
@@ -12,12 +10,6 @@ export class HowDoesComponent {
 
   constructor() {}
 
-
-  send(form: NgForm) {
-    console.log(form.value);
-    form.onReset();
-    
-  }
 
   ngAfterViewInit(): void {
     let swiper = new Swiper('#block-carousel-freight .swiper', {
