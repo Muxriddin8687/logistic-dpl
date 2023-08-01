@@ -1,9 +1,8 @@
 <app-bread-crumbs [img_url]="'truck-with-white.jpg'">
     <div class="d-flex align-items-center h-100">
         <div class="w-100">
-            <h1 class="text-light">Lorem, ipsum dolor.</h1>
-            <p class="text-light my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />Non unde atque
-                exercitationem quos rerum reiciendis.</p>
+            <h1 class="text-light">{{ 'service.auto.how-does.title' | translate }}</h1>
+            <p class="text-light my-4">{{ 'service.auto.how-does.text' | translate }}</p>
 
         </div>
     </div>
@@ -16,22 +15,118 @@
 <!-- card -->
 <section id="block-carousel">
     <div class="container mb-5">
-        <app-section-title title="Lorem ipsum dolor sit amet, consectetur adipisicing elit."></app-section-title>
+        <app-section-title [title]="'service.auto.how-does.section1' | translate"></app-section-title>
 
         <div class="swiper">
             <div class="swiper-wrapper">
 
-                <div *ngFor="let item of [1,2,3,4,5,6,7]" class="swiper-slide">
+                <div class="swiper-slide">
                     <div class="card bg-theme">
                         <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
                         <div class="card-body">
                             <div class="card-title">
-                                <h4 class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme1' | translate }}</h4>
                             </div>
                             <div class="card-text">
-                                <p class="text-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Maxime modi quod quam atque dolorem maiores reprehenderit at, deleniti illo iure
-                                    deserunt esse neque nam!</p>
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text1' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme2' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text2' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme3' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text3' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme4' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text4' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme5' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text5' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme6' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text6' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme7' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text7' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.auto.how-does.theme8' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.auto.how-does.text8' | translate }}</p>
                             </div>
                         </div>
                     </div>
