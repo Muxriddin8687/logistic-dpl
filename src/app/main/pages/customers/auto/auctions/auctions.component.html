@@ -1,37 +1,37 @@
 <app-bread-crumbs [img_url]="'trucks.jpg'">
     <div class="d-flex align-items-center h-100">
         <div class="w-100 d-block">
-            <h1 class="text-light">Lorem, ipsum dolor.</h1>
+            <h1 class="text-light">{{ 'customers.auto.auctions.title1' | translate }}</h1>
 
             <div class="g-container">
                 <ul id="list-example" class="list-unstyled" style="--s: 4">
                     <li>
                         <div (click)="goTo('block-1')" class="text-light">
-                            Lorem ipsum
+                            {{ 'customers.auto.auctions.text1' | translate }}
                             <i class="fa fa-arrow-right ms-3"></i>
                         </div>
                     </li>
                     <li>
                         <div (click)="goTo('block-2')" class="text-light">
-                            Lorem ipsum
+                            {{ 'customers.auto.auctions.text2' | translate }}
                             <i class="fa fa-arrow-right ms-3"></i>
                         </div>
                     </li>
                     <li>
                         <div (click)="goTo('block-3')" class="text-light">
-                            Lorem ipsum
+                            {{ 'customers.auto.auctions.text3' | translate }}
                             <i class="fa fa-arrow-right ms-3"></i>
                         </div>
                     </li>
                     <li>
                         <div (click)="goTo('block-4')" class="text-light">
-                            Lorem ipsum
+                            {{ 'customers.auto.auctions.text4' | translate }}
                             <i class="fa fa-arrow-right ms-3"></i>
                         </div>
                     </li>
                     <li>
                         <div (click)="goTo('block-1')" class="text-light">
-                            Lorem ipsum
+                            {{ 'customers.auto.auctions.text1' | translate }}
                             <i class="fa fa-arrow-right ms-3"></i>
                         </div>
                     </li>
@@ -48,12 +48,8 @@
 
 
     <div class="container">
-        <app-section-title title="Lorem ipsum dolor sit amet consectetur adipisicing elit."></app-section-title>
-        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ab quo aspernatur sequi
-            saepe magni ipsam ipsa
-            tempore id vel, expedita maxime perferendis ipsum quod eaque, sint atque facere temporibus. At dicta soluta
-            exercitationem commodi nemo provident maiores odit consectetur, ut repellendus dolor perspiciatis nam cupiditate
-            doloremque sed?</p>
+        <app-section-title [title]="'customers.auto.auctions.sub-title1' | translate"></app-section-title>
+        <p class="text-center">{{ 'customers.auto.auctions.paragraph1' | translate }}</p>
 
         <img src="./assets/images/header.jpg" class="w-100 my-4 rounded" alt="Service image">
     </div>
@@ -62,22 +58,17 @@
 
 
     <div class="container mb-5 pb-5">
-        <app-section-title title="Lorem ipsum dolor sit"></app-section-title>
+        <app-section-title [title]="'customers.auto.auctions.sub-title2' | translate"></app-section-title>
 
-        <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque in aut nostrum voluptatum, et
-            illo voluptatem modi quam blanditiis, nulla nam impedit ex pariatur ea ut! Similique excepturi dignissimos
-            quibusdam.</p>
+        <p class="text-center">{{ 'customers.auto.auctions.paragraph2' | translate }}</p>
 
 
         <div class="row mt-5" id="block-1">
             <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
                 <div class="d-flex align-items-center h-100">
                     <div>
-                        <h3>In the office</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ex laudantium debitis qui at
-                            dolorum totam facere rerum minima tempora? Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Sequi ex laudantium debitis qui at
-                            dolorum totam facere rerum minima tempora?</p>
+                        <h3>{{ 'customers.auto.auctions.sub-title3' | translate }}</h3>
+                        <p>{{ 'customers.auto.auctions.paragraph3' | translate }}</p>
                     </div>
                 </div>
             </div>
@@ -91,11 +82,8 @@
             <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
                 <div class="d-flex align-items-center h-100">
                     <div>
-                        <h3>Lorem, ipsum dolor.</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ex laudantium debitis qui at
-                            dolorum totam facere rerum minima tempora? Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Sequi ex laudantium debitis qui at
-                            dolorum totam facere rerum minima tempora?</p>
+                        <h3>{{ 'customers.auto.auctions.sub-title4' | translate }}</h3>
+                        <p>{{ 'customers.auto.auctions.paragraph4' | translate }}</p>
                     </div>
                 </div>
             </div>
@@ -109,11 +97,8 @@
             <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
                 <div class="d-flex align-items-center h-100">
                     <div>
-                        <h3>In the office</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi ex laudantium debitis qui at
-                            dolorum totam facere rerum minima tempora? Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Sequi ex laudantium debitis qui at
-                            dolorum totam facere rerum minima tempora?</p>
+                        <h3>{{ 'customers.auto.auctions.sub-title5' | translate }}</h3>
+                        <p>{{ 'customers.auto.auctions.paragraph5' | translate }}</p>
                     </div>
                 </div>
             </div>
@@ -136,10 +121,12 @@
                     <img src="./assets/images/showroom.jpg" class="w-100 rounded" alt="Service image">
                 </div>
                 <div class="col-11 col-sm-8 col-md-6 mx-auto p-5 ms-auto">
-                    <h3 class="text-light">Save time. Book instantly.</h3>
-                    <p class="text-light mt-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores
-                        pariatur, blanditiis labore necessitatibus tenetur hic aperiam ipsam. Officiis atque odit quae totam
-                        enim.</p>
+                    <div class="d-f-a-c-j-c h-100">
+                        <div>
+                            <h3 class="text-light">{{ 'customers.auto.auctions.sub-title6' | translate }}</h3>
+                            <p class="text-light">{{ 'customers.auto.auctions.paragraph6' | translate }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 

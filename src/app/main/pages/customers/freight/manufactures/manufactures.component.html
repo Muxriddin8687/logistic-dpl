@@ -1,13 +1,13 @@
 <app-bread-crumbs img_url="car.jpg">
     <div class="container">
         <div class="h-100 d-f-a-c-j-c flex-column text-center">
-            <h2 class="text-light">Lorem ipsum dolor sit.</h2>
-            <p class="text-light w-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, facere
-                dignissimos laboriosam dolorum placeat eos illum dolorem ducimus, commodi omnis, quidem amet nemo non
-                excepturi.</p>
+            <h2 class="text-light">{{ 'customers.freight.manufacturers.title1' | translate }}</h2>
+            <p class="text-light w-50">{{ 'customers.freight.manufacturers.text1' | translate }}</p>
         </div>
     </div>
 </app-bread-crumbs>
+
+
 
 
 
@@ -23,40 +23,15 @@
     <div class="card">
         <div class="row w-100">
             <div class="col-12 col-sm-10 col-md-5 col-lg-6 mx-auto py-4 px-5 mt-4">
-                <h3 class="my-4">Lorem ipsum dolor sit.</h3>
+                <h3 class="my-4">{{ 'customers.freight.manufacturers.sub-title1' | translate }}</h3>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sed maxime libero! Minima consectetur
-                    ipsum enim sint aperiam hic debitis magni earum vero obcaecati quaerat quod omnis, praesentium fugit
-                    reiciendis laudantium aspernatur, magnam deserunt animi temporibus eligendi? Veniam, nulla eaque?
-                </p>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, unde doloremque eaque voluptatem
-                    debitis iste accusantium vero omnis, fuga quia laudantium corrupti. Ipsum dolore molestias
-                    consequatur quas voluptatibus id dicta adipisci possimus aspernatur nobis.</p>
-
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eos facere inventore iure
-                    similique, quasi hic! Soluta voluptates fugit exercitationem voluptas, quam magnam eveniet? Modi non
-                    doloribus officiis earum nobis.</p>
+                <p>{{ 'customers.freight.manufacturers.paragraph1' | translate }}</p>
             </div>
 
             <div class="col-12 col-sm-10 col-md-5 col-lg-6 mx-auto py-4 px-5 mt-4">
-                <h3 class="my-4">Lorem ipsum dolor sit.</h3>
+                <h3 class="my-4">{{ 'customers.freight.manufacturers.sub-title2' | translate }}</h3>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sed maxime libero! Minima consectetur
-                    ipsum enim sint aperiam hic debitis magni earum vero obcaecati quaerat quod omnis, praesentium fugit
-                    reiciendis laudantium aspernatur, magnam deserunt animi temporibus eligendi? Veniam, nulla eaque?
-                </p>
-
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, unde doloremque eaque voluptatem
-                    debitis iste accusantium vero omnis, fuga quia laudantium corrupti. Ipsum dolore molestias
-                    consequatur quas voluptatibus id dicta adipisci possimus aspernatur nobis.</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eos facere inventore iure
-                    similique, quasi hic! Soluta voluptates fugit exercitationem voluptas, quam magnam eveniet? Modi non
-                    doloribus officiis earum nobis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate
-                    eos facere inventore iure similique, quasi hic! Soluta voluptates fugit exercitationem voluptas,
-                    quam magnam eveniet? Modi non doloribus officiis earum nobis.</p>
+                <p>{{ 'customers.freight.manufacturers.paragraph2' | translate }}</p>
             </div>
         </div>
     </div>
@@ -70,7 +45,7 @@
 
 <!-- large image block -->
 <div class="container">
-    <app-section-title title="Lorem ipsum dolor sit amet consectetur adipisicing elit."></app-section-title>
+    <app-section-title [title]="'customers.freight.manufacturers.text2' | translate"></app-section-title>
 
     <!-- Carousel wrapper -->
     <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel"
@@ -96,8 +71,8 @@
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100"
                     alt="Sunset Over the City" />
                 <div class="carousel-caption">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5>{{ 'customers.freight.manufacturers.c-title1' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.c-text1' | translate }}</p>
                 </div>
             </div>
 
@@ -106,8 +81,8 @@
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100"
                     alt="Canyon at Nigh" />
                 <div class="carousel-caption">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5>{{ 'customers.freight.manufacturers.c-title2' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.c-text2' | translate }}</p>
                 </div>
             </div>
 
@@ -116,8 +91,8 @@
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100"
                     alt="Cliff Above a Stormy Sea" />
                 <div class="carousel-caption">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h5>{{ 'customers.freight.manufacturers.c-title3' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.c-text3' | translate }}</p>
                 </div>
             </div>
 
@@ -126,8 +101,8 @@
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100"
                     alt="Canyon at Nigh" />
                 <div class="carousel-caption">
-                    <h5>Four slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h5>{{ 'customers.freight.manufacturers.c-title4' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.c-text4' | translate }}</p>
                 </div>
             </div>
 
@@ -136,8 +111,8 @@
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100"
                     alt="Cliff Above a Stormy Sea" />
                 <div class="carousel-caption">
-                    <h5>Five slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h5>{{ 'customers.freight.manufacturers.c-title5' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.c-text5' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -166,7 +141,7 @@
 
 <!-- icon block -->
 <div class="container pb-5">
-    <app-section-title title="Lorem ipsum dolor sit amet consectetur adipisicing elit."></app-section-title>
+    <app-section-title [title]="'customers.freight.manufacturers.service1' | translate"></app-section-title>
 
     <div class="row">
         <div class="mx-auto mt-5 col-11 col-sm-8 col-md-5 col-lg-4">
@@ -175,7 +150,8 @@
                     <i class="fa fa-box"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service1' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text1' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -185,7 +161,8 @@
                     <i class="fa fa-box-open"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service2' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text2' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -195,7 +172,8 @@
                     <i class="fa fa-truck-ramp-box"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service3' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text3' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -205,7 +183,8 @@
                     <i class="fa fa-gauge-high"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service4' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text4' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -215,7 +194,8 @@
                     <i class="fa fa-boxes-stacked"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service5' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text5' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -225,7 +205,8 @@
                     <i class="fa-solid fa-stopwatch"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service6' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text6' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -235,7 +216,8 @@
                     <i class="fa-solid fa-shield"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service7' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text7' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -245,7 +227,8 @@
                     <i class="fa-solid fa-warehouse"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service8' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text8' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -255,7 +238,8 @@
                     <i class="fa-solid fa-file-lines"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h5>{{ 'customers.freight.manufacturers.service9' | translate }}</h5>
+                    <p>{{ 'customers.freight.manufacturers.s-text9' | translate }}</p>
                 </div>
             </div>
         </div>
