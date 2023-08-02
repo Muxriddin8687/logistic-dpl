@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-              npm istall --legacy-peer-deps
+              npm install --legacy-peer-deps
               npm install -g @angular/cli
               ng build
       - uses: FirebaseExtended/action-hosting-deploy@v0
