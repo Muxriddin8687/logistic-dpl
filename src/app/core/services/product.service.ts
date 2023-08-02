@@ -78,7 +78,7 @@ export class ProductService {
   public defultProductGroup = [
     {
       id: 1,
-      name: 'Olma',
+      name: 'New Product',
       product: [
         {
           id: 1,
@@ -97,7 +97,7 @@ export class ProductService {
     },
     {
       id: 2,
-      name: 'Nok',
+      name: 'New Product',
       product: [
         {
           id: 2,
@@ -116,7 +116,7 @@ export class ProductService {
     },
     {
       id: 3,
-      name: 'Moloko',
+      name: 'New Product',
       product: [
         {
           id: 3,
