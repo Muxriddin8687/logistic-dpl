@@ -21,14 +21,18 @@ export class NewsCarouselComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     let swiper = new Swiper('#reviews .swiper', {
-      loop: false,
-      pagination: false,
+      loop: true,
       centeredSlides: false,
       grabCursor: true,
       spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next-reviews',
-        prevEl: '.swiper-button-prev-reviews'
+      speed: 2000,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '#reviews .swiper-pagination',
+        type: 'bullets',
       },
       breakpoints: {
         1400: {

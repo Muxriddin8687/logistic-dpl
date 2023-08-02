@@ -22,16 +22,17 @@ export class HowDoesComponent {
     let swiper = new Swiper('#block-carousel .swiper', {
       loop: true,
       centeredSlides: false,
-      navigation: {
-        nextEl: '.swiper-button-next-reviews',
-        prevEl: '.swiper-button-prev-reviews'
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-      },
       grabCursor: true,
       spaceBetween: 30,
+      speed: 2000,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '#block-carousel .swiper-pagination',
+        type: 'bullets',
+      },
       breakpoints: {
         1400: {
           slidesPerView: 3,

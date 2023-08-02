@@ -15,36 +15,125 @@
 <!-- card -->
 <section id="block-carousel-freight">
     <div class="container mb-5">
-        <app-section-title title="Lorem ipsum dolor sit amet, consectetur adipisicing elit."></app-section-title>
+        <app-section-title [title]="'service.freight.how-does.section1' | translate"></app-section-title>
 
 
         <div class="swiper">
             <div class="swiper-wrapper">
 
-                <div *ngFor="let item of [1,2,3,4,5,6,7]" class="swiper-slide">
+                <div class="swiper-slide">
                     <div class="card bg-theme">
-                        <img class="card-img-top" src="./assets/images/car-dealership.jpg" alt="DPL service image">
+                        <img class="card-img-top" src="./assets/images/AdobeStock_111940874.jpeg" alt="DPL service image">
                         <div class="card-body">
                             <div class="card-title">
-                                <h4 class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h4>
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme1' | translate }}</h4>
                             </div>
                             <div class="card-text">
-                                <p class="text-light mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Maxime modi quod quam atque dolorem maiores reprehenderit at, deleniti illo iure
-                                    deserunt esse neque nam!</p>
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text1' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/warehouse.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme2' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text2' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/forklift_driver_relocating.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme3' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text3' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/carries/Flatbate_freight/2.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme4' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text4' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/carries/Flatbate_freight/3.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme5' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text5' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/carries/Flatbate_freight/flatbate_fre1.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme6' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text6' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/carries/Flatbate_freight/1.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme7' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text7' | translate }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card bg-theme">
+                        <img class="card-img-top" src="./assets/images/carries/Step_Deck/4.jpg" alt="DPL service image">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h4 class="text-light">{{ 'service.freight.how-does.theme8' | translate }}</h4>
+                            </div>
+                            <div class="card-text">
+                                <p class="text-light mb-0">{{ 'service.freight.how-does.text8' | translate }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>
-
-        <div class="swiper-button-next--freight">
-            <i class="fa fa-chevron-right"></i>
-        </div>
-        <div class="swiper-button-prev--freight">
-            <i class="fa fa-chevron-left"></i>
         </div>
 
         <div class="swiper-pagination"></div>

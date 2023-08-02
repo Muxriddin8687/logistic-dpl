@@ -16,7 +16,7 @@ export class ProductService {
         { name: "length", label: "Length", unity: "inc", value: 100 },
         { name: "width", label: "Width", unity: "inc", value: 100 },
         { name: "height", label: "Height", unity: "inc", value: 100 },
-        { name: "weight", label: "Weight", unity: "kg", value: 1 },
+        { name: "weight", label: "Weight", unity: "lbs", value: 1 },
         { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
       ]
     },
@@ -29,7 +29,7 @@ export class ProductService {
         { name: "length", label: "Length", unity: "inc", value: 100 },
         { name: "width", label: "Width", unity: "inc", value: 100 },
         { name: "height", label: "Height", unity: "inc", value: 100 },
-        { name: "weight", label: "Weight", unity: "kg", value: 1 },
+        { name: "weight", label: "Weight", unity: "lbs", value: 1 },
         { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
       ]
     },
@@ -42,7 +42,7 @@ export class ProductService {
         { name: "length", label: "Length", unity: "inc", value: 100 },
         { name: "width", label: "Width", unity: "inc", value: 100 },
         { name: "height", label: "Height", unity: "inc", value: 100 },
-        { name: "weight", label: "Weight", unity: "kg", value: 1 },
+        { name: "weight", label: "Weight", unity: "lbs", value: 1 },
         { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
       ]
     },
@@ -55,7 +55,7 @@ export class ProductService {
         { name: "length", label: "Length", unity: "inc", value: undefined },
         { name: "radius", label: "Radius", unity: "inc", value: 100 },
         { name: "height", label: "Height", unity: "inc", value: 100 },
-        { name: "weight", label: "Weight", unity: "kg", value: 1 },
+        { name: "weight", label: "Weight", unity: "lbs", value: 1 },
         { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
       ]
     },
@@ -68,7 +68,7 @@ export class ProductService {
         { name: "length", label: "Length", unity: "inc", value: undefined },
         { name: "radius", label: "Radius", unity: "inc", value: 100 },
         { name: "height", label: "Height", unity: "inc", value: 100 },
-        { name: "weight", label: "Weight", unity: "kg", value: 1 },
+        { name: "weight", label: "Weight", unity: "lbs", value: 1 },
         { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
       ]
     }
@@ -89,7 +89,7 @@ export class ProductService {
             { name: "length", label: "Length", unity: "inc", value: 100 },
             { name: "width", label: "Width", unity: "inc", value: 100 },
             { name: "height", label: "Height", unity: "inc", value: 100 },
-            { name: "weight", label: "Weight", unity: "kg", value: 1 },
+            { name: "weight", label: "Weight", unity: "lbs", value: 1 },
             { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
           ]
         }
@@ -108,7 +108,7 @@ export class ProductService {
             { name: "length", label: "Length", unity: "inc", value: 100 },
             { name: "width", label: "Width", unity: "inc", value: 100 },
             { name: "height", label: "Height", unity: "inc", value: 100 },
-            { name: "weight", label: "Weight", unity: "kg", value: 1 },
+            { name: "weight", label: "Weight", unity: "lbs", value: 1 },
             { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
           ]
         }
@@ -127,7 +127,7 @@ export class ProductService {
             { name: "length", label: "Length", unity: "inc", value: 100 },
             { name: "width", label: "Width", unity: "inc", value: 100 },
             { name: "height", label: "Height", unity: "inc", value: 100 },
-            { name: "weight", label: "Weight", unity: "kg", value: 1 },
+            { name: "weight", label: "Weight", unity: "lbs", value: 1 },
             { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
           ]
         }
@@ -148,7 +148,7 @@ export class ProductService {
         { name: "length", label: "Length", unity: "inc", value: 100 },
         { name: "width", label: "Width", unity: "inc", value: 100 },
         { name: "height", label: "Height", unity: "inc", value: 100 },
-        { name: "weight", label: "Weight", unity: "kg", value: 1 },
+        { name: "weight", label: "Weight", unity: "lbs", value: 1 },
         { name: "quantity", label: "Quantity", unity: undefined, value: 1 }
       ]
     }]

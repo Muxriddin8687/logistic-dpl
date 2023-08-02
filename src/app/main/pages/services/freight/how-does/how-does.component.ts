@@ -15,16 +15,17 @@ export class HowDoesComponent {
     let swiper = new Swiper('#block-carousel-freight .swiper', {
       loop: true,
       centeredSlides: false,
-      navigation: {
-        nextEl: '.swiper-button-next--freight',
-        prevEl: '.swiper-button-prev--freight'
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-      },
       grabCursor: true,
       spaceBetween: 30,
+      speed: 2000,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '#block-carousel-freight .swiper-pagination',
+        type: 'bullets',
+      },
       breakpoints: {
         1400: {
           slidesPerView: 3,
