@@ -148,11 +148,11 @@
 
             <form #f="ngForm" (submit)="send(f)">
                 <h3 class="text-center">Dealerships form</h3>
-                
+
                 <mat-form-field class="w-100">
                     <mat-label>Company name</mat-label>
-                    <input type="text" placeholder="City or ZIP" aria-label="Number" matInput ngModel
-                        #inputFromCompany (input)="findCompany(inputFromCompany.value)" [matAutocomplete]="company_name"
+                    <input type="text" placeholder="City or ZIP" aria-label="Number" matInput ngModel #inputFromCompany
+                        (input)="findCompany(inputFromCompany.value)" [matAutocomplete]="company_name"
                         name="company_name" required minlength="5">
 
                     <mat-autocomplete #company_name="matAutocomplete">
@@ -187,7 +187,7 @@
                     <input type="text" matInput ngModel name="role" required minlength="7">
                 </mat-form-field>
 
-                
+
 
                 <button [disabled]="f.invalid" type="submit" class="btn-theme w-100">SEND</button>
             </form>
@@ -296,6 +296,19 @@
 
 
                                     <mat-form-field class="w-100">
+                                        <mat-label>Company name</mat-label>
+                                        <input type="text" placeholder="City or ZIP" aria-label="Number" matInput
+                                            ngModel #inputFromCompany (input)="findCompany(inputFromCompany.value)"
+                                            [matAutocomplete]="company_name" name="company_name" required minlength="5">
+
+                                        <mat-autocomplete #company_name="matAutocomplete">
+                                            <mat-option *ngFor="let item of companies" [value]="item.name">
+                                                {{ item['name'] }}
+                                            </mat-option>
+                                        </mat-autocomplete>
+                                    </mat-form-field>
+
+                                    <mat-form-field class="w-100">
                                         <mat-label>First name</mat-label>
                                         <input type="text" matInput ngModel name="first_name" required minlength="3">
                                     </mat-form-field>
@@ -316,13 +329,8 @@
                                     </mat-form-field>
 
                                     <mat-form-field class="w-100">
-                                        <mat-label>Volume</mat-label>
-                                        <mat-select ngModel name="car" required>
-                                            <mat-option [value]="'1'">1 vehicle in month</mat-option>
-                                            <mat-option [value]="'1-5'">1-5 vehicle in month</mat-option>
-                                            <mat-option [value]="'5-10'">5-10 vehicle in month</mat-option>
-                                            <mat-option [value]="'10+'">10+ vehicle in month</mat-option>
-                                        </mat-select>
+                                        <mat-label>Role</mat-label>
+                                        <input type="text" matInput ngModel name="role" required minlength="7">
                                     </mat-form-field>
 
 

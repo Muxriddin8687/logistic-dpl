@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { SpinnerService } from './core/services/spinner.service';
 import { filter } from 'rxjs';
+import { GoogleAnalyticsService } from './core/services/google-analistic.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,24 @@ import { filter } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'logistic-dpl';
+  title = 'DPL';
 
-  constructor(private router: Router, private spinnerService: SpinnerService) { }
+  constructor(private router: Router,
+    private _googleAnalytics: GoogleAnalyticsService,
+    private spinnerService: SpinnerService) {
+
+
+    if (environment.prod) {
+      this.router.events.subscribe(this.handleGoogleAnalytics);
+    }
+  }
+
+
+  handleGoogleAnalytics = (event: any): void => {
+    if (event instanceof NavigationEnd) {
+      this._googleAnalytics.sendPageView(event.urlAfterRedirects);
+    }
+  };
 
   ngOnInit() {
     this.router
