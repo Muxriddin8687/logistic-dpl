@@ -5,21 +5,21 @@
     <div class="row">
 
         <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1 mb-3">
-            <span>First&nbsp;name:</span>
+            <span>{{ 'form.first_name' | translate }}:</span>
         </div>
         <div class="col-7 col-sm-8 col-md-4 col-lg-4 col-xl-5 mb-3">
             <h5 class="mb-0 ms-3 d-inline-block">{{ client_information.first_name }}</h5>
         </div>
 
         <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1 mb-3">
-            <span>Last&nbsp;name:</span>
+            <span>{{ 'form.last_name' | translate }}:</span>
         </div>
         <div class="col-7 col-sm-8 col-md-4 col-lg-4 col-xl-5 mb-3">
             <h5 class="mb-0 ms-3 d-inline-block">{{ client_information.last_name }}</h5>
         </div>
 
         <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1 mb-3">
-            <span>Phone:</span>
+            <span>{{ 'form.phone' | translate }}:</span>
         </div>
         <div class="col-7 col-sm-8 col-md-4 col-lg-4 col-xl-5 mb-3">
             <h5 class="mb-0 ms-3 d-inline-block">{{ client_information.phone }}</h5>
@@ -33,14 +33,14 @@
         </div>
 
         <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1 mb-3">
-            <span>From:</span>
+            <span>{{ 'form.from' | translate }}:</span>
         </div>
         <div class="col-7 col-sm-8 col-md-4 col-lg-4 col-xl-5 mb-3">
             <h5 class="mb-0 ms-3 d-inline-block">{{ client_information.from }}</h5>
         </div>
 
         <div class="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-1 mb-3">
-            <span>To:</span>
+            <span>{{ 'form.to' | translate }}:</span>
         </div>
         <div class="col-7 col-sm-8 col-md-4 col-lg-4 col-xl-5 mb-3">
             <h5 class="mb-0 ms-3 d-inline-block">{{ client_information.to }}</h5>
@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row">
 
-            <app-section-title title="Trucks & Containers"></app-section-title>
+            <app-section-title title="{{ 'form.containers' | translate }}"></app-section-title>
 
             <ng-container *ngFor="let item of user_truck">
                 <div class="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-auto mb-4">
@@ -81,7 +81,7 @@
 <section id="products" *ngIf="products; else notFound">
     <div class="container">
 
-        <app-section-title title="Product group"></app-section-title>
+        <app-section-title title="{{ 'form.productGroup' | translate }}"></app-section-title>
 
         <hr class="my-4">
 
@@ -90,13 +90,13 @@
 
                 <thead>
                     <tr>
-                        <th width="42px">Type</th>
-                        <th>Product Name</th>
-                        <th class="number-input">Length</th>
-                        <th class="number-input">Width / Radius</th>
-                        <th class="number-input">Height</th>
-                        <th class="number-input">Weight</th>
-                        <th class="number-input">Quantity</th>
+                        <th width="42px">{{ 'form.type' | translate }}</th>
+                        <th>{{ 'form.productName' | translate }}</th>
+                        <th class="number-input">{{ 'form.length' | translate }}</th>
+                        <th class="number-input">{{ 'form.width' | translate }}</th>
+                        <th class="number-input">{{ 'form.height' | translate }}</th>
+                        <th class="number-input">{{ 'form.weight' | translate }}</th>
+                        <th class="number-input">{{ 'form.quantity' | translate }}</th>
                     </tr>
                 </thead>
 
@@ -183,7 +183,7 @@
 
 
 <div class="text-center my-5">
-    <a routerLink="/app/services/freight/how-much-does-it-cost/client-form" class="btn btn-secondary">Back</a>
+    <a routerLink="/app/services/freight/how-much-does-it-cost/client-form" class="btn btn-secondary">{{ 'form.back' | translate }}</a>
     <!-- <button class="btn btn-info mx-2"><i class="fa fa-print me-2"></i> Print</button> -->
-    <button (click)="send()" class="btn btn-primary ms-2">Send</button>
+    <button (click)="send()" class="btn btn-primary ms-2">{{ 'form.send' | translate }}</button>
 </div>

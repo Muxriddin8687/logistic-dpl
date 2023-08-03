@@ -9,6 +9,7 @@
     h2 {
         display: inline-block;
         position: relative;
+        font-size: 26px;
 
         &::before {
             content: '';
@@ -33,7 +34,7 @@
         font-weight: 600;
         margin-top: 30px;
         margin-bottom: 20px;
-        font-size: 32px;
+        font-size: 22px;
     }
 }
 
@@ -41,6 +42,6 @@
 
 @media screen and (max-width: 500px) {
     .section-title h2 {
-        font-size: 26px;
+        font-size: 18px;
     }
 }

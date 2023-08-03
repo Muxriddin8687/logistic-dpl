@@ -3,7 +3,7 @@
 
         <div class="shadow border rounded w-100 p-3 mb-5">
 
-            <h5>Product group</h5>
+            <h5>{{ 'form.productGroup' | translate }}</h5>
 
             <hr class="my-4">
 
@@ -12,14 +12,14 @@
 
                     <thead>
                         <tr>
-                            <th width="42px">Type</th>
-                            <th>Product Name</th>
-                            <th class="number-input">Length</th>
-                            <th class="number-input">Width / Radius</th>
-                            <th class="number-input">Height</th>
-                            <th class="number-input">Weight</th>
-                            <th class="number-input">Quantity</th>
-                            <th width="111px">Stack</th>
+                            <th width="42px">{{ 'form.type' | translate }}</th>
+                            <th>{{ 'form.productName' | translate }}</th>
+                            <th class="number-input">{{ 'form.length' | translate }}</th>
+                            <th class="number-input">{{ 'form.width' | translate }}</th>
+                            <th class="number-input">{{ 'form.height' | translate }}</th>
+                            <th class="number-input">{{ 'form.weight' | translate }}</th>
+                            <th class="number-input">{{ 'form.quantity' | translate }}</th>
+                            <th width="111px">{{ 'form.stack' | translate }}</th>
                         </tr>
                     </thead>
 
@@ -105,7 +105,7 @@
                             <td colspan="8" class="border-bottom-0 ps-0">
                                 <button class="btn btn-secondary" data-mdb-toggle="modal" type="button"
                                     data-mdb-target="#addProductModal">
-                                    <i class="fa fa-plus me-2"></i> Add Product
+                                    <i class="fa fa-plus me-2"></i> {{ 'form.addProduct' | translate }}
                                 </button>
                             </td>
                         </tr>
@@ -117,7 +117,7 @@
 
 
         <div class="text-center my-5">
-            <a routerLink="/app/services/freight/how-much-does-it-cost/truck-container" class="btn btn-primary">Next</a>
+            <a routerLink="/app/services/freight/how-much-does-it-cost/truck-container" class="btn btn-primary">{{ 'form.next' | translate }}</a>
         </div>
     </div>
 </section>
@@ -133,7 +133,7 @@
                 <div class="modal-body">
                     <div id="product-form" class="container py-4">
 
-                        <h3 class="text-center mb-3">Add product</h3>
+                        <h3 class="text-center mb-3">{{ 'form.addProduct' | translate }}</h3>
 
                         <div class="row">
                             <ng-container *ngFor="let item of productList">
@@ -161,7 +161,7 @@
                                     <div class="row w-100 mx-auto">
 
                                         <div class="col-12 mb-3">
-                                            <span>Product name</span>
+                                            <span>{{ 'form.productName' | translate }}</span>
                                             <div class="form-outline mb-3">
                                                 <input [(ngModel)]="item.name" name="product_name" required type="text"
                                                     class="form-control form-sm rounded-pill" />
@@ -188,9 +188,9 @@
 
                                     <div class="d-flex">
                                         <button class="btn-secondary btn w-100 me-3" (click)="selectedProduct(1)" type="button"
-                                            data-mdb-dismiss="modal">Cancel</button>
+                                            data-mdb-dismiss="modal">{{ 'form.cancel' | translate }}</button>
                                         <button data-mdb-dismiss="modal" (click)="addProduct(prodForm)" type="button"
-                                            class="btn-theme w-100">SEND</button>
+                                            class="btn-theme w-100">{{ 'form.send' | translate }}</button>
                                     </div>
 
                                 </form>

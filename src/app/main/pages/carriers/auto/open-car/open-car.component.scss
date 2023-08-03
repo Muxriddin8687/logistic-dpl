@@ -1,0 +1,14 @@
+#carouselBasicExample {
+    &.carousel {
+        max-height: 90vh;
+
+        .carousel-item {
+            max-height: 90vh;
+
+            img {
+                max-height: 90vh;
+                object-fit: cover;
+            }
+        }
+    }
+}

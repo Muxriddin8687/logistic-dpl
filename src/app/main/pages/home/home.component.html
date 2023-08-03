@@ -6,7 +6,7 @@
 
 
 <section id="car-shipping">
-    <app-section-title title="Car Shipping"></app-section-title>
+    <app-section-title title="{{ 'home.section2' | translate }}"></app-section-title>
 
     <div class="container">
         <div class="row">
@@ -15,31 +15,28 @@
                     <img src="./assets/images/shipping/car-hauler_SuperDispatch.jpg" alt="Service image"
                         class="img-fluid" height="300px">
 
-                    <h5 class="mt-4 mb-2">Open car hauler</h5>
+                    <h5 class="mt-4 mb-2">{{ 'home.title1' | translate }}</h5>
                     <p>
                         <strong>
                             <span>|&nbsp;</span>
                         </strong>
-                        Open car haulers are typically composed of a flatbed or a series of interconnected decks that
-                        are equipped with ramps or hydraulic lift systems for loading and unloading vehicles.
+                        {{ 'home.text1' | translate }}
                     </p>
-                    <a class="block-link" routerLink="/app/carriers/auto/open-car-haulers">Read more</a>
+                    <a class="block-link" routerLink="/app/carriers/auto/open-car-haulers">{{ 'home.readmore' | translate }}</a>
                 </div>
             </div>
             <div class="mx-auto col-11 col-sm-10 col-md-4">
                 <div class="block">
                     <img src="./assets/images/shipping/truck.jpg" alt="Service image" class="img-fluid" height="300px">
 
-                    <h5 class="mt-4 mb-2">Enclosed Car Haulers</h5>
+                    <h5 class="mt-4 mb-2">{{ 'home.title2' | translate }}</h5>
                     <p>
                         <strong>
                             <span>|&nbsp;</span>
                         </strong>
-                        Transportation of cars on enclosed trailers versus open trailers is a common debate among car
-                        owners and transportation companies. Each method has its own advantages and disadvantages which
-                        should be considered before making a decision.
+                        {{ 'home.text2' | translate }}
                     </p>
-                    <a class="block-link" routerLink="/app/carriers/auto/enclosed-car-haulers">Read more</a>
+                    <a class="block-link" routerLink="/app/carriers/auto/enclosed-car-haulers">{{ 'home.readmore' | translate }}</a>
                 </div>
             </div>
             <div class="mx-auto col-11 col-sm-10 col-md-4">
@@ -47,16 +44,14 @@
                     <img src="./assets/images/shipping/Untitled-design-7.png" alt="Service image" class="img-fluid"
                         height="300px">
 
-                    <h5 class="mt-4 mb-2">Dealerships</h5>
+                    <h5 class="mt-4 mb-2">{{ 'home.title3' | translate }}</h5>
                     <p>
                         <strong>
                             <span>|&nbsp;</span>
                         </strong>
-                        Our brokerage model allows us to negotiate competitive rates with carriers passing on the
-                        savings to you. By minimizing transportation costs you can allocate your budget to other
-                        critical aspects of your business
+                        {{ 'home.text3' | translate }}
                     </p>
-                    <a class="block-link" routerLink="/app/customers/auto/dealerships">Read more</a>
+                    <a class="block-link" routerLink="/app/customers/auto/dealerships">{{ 'home.readmore' | translate }}</a>
                 </div>
             </div>
         </div>
@@ -79,12 +74,10 @@
                 <img src="./assets/images/dashboard.jpg" class="w-100 rounded" alt="Service image">
             </div>
             <div class="col-11 col-sm-8 col-md-6 mx-auto p-5 ms-auto d-flex align-items-center flex-column h-100">
-                <h3 class="text-light">Original Equipment Manufacturers (OEMs)</h3>
-                <p class="text-light mt-4">These manufacturers produce products or components that are used as parts in
-                    another company's finished product. For example, a car manufacturer may purchase engines from an OEM
-                    to use in their vehicles.</p>
+                <h3 class="text-light">{{ 'home.title4' | translate }}</h3>
+                <p class="text-light mt-4">{{ 'home.text4' | translate }}</p>
 
-                <a class="btn-theme btn-inline me-auto" routerLink="/app/customers/freight/manufacturers-and-warehouses">Read more</a>
+                <a class="btn-theme btn-inline me-auto" routerLink="/app/customers/freight/manufacturers-and-warehouses">{{ 'home.readmore' | translate }}</a>
             </div>
         </div>
 
@@ -97,7 +90,7 @@
 
 
 <section id="freight-shipping">
-    <app-section-title title="Freight Shipping"></app-section-title>
+    <app-section-title title="{{ 'home.section3' | translate }}"></app-section-title>
 
     <div class="container">
         <div class="row">
@@ -108,14 +101,11 @@
             </div>
             <div class="mx-auto mb-5 col-11 col-sm-10 col-md-6">
                 <div class="text-block">
-                    <h4>Pre-loading preparation</h4>
+                    <h4>{{ 'home.title5' | translate }}</h4>
 
-                    <p>This step involves planning and preparing the logistics of loading the goods into the dry vans.
-                        It includes determining the type and quantity of goods to be loaded calculating the weight and
-                        dimensions of the goods and ensuring that they comply with the weight and size limits of the dry
-                        van.</p>
+                    <p>{{ 'home.text5' | translate }}</p>
 
-                    <a routerLink="/app/carriers/freight/box-trucks" class="btn-theme">Read more</a>
+                    <a routerLink="/app/carriers/freight/box-trucks" class="btn-theme">{{ 'home.readmore' | translate }}</a>
                 </div>
             </div>
         </div>
@@ -128,13 +118,11 @@
             </div>
             <div class="mx-auto mb-5 col-11 col-sm-10 col-md-6">
                 <div class="text-block">
-                    <h4>Temperature Control</h4>
+                    <h4>{{ 'home.title6' | translate }}</h4>
 
-                    <p>Refrigerated trailers are designed to maintain a specific temperature range typically between -20
-                        to 70 degrees Fahrenheit. This allows for the safe transport of perishable goods such as fresh
-                        produce frozen foods pharmaceuticals and other temperature-sensitive products.</p>
+                    <p>{{ 'home.text6' | translate }}</p>
 
-                    <a routerLink="/app/carriers/freight/containers" class="btn-theme">Read more</a>
+                    <a routerLink="/app/carriers/freight/containers" class="btn-theme">{{ 'home.readmore' | translate }}</a>
                 </div>
             </div>
         </div>
@@ -147,13 +135,11 @@
             </div>
             <div class="mx-auto mb-5 col-11 col-sm-10 col-md-6">
                 <div class="text-block">
-                    <h4>Cargo Security</h4>
+                    <h4>{{ 'home.title7' | translate }}</h4>
 
-                    <p>Since flatbed trailers do not have sides or roofs cargo security is a major concern. Customers
-                        must use proper tie-down equipment such as straps chains or tarps to secure the load effectively
-                        to the trailer and prevent any shift or damage during transportation.</p>
+                    <p>{{ 'home.text7' | translate }}</p>
 
-                    <a routerLink="/app/carriers/auto/flatbed-car-trailers" class="btn-theme">Read more</a>
+                    <a routerLink="/app/carriers/auto/flatbed-car-trailers" class="btn-theme">{{ 'home.readmore' | translate }}</a>
                 </div>
             </div>
         </div>
@@ -166,12 +152,11 @@
             </div>
             <div class="mx-auto mb-5 col-11 col-sm-10 col-md-6">
                 <div class="text-block">
-                    <h4>Oversized or over-dimensional items</h4>
+                    <h4>{{ 'home.title8' | translate }}</h4>
 
-                    <p>Step decks provide a lower deck height allowing for the transportation of tall or high-clearance
-                        items such as construction equipment machinery or large industrial components.</p>
+                    <p>{{ 'home.text8' | translate }}</p>
 
-                    <a routerLink="/app/carriers/freight/conestoga" class="btn-theme">Read more</a>
+                    <a routerLink="/app/carriers/freight/conestoga" class="btn-theme">{{ 'home.readmore' | translate }}</a>
                 </div>
             </div>
         </div>

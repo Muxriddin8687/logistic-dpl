@@ -1,11 +1,10 @@
 <app-bread-crumbs [img_url]="'4.jpg'">
     <div class="d-flex align-items-center h-100">
         <div class="w-100">
-            <h1 class="text-light">Lorem ipsum dolor sit<br />amet consectetur.</h1>
-            <p class="text-light my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />Non unde atque
-                exercitationem quos rerum reiciendis.</p>
-            <a href="#" class="btn-theme">Sign In</a>
+            <h1 class="text-light">{{ 'carriers.auto.flatbed-car.title1' | translate }}</h1>
+            <p class="text-light my-4">{{ 'carriers.auto.flatbed-car.text1' | translate }}</p>
 
+            <a href="#" class="btn-theme">Sign In</a>
         </div>
     </div>
 </app-bread-crumbs>
@@ -18,15 +17,15 @@
 
 
 <div class="container my-5 py-5">
-    <app-section-title title="Lorem ipsum dolor sit amet"></app-section-title>
+    <app-section-title title="{{ 'carriers.auto.flatbed-car.title2' | translate }}"></app-section-title>
 
     <div class="text-list">
         <ul>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
+            <li>{{ 'carriers.auto.flatbed-car.size' | translate }}  {{ 'carriers.auto.flatbed-car.text2' | translate }}</li>
+            <li>{{ 'carriers.auto.flatbed-car.weight' | translate }}  {{ 'carriers.auto.flatbed-car.text3' | translate }}</li>
+            <li>{{ 'carriers.auto.flatbed-car.equipment' | translate }}  {{ 'carriers.auto.flatbed-car.text4' | translate }}</li>
+            <li>{{ 'carriers.auto.flatbed-car.configuration' | translate }}  {{ 'carriers.auto.flatbed-car.text5' | translate }}</li>
+            <li>{{ 'carriers.auto.flatbed-car.handling' | translate }}  {{ 'carriers.auto.flatbed-car.text6' | translate }}</li>
         </ul>
     </div>
 </div>
@@ -40,17 +39,14 @@
 
 
 <div class="container mb-5 pb-5">
-    <app-section-title title="Lorem ipsum dolor sit"></app-section-title>
+    <app-section-title title="{{ 'carriers.auto.flatbed-car.title3' | translate }}"></app-section-title>
 
     <div class="row">
         <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
             <div class="d-flex align-items-center h-100">
                 <div>
-                    <h3>Lorem ipsum dolor, sit amet.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti consequuntur nostrum,
-                        quibusdam nesciunt neque repellat doloribus! Autem odit facere quisquam maiores ut tempora sed,
-                        cum sequi aut pariatur! Nam dolorum nulla perferendis minus laudantium reprehenderit pariatur
-                        quasi aliquid distinctio vero.</p>
+                    <h3>{{ 'carriers.auto.flatbed-car.sub-title1' | translate }}</h3>
+                    <p>{{ 'carriers.auto.flatbed-car.sub-text1' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -64,10 +60,8 @@
         <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
             <div class="d-flex align-items-center h-100">
                 <div>
-                    <h3>Lorem, ipsum dolor sit.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, aliquid tempora magnam totam
-                        enim voluptatem similique quas nobis optio odio itaque repudiandae autem illum. Accusamus magni
-                        ad harum excepturi neque nemo quae. Suscipit, consequuntur quibusdam.</p>
+                    <h3>{{ 'carriers.auto.flatbed-car.sub-title2' | translate }}</h3>
+                    <p>{{ 'carriers.auto.flatbed-car.sub-text3' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -80,33 +74,13 @@
         <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
             <div class="d-flex align-items-center h-100">
                 <div>
-                    <h3>Lorem ipsum dolor, sit amet.</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti consequuntur nostrum,
-                        quibusdam nesciunt neque repellat doloribus! Autem odit facere quisquam maiores ut tempora sed,
-                        cum sequi aut pariatur! Nam dolorum nulla perferendis minus laudantium reprehenderit pariatur
-                        quasi aliquid distinctio vero.</p>
+                    <h3>{{ 'carriers.auto.flatbed-car.sub-title3' | translate }}</h3>
+                    <p>{{ 'carriers.auto.flatbed-car.sub-text3' | translate }}</p>
                 </div>
             </div>
         </div>
         <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
             <img src="./assets/images/carries/Flatbed/3.jpg" alt="DPL service image" class="img-fluid rounded">
-        </div>
-    </div>
-
-
-    <div class="row sm-reverse">
-        <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
-            <div class="d-flex align-items-center h-100">
-                <div>
-                    <h3>Lorem, ipsum dolor sit.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, aliquid tempora magnam totam
-                        enim voluptatem similique quas nobis optio odio itaque repudiandae autem illum. Accusamus magni
-                        ad harum excepturi neque nemo quae. Suscipit, consequuntur quibusdam.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-11 col-sm-8 col-md-6 mx-auto mt-5">
-            <img src="./assets/images/carries/Flatbed/5.jpg" alt="DPL service image" class="img-fluid rounded">
         </div>
     </div>
 

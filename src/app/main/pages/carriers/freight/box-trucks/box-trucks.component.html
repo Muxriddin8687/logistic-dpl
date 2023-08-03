@@ -1,9 +1,8 @@
 <app-bread-crumbs [img_url]="'box.jpg'">
     <div class="d-flex align-items-center h-100">
         <div class="w-100">
-            <h1 class="text-light">Lorem, ipsum dolor.</h1>
-            <p class="text-light my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />Non unde atque
-                exercitationem quos rerum reiciendis.</p>
+            <h1 class="text-light">{{ 'carriers.freight.box-trucks.title' | translate }}</h1>
+            <p class="text-light my-4">{{ 'carriers.freight.box-trucks.text' | translate }}</p>
 
             <a routerLink="/app/services/freight/how-much-does-it-cost/products" class="btn-theme">Free Form</a>
         </div>
@@ -25,10 +24,8 @@
         <div class="col-11 col-sm-10 col-md-6 mx-auto mt-5">
             <div class="d-flex align-items-center h-100">
                 <div>
-                    <h3>Lorem, ipsum dolor sit.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, aliquid tempora magnam totam
-                        enim voluptatem similique quas nobis optio odio itaque repudiandae autem illum. Accusamus magni
-                        ad harum excepturi neque nemo quae. Suscipit, consequuntur quibusdam.</p>
+                    <h3>{{ 'carriers.freight.box-trucks.theme1' | translate }}</h3>
+                    <p>{{ 'carriers.freight.box-trucks.text1' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -43,10 +40,8 @@
         <div class="col-11 col-sm-10 col-md-6 mx-auto mt-5">
             <div class="d-flex align-items-center h-100">
                 <div>
-                    <h3>Lorem, ipsum dolor sit.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, aliquid tempora magnam totam
-                        enim voluptatem similique quas nobis optio odio itaque repudiandae autem illum. Accusamus magni
-                        ad harum excepturi neque nemo quae. Suscipit, consequuntur quibusdam.</p>
+                    <h3>{{ 'carriers.freight.box-trucks.theme2' | translate }}</h3>
+                    <p>{{ 'carriers.freight.box-trucks.text2' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -61,10 +56,8 @@
         <div class="col-11 col-sm-10 col-md-6 mx-auto mt-5">
             <div class="d-flex align-items-center h-100">
                 <div>
-                    <h3>Lorem, ipsum dolor sit.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, aliquid tempora magnam totam
-                        enim voluptatem similique quas nobis optio odio itaque repudiandae autem illum. Accusamus magni
-                        ad harum excepturi neque nemo quae. Suscipit, consequuntur quibusdam.</p>
+                    <h3>{{ 'carriers.freight.box-trucks.theme3' | translate }}</h3>
+                    <p>{{ 'carriers.freight.box-trucks.text3' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -82,14 +75,14 @@
 
 
 <div class="container my-5 py-5">
-    <app-section-title title="Lorem ipsum dolor sit amet"></app-section-title>
+    <app-section-title [title]="'carriers.freight.box-trucks.section1' | translate"></app-section-title>
 
     <div class="text-list">
         <ul>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
-            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, dignissimos? Ipsam, ducimus.</li>
+            <li>{{ 'carriers.freight.box-trucks.list1' | translate }}</li>
+            <li>{{ 'carriers.freight.box-trucks.list2' | translate }}</li>
+            <li>{{ 'carriers.freight.box-trucks.list3' | translate }}</li>
+            <li>{{ 'carriers.freight.box-trucks.list4' | translate }}</li>
         </ul>
     </div>
 </div>

@@ -24,7 +24,7 @@ export class TruckContainerComponent {
   ];
 
   truck_list: TruckModel[] = [
-    { id: 13, image: "tautliner.svg", type: "TAUTLINER" },
+    { id: 13, image: "tautliner.svg", type: "Van" },
     { id: 14, image: "refrigerated.svg", type: "REFRIGERATED TRUCK" },
     { id: 15, image: "isotherm.svg", type: "ISOTHERM TRUCK" },
     { id: 16, image: "tautliner.svg", type: "MEGA-TRAILER" },

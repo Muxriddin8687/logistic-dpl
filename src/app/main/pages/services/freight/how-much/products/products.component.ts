@@ -55,14 +55,13 @@ export class ProductsComponent {
       let product = this.productList.filter((item: any) => item.id == form.value.product_type_id);
 
       product[0]['parametrs'][0]['value'] = (form.value.length != undefined) ? parseInt(form.value.length) : undefined;
-      product[0]['parametrs'][1]['value'] = (form.value.width != undefined)  ? parseInt(form.value.width) : parseInt(form.value.radius);
+      product[0]['parametrs'][1]['value'] = (form.value.width != undefined) ? parseInt(form.value.width) : parseInt(form.value.radius);
       product[0]['parametrs'][2]['value'] = parseInt(form.value.height);
       product[0]['parametrs'][3]['value'] = parseInt(form.value.weight);
       product[0]['parametrs'][4]['value'] = parseInt(form.value.quantity);
 
 
-      let newProduct =
-      {
+      let newProduct = {
         id: this.productService.getRandomId(),
         name: form.value.product_name,
         product
@@ -75,7 +74,7 @@ export class ProductsComponent {
 
     this.selectEvet = true;
     this.selectedProduct(1);
-    
+
     localStorage.setItem('products', JSON.stringify(this.userProducts));
   }
 
@@ -84,7 +83,6 @@ export class ProductsComponent {
     this.selectEvet = false;
     this.selectedProductNumber = id;
     let data = this.userProducts.filter(item => item.id == id);
-
 
     this.productService.setProduct(data);
   }
@@ -100,5 +98,5 @@ export class ProductsComponent {
   trackByFn(index: number, item: any): any {
     return item.id;
   }
-  
+
 }

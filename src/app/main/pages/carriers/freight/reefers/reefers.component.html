@@ -1,10 +1,8 @@
 <app-bread-crumbs img_url="car.jpg">
     <div class="container">
         <div class="h-100 d-f-a-c-j-c flex-column text-center">
-            <h2 class="text-light">Lorem ipsum dolor sit.</h2>
-            <p class="text-light w-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, facere
-                dignissimos laboriosam dolorum placeat eos illum dolorem ducimus, commodi omnis, quidem amet nemo non
-                excepturi.</p>
+            <h2 class="text-light">{{ 'carriers.freight.reefers.title1' | translate }}</h2>
+            <p class="text-light w-50">{{ 'carriers.freight.reefers.text1' | translate }}</p>
             <div class="d-flex w-auto">
                 <a routerLink="signup" class="btn-theme me-3">Sign Up</a>
                 <a routerLink="/app/services/freight/how-much-does-it-cost/products" class="btn-theme">Free Form</a>
@@ -19,7 +17,7 @@
 
 
 <div class="container">
-    <app-section-title title="Lorem ipsum dolor sit amet consectetur adipisicing."></app-section-title>
+    <app-section-title [title]="'carriers.freight.reefers.title2' | translate "></app-section-title>
 
     <div class="row">
         <div class="mx-auto mt-5 col-11 col-sm-8 col-md-5 col-lg-4">
@@ -28,7 +26,8 @@
                     <i class="fa fa-box"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h4>{{ 'carriers.freight.reefers.service1' | translate }}</h4>
+                    <p>{{ 'carriers.freight.reefers.paragraph1' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -38,7 +37,8 @@
                     <i class="fa fa-box-open"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h4>{{ 'carriers.freight.reefers.service2' | translate }}</h4>
+                    <p>{{ 'carriers.freight.reefers.paragraph2' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -48,7 +48,8 @@
                     <i class="fa fa-truck-ramp-box"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h4>{{ 'carriers.freight.reefers.service3' | translate }}</h4>
+                    <p>{{ 'carriers.freight.reefers.paragraph3' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -58,7 +59,8 @@
                     <i class="fa fa-gauge-high"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h4>{{ 'carriers.freight.reefers.service4' | translate }}</h4>
+                    <p>{{ 'carriers.freight.reefers.paragraph4' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -68,7 +70,8 @@
                     <i class="fa fa-boxes-stacked"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h4>{{ 'carriers.freight.reefers.service5' | translate }}</h4>
+                    <p>{{ 'carriers.freight.reefers.paragraph5' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -78,7 +81,8 @@
                     <i class="fa-solid fa-stopwatch"></i>
                 </div>
                 <div class="text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius quae unde rerum odit magnam aliquam!
+                    <h4>{{ 'carriers.freight.reefers.service6' | translate }}</h4>
+                    <p>{{ 'carriers.freight.reefers.paragraph6' | translate }}</p>
                 </div>
             </div>
         </div>
@@ -99,19 +103,13 @@
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
+                        {{ 'carriers.freight.reefers.f-question1' | translate }}
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-mdb-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is hidden by default,
-                        until the collapse plugin adds the appropriate classes that we use to style each
-                        element. These classes control the overall appearance, as well as the showing and
-                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                        overriding our default variables. It's also worth noting that just about any HTML
-                        can go within the <strong>.accordion-body</strong>, though the transition does
-                        limit overflow.
+                        {{ 'carriers.freight.reefers.f-answer1' | translate }}
                     </div>
                 </div>
             </div>
@@ -119,19 +117,13 @@
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Accordion Item #2
+                        {{ 'carriers.freight.reefers.f-question2' | translate }}
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-mdb-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                        default, until the collapse plugin adds the appropriate classes that we use to
-                        style each element. These classes control the overall appearance, as well as the
-                        showing and hiding via CSS transitions. You can modify any of this with custom CSS
-                        or overriding our default variables. It's also worth noting that just about any
-                        HTML can go within the <strong>.accordion-body</strong>, though the transition
-                        does limit overflow.
+                        {{ 'carriers.freight.reefers.f-answer2' | translate }}
                     </div>
                 </div>
             </div>
@@ -139,19 +131,13 @@
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Accordion Item #3
+                        {{ 'carriers.freight.reefers.f-question3' | translate }}
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-mdb-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                        until the collapse plugin adds the appropriate classes that we use to style each
-                        element. These classes control the overall appearance, as well as the showing and
-                        hiding via CSS transitions. You can modify any of this with custom CSS or
-                        overriding our default variables. It's also worth noting that just about any HTML
-                        can go within the <strong>.accordion-body</strong>, though the transition does
-                        limit overflow.
+                        {{ 'carriers.freight.reefers.f-answer3' | translate }}
                     </div>
                 </div>
             </div>

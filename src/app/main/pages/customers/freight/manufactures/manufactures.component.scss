@@ -1,8 +1,23 @@
-.carousel {
+#carouselBasicExample {
     h5, p {
         margin-bottom: 0;
         padding-bottom: 20px;
         color: #fff;
+    }
+
+    .carousel-inner {
+        min-height: 500px;
+        display: block;
+
+        .carousel-item,
+        .carousel-item.active {
+            min-height: 500px !important;
+
+            img {
+                min-height: 500px;
+                object-fit: cover;
+            }
+        }
     }
 
     .carousel-caption {
@@ -13,7 +28,7 @@
 
 @media screen and (max-width: 500px) {
     .carousel {
-        h5 { font-size: 14px !important;}
+        h5 { font-size: 16px !important;}
         p { font-size: 10 !important; }
     }
 }

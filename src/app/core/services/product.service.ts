@@ -159,8 +159,6 @@ export class ProductService {
   private selectedProduct$$ = new BehaviorSubject<any>(this.defultSelectProduct);
 
 
-
-
   constructor() { }
 
 
@@ -173,9 +171,6 @@ export class ProductService {
       name: 'New product',
       product: findData
     }];
-
-    console.log(data);
-    
 
     if (findData != undefined)
       this.selectedProduct$$.next(data);

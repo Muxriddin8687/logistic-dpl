@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
 
-            <app-section-title title="Trucks"></app-section-title>
+            <app-section-title title="{{ 'form.trucks' | translate }}"></app-section-title>
 
             <ng-container *ngFor="let item of truck_list">
                 <div class="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-auto mb-4">
@@ -14,7 +14,7 @@
             </ng-container>
 
 
-            <app-section-title title="Containers"></app-section-title>
+            <app-section-title title="{{ 'form.trailers' | translate }}"></app-section-title>
 
             <ng-container *ngFor="let item of container_list">
                 <div class="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-auto mb-4">
@@ -34,6 +34,6 @@
 
 
 <div class="text-center my-5">
-    <a routerLink="/app/services/freight/how-much-does-it-cost/products" class="btn btn-secondary">Back</a>
-    <a routerLink="/app/services/freight/how-much-does-it-cost/client-form" class="btn btn-primary ms-2">Next</a>
+    <a routerLink="/app/services/freight/how-much-does-it-cost/products" class="btn btn-secondary">{{ 'form.back' | translate }}</a>
+    <a routerLink="/app/services/freight/how-much-does-it-cost/client-form" class="btn btn-primary ms-2">{{ 'form.next' | translate }}</a>
 </div>
