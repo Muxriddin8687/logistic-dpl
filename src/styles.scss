@@ -362,6 +362,20 @@ strong span {
 }
 
 
+// stepper navigation color
+.mat-step-icon span {
+    color: #fff;
+}
+
+.mat-step-icon-selected,
+.mat-step-icon-state-edit {
+    color: #fff;
+    background-color: var(--theme-2) !important;
+
+    span {
+        color: #fff;
+    }
+}
 
 
 
