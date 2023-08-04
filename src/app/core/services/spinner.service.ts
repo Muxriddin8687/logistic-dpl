@@ -20,6 +20,6 @@ export class SpinnerService {
   loading() {
     this.loading$$.next(false);
 
-    setTimeout( () => this.loading$$.next(true), 500);
+    setTimeout( () => this.loading$$.next(true), 1000);
   }
 }
