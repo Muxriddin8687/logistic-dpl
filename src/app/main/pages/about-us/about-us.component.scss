@@ -95,11 +95,13 @@
 
 @media screen and (max-width: 769px) {
     .portraits-box {
-        transform: translateX(-10%);
+        svg {
+            transform: translateX(-10%);
 
-        svg #logo_headline_wrapper {
-            -webkit-transform: translate(38%, 31%) !important;
-            transform: translate(38%, 31%) !important;
+            #logo_headline_wrapper {
+                -webkit-transform: translate(38%, 31%) !important;
+                transform: translate(38%, 31%) !important;
+            }
         }
     }
 }
