@@ -451,7 +451,8 @@
     },
     "home": {
         "title": "Bienvenida a DPL",
-        "section1": "Reseñas",
+        "aboutTitle": "Complete el formulario para obtener la mejor cotización",
+        "section1": "Noticias",
         "section2": "Envío de coches",
         "section3": "Envío de la carga",
         "title1": "Transportador de coches abiertos",

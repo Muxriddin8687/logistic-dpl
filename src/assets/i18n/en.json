@@ -451,7 +451,8 @@
     },
     "home": {
         "title": "Welcome to DPL",
-        "section1": "Reviews",
+        "aboutTitle": "Fill Out the Form to get the best quote",
+        "section1": "News",
         "section2": "Car Shipping",
         "section3": "Freight Shipping",
         "title1": "Open car hauler",
