@@ -8,13 +8,12 @@ export class UserGuard implements CanLoad {
   constructor(private _router: Router) { }
 
   canLoad() {
-    let token = sessionStorage.getItem('dpl_user_token');
+    let data = sessionStorage.getItem('dpl_client');
 
-    if (token != null && token?.length > 5)
+    if (data != undefined && data != null && data?.length > 5)
       return true;
-    else {
-      this._router.navigateByUrl('/');
-      return false;
-    }
+    
+    this._router.navigate(['/auth/login']);
+    return false;
   }
 }

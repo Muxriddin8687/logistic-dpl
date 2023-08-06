@@ -9,6 +9,7 @@ export const environment = {
         appId: "1:159454798374:web:5c7f94fd7ab190033abce7",
         measurementId: "G-C47LBNM3YR"
     },
+    api: 'https://merasoft-group.uz/dpl_logistic/',
     companyApi: 'https://api.thecompaniesapi.com/v1/companies?size=10&token=XkjLsLUY&search=',
     telegram_api: 'https://api.telegram.org/bot5201252679:AAEqE5sjhIL94ajvc04nwDJIIVR3H2m30I8/sendMessage?chat_id=@',
 };

@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MainRoutingModule } from './main-routing.module';
+import { MainComponent } from './main.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -10,14 +13,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSelectSearchModule } from 'mat-select-search';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-
-import { MainRoutingModule } from './main-routing.module';
-import { MainComponent } from './main.component';
-import { SearchPipe } from '../core/pipes/search.pipe';
 
 import { HomeComponent } from './pages/home/home.component';
 import { OnlineCarBuyersComponent } from './pages/customers/auto/online-car-buyers/online-car-buyers.component';
@@ -46,7 +41,6 @@ import { ProductsComponent } from './pages/services/freight/how-much/products/pr
 import { TruckContainerComponent } from './pages/services/freight/how-much/truck-container/truck-container.component';
 import { ClientFormComponent } from './pages/services/freight/how-much/client-form/client-form.component';
 import { ResultComponent } from './pages/services/freight/how-much/result/result.component';
-
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NewsCarouselComponent } from './components/news-carousel/news-carousel.component';
@@ -56,9 +50,11 @@ import { FixedButtonsComponent } from './components/fixed-buttons/fixed-buttons.
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.component';
 import { LoaderSpinnerComponent } from './components/loader-spinner/loader-spinner.component';
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-
-
+import { SearchPipe } from '../core/pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -94,18 +90,17 @@ import { HttpClient } from '@angular/common/http';
     HowDoesComponentAuto,
     HowMuchComponentAuto,
     AboutUsComponent,
-    LoaderSpinnerComponent,
     ProductsComponent,
     TruckContainerComponent,
     ClientFormComponent,
     ResultComponent,
-    SearchPipe
   ],
   imports: [
-    CommonModule,
     MainRoutingModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    SearchPipe,
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
@@ -126,8 +121,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MainModule { }
 
-
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
 }
+

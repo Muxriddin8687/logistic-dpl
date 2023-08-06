@@ -1,1 +1,193 @@
-<p>accepted-order works!</p>
+<div class="container py-4">
+    <h3 class="text-center">My accepted qoutes</h3>
+
+    <form>
+        <div class="row my-5">
+
+            <!-- from -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>{{ 'form.from' | translate }}</mat-label>
+                    <input type="text" matInput readonly name="from">
+                </mat-form-field>
+            </div>
+
+            <!-- to -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>{{ 'form.to' | translate }}</mat-label>
+                    <input type="text" matInput readonly name="to">
+                </mat-form-field>
+            </div>
+
+            <!-- datepicker -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Pickup date</mat-label>
+                    <input type="text" matInput readonly name="date">
+                </mat-form-field>
+            </div>
+
+            <!-- truck type -->
+            <div
+                class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3 d-flex align-items-center justify-content-start">
+                <div class="radio-btn">
+                    <input ngModel type="radio" class="form-check-input" readonly name="truck" value="open" id="open" required>
+                    <label class="form-check-label" for="open">
+                        <img src="./assets/truck2.png" width="30px" alt="">&nbsp;{{ 'form.open' | translate }}
+                    </label>
+                </div>
+                <div class="radio-btn ms-3">
+                    <input ngModel type="radio" class="form-check-input" readonly name="truck" value="enclosed" id="enclosed"
+                        required>
+                    <label class="form-check-label" for="enclosed">
+                        <img src="./assets/truck1.png" width="30px" alt="">&nbsp;{{ 'form.enclosed' | translate }}
+                    </label>
+                </div>
+            </div>
+
+            <!-- car year -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>{{ 'form.year' | translate }}</mat-label>
+                    <input type="text" matInput readonly name="year">
+                </mat-form-field>
+            </div>
+
+            <!-- car make -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>{{ 'form.make' | translate }}</mat-label>
+                    <input type="text" matInput readonly name="make">
+                </mat-form-field>
+            </div>
+
+            <!-- car model -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>{{ 'form.model' | translate }}</mat-label>
+                    <input type="text" matInput readonly name="model">
+                </mat-form-field>
+            </div>
+
+            <!-- car type -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>{{ 'form.type' | translate }}</mat-label>
+                    <input type="text" matInput readonly name="type">
+                </mat-form-field>
+            </div>
+
+            <hr class="my-3">
+
+            <!-- custom id -->
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>ID</mat-label>
+                    <input type="text" matInput readonly name="type">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Deliverey date</mat-label>
+                    <input type="text" matInput readonly name="type">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Total price</mat-label>
+                    <input type="text" matInput readonly name="type">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Deposit price</mat-label>
+                    <input type="text" matInput readonly name="type">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-6 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Your commentary</mat-label>
+                    <input type="text" matInput readonly name="client_comment">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-6 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Admin commentary</mat-label>
+                    <input type="text" matInput readonly name="admin_comment">
+                </mat-form-field>
+            </div>
+
+
+
+            <hr class="my-3">
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Pickup full address</mat-label>
+                    <input type="text" matInput name="pickup_address">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Delivery full address</mat-label>
+                    <input type="text" matInput name="delivery_address">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Person full name (Pickup place)</mat-label>
+                    <input type="text" matInput name="person_1">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Person phone (Pickup place)</mat-label>
+                    <input type="text" matInput name="phone_1">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Person full name (Delivery place)</mat-label>
+                    <input type="text" matInput name="person_2">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>Person phone (Delivery place)</mat-label>
+                    <input type="text" matInput name="phone_2">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>#VIN</mat-label>
+                    <input type="text" matInput name="vin">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                <mat-form-field class="w-100">
+                    <mat-label>#LOT</mat-label>
+                    <input type="text" matInput name="lot">
+                </mat-form-field>
+            </div>
+
+            <div class="col-11 col-sm-10 col-md-12 text-center mt-3">
+                <button class="btn btn-danger me-2" type="button">Delete</button>
+                <button class="btn btn-warning" type="button">Send</button>
+            </div>
+
+        </div>
+    </form>
+</div>

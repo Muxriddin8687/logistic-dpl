@@ -8,12 +8,12 @@ export class AdminGuard implements CanLoad {
   constructor(private _router: Router) { }
 
   canLoad() {
-    let token = sessionStorage.getItem('dpl_admin_token');
+    let data = sessionStorage.getItem('dpl_admin');
 
-    if (token != null && token?.length > 5)
+    if (data != null && data?.length > 5)
       return true;
     else {
-      this._router.navigateByUrl('/');
+      this._router.navigateByUrl('/auth/admin');
       return false;
     }
   }
