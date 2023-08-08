@@ -4,6 +4,7 @@ import { SpinnerService } from './core/services/spinner.service';
 import { filter } from 'rxjs';
 import { GoogleAnalyticsService } from './core/services/google-analistic.service';
 import { environment } from 'src/environments/environment';
+declare let AOS: any;
 
 @Component({
   selector: 'app-root',
@@ -30,12 +31,14 @@ export class AppComponent implements OnInit {
     }
   };
 
+
   ngOnInit() {
     this.router
       .events
       .pipe(filter((event) => event instanceof NavigationStart))
       .subscribe((event: any) => {
         this.spinnerService.loading();
+        setTimeout(() => AOS.init(), 1000);
       });
   }
 }

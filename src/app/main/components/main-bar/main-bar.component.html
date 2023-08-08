@@ -2,12 +2,18 @@
 
     <div class="form-block flex-column">
 
-        <h2 class="mb-5">{{ 'home.title' | translate }}</h2>
+        <!-- <h2 class="mb-5">{{ 'home.title' | translate }}</h2> -->
 
-        <form #f="ngForm" (submit)="send(f)">
+        <div class="animate three" style="margin-left: 5%;">
+            <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>&nbsp;
+            <span>t</span><span>o</span>&nbsp;
+            <span>D</span><span>P</span><span>L</span>
+        </div>
+
+        <form #f="ngForm" (submit)="send(f)" data-aos="fade-up" data-aos-duration="1000">
 
 
-            <div class="form" [class.d-none]="!one">
+            <div class="form" [class.d-none]="!one" [class.zoom-in-zoom-out]="one">
 
                 <!-- from input -->
                 <div class="form-outline">
@@ -41,8 +47,8 @@
 
                 <!-- change date -->
                 <div class="form-outline">
-                    <input ngModel name="date" style="padding-left: 55px;" placeholder="mm/dd/yy" matInput [matDatepicker]="picker" readonly
-                        required>
+                    <input ngModel name="date" style="padding-left: 55px;" placeholder="mm/dd/yy" matInput
+                        [matDatepicker]="picker" readonly required>
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </div>
@@ -73,7 +79,7 @@
             </div>
 
 
-            <div class="form" [class.d-none]="!two">
+            <div class="form" [class.d-none]="!two" [class.zoom-in-zoom-out]="two">
 
                 <!-- prev btn -->
                 <div class="pc-show">
@@ -85,28 +91,32 @@
 
                 <!-- frist name -->
                 <div class="form-outline">
-                    <input ngModel name="first_name" type="text" placeholder="{{ 'form.first_name' | translate }}" required minlength="3">
+                    <input ngModel name="first_name" type="text" placeholder="{{ 'form.first_name' | translate }}"
+                        required minlength="3">
                     <i class="fa fa-user"></i>
                 </div>
 
 
                 <!-- last name -->
                 <div class="form-outline">
-                    <input ngModel name="last_name" type="text" placeholder="{{ 'form.last_name' | translate }}" required minlength="3">
+                    <input ngModel name="last_name" type="text" placeholder="{{ 'form.last_name' | translate }}"
+                        required minlength="3">
                     <i class="fa fa-user"></i>
                 </div>
 
 
                 <!-- phone -->
                 <div class="form-outline">
-                    <input ngModel name="phone" type="text" placeholder="{{ 'form.phone' | translate }}" required minlength="6">
+                    <input ngModel name="phone" type="text" placeholder="{{ 'form.phone' | translate }}" required
+                        minlength="6">
                     <i class="fa fa-phone"></i>
                 </div>
 
 
                 <!-- email -->
                 <div class="form-outline">
-                    <input ngModel name="email" type="email" placeholder="{{ 'form.email' | translate }}" required minlength="8">
+                    <input ngModel name="email" type="email" placeholder="{{ 'form.email' | translate }}" required
+                        minlength="8">
                     <i class="fa fa-envelope"></i>
                 </div>
 
@@ -131,7 +141,7 @@
             </div>
 
 
-            <div class="form" [class.d-none]="!three">
+            <div class="form" [class.d-none]="!three" [class.zoom-in-zoom-out]="three">
 
                 <!-- prev btn -->
                 <div class="pc-show">
@@ -143,15 +153,16 @@
 
                 <!-- car's year -->
                 <div class="form-outline">
-                    <input ngModel name="year" type="text" placeholder="{{ 'form.year' | translate }}" required minlength="3">
+                    <input ngModel name="year" type="text" placeholder="{{ 'form.year' | translate }}" required
+                        minlength="3">
                     <i class="fa fa-car"></i>
                 </div>
 
 
                 <!-- car brand -->
                 <div class="form-outline">
-                    <input ngModel name="make" type="text" placeholder="{{ 'form.make' | translate }}" required minlength="3" #makeInput
-                        [matAutocomplete]="makeSelect">
+                    <input ngModel name="make" type="text" placeholder="{{ 'form.make' | translate }}" required
+                        minlength="3" #makeInput [matAutocomplete]="makeSelect">
                     <i class="fa fa-car"></i>
 
                     <mat-autocomplete #makeSelect="matAutocomplete">
@@ -165,8 +176,8 @@
 
                 <!-- car model -->
                 <div class="form-outline">
-                    <input ngModel name="model" type="text" placeholder="{{ 'form.model' | translate }}" required minlength="3" #modelInput
-                        [matAutocomplete]="carSelect">
+                    <input ngModel name="model" type="text" placeholder="{{ 'form.model' | translate }}" required
+                        minlength="3" #modelInput [matAutocomplete]="carSelect">
                     <i class="fa fa-car"></i>
 
                     <mat-autocomplete #carSelect="matAutocomplete">
@@ -180,8 +191,8 @@
 
                 <!-- car type -->
                 <div class="form-outline">
-                    <input ngModel name="type" type="text" placeholder="{{ 'form.type' | translate }}" required minlength="3" #typeInput
-                        [matAutocomplete]="typeSelect">
+                    <input ngModel name="type" type="text" placeholder="{{ 'form.type' | translate }}" required
+                        minlength="3" #typeInput [matAutocomplete]="typeSelect">
                     <i class="fa fa-car"></i>
 
                     <mat-autocomplete #typeSelect="matAutocomplete">

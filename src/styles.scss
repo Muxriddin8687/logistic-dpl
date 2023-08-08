@@ -135,6 +135,12 @@ strong span {
 
 
 
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+
+
 .sm-reverse {
     flex-direction: row-reverse;
 }
@@ -247,54 +253,118 @@ strong span {
 
 
 
+
+
 .btn-theme {
     position: relative;
-    display: inline-block;
-    overflow: hidden;
+    display: inherit;
     border: none;
-    padding: 10px 20px;
-    color: #fff;
-    font-size: 1rem;
-    border-radius: 10px;
-    letter-spacing: .15rem;
-    transition: all .3s;
-    z-index: 1;
+    outline: none;
+    box-shadow: none;
 
-    &:after {
-        content: '';
+    span {
+        display: block;
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--theme-2);
-        z-index: -2;
-    }
-
-    &:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 100%;
-        background-color: var(--theme-1);
+        width: max-content;
+        height: max-content;
+        border-radius: 5px;
+        padding: 8px 25px;
+        margin: 0;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
         transition: all .3s;
-        z-index: -1;
     }
 
-    &:hover,
-    &:focus {
+    span:nth-child(1) {
+        background: var(--theme-1);
         color: var(--light);
+        -webkit-transform: rotateX(90deg);
+        -moz-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+        -webkit-transform-origin: 50% 50% -20px;
+        -moz-transform-origin: 50% 50% -20px;
+        transform-origin: 50% 50% -20px;
+    }
 
-        &:before {
-            width: 100%;
-        }
+    span:nth-child(2) {
+        background: var(--theme-2);
+        color: var(--light);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: 50% 50% -20px;
+        -moz-transform-origin: 50% 50% -20px;
+        transform-origin: 50% 50% -20px;
+    }
+
+    &:hover span:nth-child(1) {
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+    }
+
+    &:hover span:nth-child(2) {
+        color: transparent;
+        background: transparent;
+        -webkit-transform: rotateX(-90deg);
+        -moz-transform: rotateX(-90deg);
+        transform: rotateX(-90deg);
+        z-index: 0;
     }
 }
+// .btn-theme {
+//     position: relative;
+//     display: inline-block;
+//     overflow: hidden;
+//     border: none;
+//     padding: 10px 20px;
+//     color: #fff;
+//     font-size: 1rem;
+//     border-radius: 10px;
+//     letter-spacing: .15rem;
+//     transition: all .3s;
+//     z-index: 1;
+
+//     &:after {
+//         content: '';
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: var(--theme-2);
+//         z-index: -2;
+//     }
+
+//     &:before {
+//         content: '';
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         width: 0%;
+//         height: 100%;
+//         background-color: var(--theme-1);
+//         transition: all .3s;
+//         z-index: -1;
+//     }
+
+//     &:hover,
+//     &:focus {
+//         color: var(--light);
+
+//         &:before {
+//             width: 100%;
+//         }
+//     }
+// }
 
 
 
+
+.btn { padding-top: 11px; padding-bottom: 11px; }
 .btn-primary {
     --mdb-btn-bg: var(--theme-2);
     --mdb-btn-box-shadow: 0 4px 9px -4px var(--theme-2);
@@ -309,9 +379,11 @@ strong span {
 .accordion-header {
     border-bottom: 0.5px solid #ddd;
 }
+
 .accordion-item {
     border: none;
 }
+
 .accordion-button:not(.collapsed) {
     color: var(--theme-1);
     font-weight: 700;
@@ -357,6 +429,7 @@ strong span {
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
     color: var(--theme-2) !important;
 }
+
 .mat-mdc-button-persistent-ripple.mdc-icon-button__ripple {
     margin-top: 50px;
 }
@@ -431,7 +504,7 @@ strong span {
 
 // text animation style
 .g-container {
-    width: 300px;
+    width: 360px;
     height: calc(var(--h) * 1px);
     line-height: calc(var(--h) * 1px);
     font-size: 20px;

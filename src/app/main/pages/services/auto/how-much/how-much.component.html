@@ -4,10 +4,10 @@
 
         <h2 class="mb-5">{{ 'home.aboutTitle' | translate }}</h2>
 
-        <form #f="ngForm" (submit)="send(f)">
+        <form #f="ngForm" (submit)="send(f)" data-aos="fade-up">
 
 
-            <div class="form" [class.d-none]="!one">
+            <div class="form" [class.d-none]="!one" [class.zoom-in-zoom-out]="one">
 
                 <!-- from input -->
                 <div class="form-outline">
@@ -73,7 +73,7 @@
             </div>
 
 
-            <div class="form" [class.d-none]="!two">
+            <div class="form" [class.d-none]="!two" [class.zoom-in-zoom-out]="two">
 
                 <!-- prev btn -->
                 <div class="pc-show">
@@ -135,7 +135,7 @@
             </div>
 
 
-            <div class="form" [class.d-none]="!three">
+            <div class="form" [class.d-none]="!three" [class.zoom-in-zoom-out]="three">
 
                 <!-- prev btn -->
                 <div class="pc-show">

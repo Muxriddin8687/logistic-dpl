@@ -130,6 +130,11 @@
             }
         }
     }
+
+
+    .zoom-in-zoom-out {
+        animation: zoom-in-zoom-out .5s ease-out;
+    }
 }
 
 
@@ -188,5 +193,18 @@
                 }
             }
         }
+    }
+}
+
+
+
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(.7);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }

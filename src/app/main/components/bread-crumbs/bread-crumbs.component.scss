@@ -1,11 +1,19 @@
 #bread-crumb {
     position: relative;
-    background-position: center;
-    background-size: cover;
 
     .container {
         min-height: calc(30vh + 115px);
         height: 500px;
     }
 
+    #jarallax-container-0 div {
+        background-position: bottom !important;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    #bread-crumb #jarallax-container-0 div {
+        background-position: 50% 50% !important;
+    }
 }

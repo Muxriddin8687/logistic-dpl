@@ -2,7 +2,70 @@
     min-height: 90vh;
     position: relative;
     background: transparent;
+    word-wrap: break-word;
 
+    // text animation
+    .animate.three span {
+        display: inline-block;
+        color: var(--theme-1);
+        opacity: 0;
+        font-size: 36px;
+        font-weight: 600;
+        transform: translate(-300px, 0) scale(0);
+        animation: sideSlide 5s forwards;
+
+        &:nth-of-type(2) {
+            animation-delay: .05s;
+        }
+
+        &:nth-of-type(3) {
+            animation-delay: .1s;
+        }
+
+        &:nth-of-type(4) {
+            animation-delay: .15s;
+        }
+
+        &:nth-of-type(5) {
+            animation-delay: .2s;
+        }
+
+        &:nth-of-type(6) {
+            animation-delay: .25s;
+        }
+
+        &:nth-of-type(7) {
+            animation-delay: .3s;
+        }
+
+        &:nth-of-type(8) {
+            animation-delay: .35s;
+        }
+
+        &:nth-of-type(9) {
+            animation-delay: .4s;
+        }
+
+        &:nth-of-type(10) {
+            animation-delay: .45s;
+        }
+
+        &:nth-of-type(11) {
+            animation-delay: .5s;
+        }
+
+        &:nth-of-type(12) {
+            animation-delay: .55s;
+        }
+
+        &:nth-of-type(13) {
+            animation-delay: .6s;
+        }
+
+    }
+
+
+    // background video
     #main-bar-video {
         position: absolute;
         width: 100%;
@@ -14,6 +77,7 @@
     }
 
 
+    // form style
     .form-block {
         position: absolute;
         width: 100%;
@@ -130,6 +194,11 @@
             }
         }
     }
+
+
+    .zoom-in-zoom-out {
+        animation: zoom-in-zoom-out .5s ease-out;
+    }
 }
 
 
@@ -192,5 +261,40 @@
         #main-bar-video {
             height: 70%;
         }
+    }
+}
+
+
+
+
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(.7);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+
+
+
+@keyframes sideSlide {
+    60% {
+        transform: translate(20px, 0) scale(1);
+    }
+
+    80% {
+        transform: translate(20px, 0) scale(1);
+    }
+
+    99% {
+        transform: translate(0) scale(1.2);
+    }
+
+    100% {
+        transform: translate(0) scale(1);
+        opacity: 1;
     }
 }
