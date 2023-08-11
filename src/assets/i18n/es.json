@@ -487,6 +487,8 @@
         "text4": "Somos un 3PL basado en equipos, y cada equipo tiene su propia misión y objetivos. Miembros altamente calificados y experimentados atienden a cada cliente de acuerdo con sus necesidades y requisitos, y ya hemos cubierto las dos principales industrias de transporte: envío de automóviles y envío de carga. Como resultado, cada miembro del equipo es responsable de llevar a cabo las tareas asignadas."
     },
     "form": {
+        "sendMessage": "Enviar mensaje",
+        "click": "¡Hacer clic!",
         "from": "Desde (código postal)",
         "to": "A (código postal)",
         "open": "Abierto",

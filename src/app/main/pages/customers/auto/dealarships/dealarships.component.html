@@ -1,12 +1,16 @@
 <app-bread-crumbs [img_url]="'header.jpg'">
-    <div class="d-flex align-items-center h-100">
-        <div class="w-100">
-            <h1 data-aos="fade-right" data-aos-duration="2000" class="text-light">{{ 'customers.auto.dealership.title1' | translate }}</h1>
-            <p data-aos="fade-right" data-aos-duration="2300" class="text-light my-4">{{ 'customers.auto.dealership.text1' | translate }}</p>
+    <div class="row w-100">
+        <div class="col-11 col-10 col-md-7 col-lg-6">
+            <h1 data-aos="fade-right" data-aos-duration="2000" class="text-light">{{
+                'customers.auto.dealership.title1' | translate }}</h1>
+            <p data-aos="fade-right" data-aos-duration="2300" class="text-light my-4">{{
+                'customers.auto.dealership.text1' | translate }}</p>
 
-            <a data-aos="fade-right" data-aos-duration="2600" href="#" class="btn-theme mt-4" role="button" data-mdb-toggle="modal" data-mdb-target="#privateFormModal">
-                <span>Send Message</span>
-                <span>Send Message</span>
+            <a data-aos="fade-right" data-aos-duration="2600" href="#" class="btn-theme mt-4" role="button"
+                data-mdb-toggle="modal" data-mdb-target="#privateFormModal">
+                <span>{{ 'form.click' | translate }}</span>
+                <span>{{ 'form.sendMessage' | translate }}</span>
+                {{ 'form.sendMessage' | translate }}
             </a>
         </div>
     </div>
@@ -190,8 +194,9 @@
 
 
                 <button [disabled]="f.invalid" type="submit" class="btn-theme w-100">
+                    <span>{{ 'form.click' | translate }}</span>
                     <span class="w-100">{{ 'form.send' |translate }}</span>
-                    <span class="w-100">{{ 'form.send' |translate }}</span>    
+                    {{ 'form.send' |translate }}
                 </button>
             </form>
         </div>
@@ -208,12 +213,14 @@
     <div class="container mt-5 py-5">
 
         <div class="row">
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="img-block">
-                    <img class="img-fluid rounded-3" src="./assets/images/dealers/dealership.jpg" alt="Service image">
+                    <img class="img-fluid rounded-3" src="./assets/images/car-dealership.jpg" alt="Service image">
                 </div>
             </div>
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="text-block">
                     <h3>{{ 'customers.auto.dealership.sub-title1' | translate }}</h3>
                     <p>{{ 'customers.auto.dealership.paragraph1' | translate }}</p>
@@ -222,12 +229,14 @@
         </div>
 
         <div class="row sm-reverse">
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="img-block">
-                    <img class="img-fluid rounded-3" src="./assets/images/dealers/carhauler.jpg" alt="Service image">
+                    <img class="img-fluid rounded-3" src="./assets/images/carshop-nottingham.jpg" alt="Service image">
                 </div>
             </div>
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="text-block">
                     <h3>{{ 'customers.auto.dealership.sub-title2' | translate }}</h3>
                     <p>{{ 'customers.auto.dealership.paragraph2' | translate }}</p>
@@ -236,12 +245,15 @@
         </div>
 
         <div class="row">
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="img-block">
-                    <img class="img-fluid rounded-3" src="./assets/images/dealers/dealership.jpg" alt="Service image">
+                    <img class="img-fluid rounded-3" src="./assets/images/dealers/man-and-woman-at-a-car-dealership.jpg"
+                        alt="Service image">
                 </div>
             </div>
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="text-block">
                     <h3>{{ 'customers.auto.dealership.sub-title3' | translate }}</h3>
                     <p>{{ 'customers.auto.dealership.paragraph3' | translate }}</p>
@@ -250,12 +262,14 @@
         </div>
 
         <div class="row sm-reverse">
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="img-block">
-                    <img class="img-fluid rounded-3" src="./assets/images/dealers/carhauler.jpg" alt="Service image">
+                    <img class="img-fluid rounded-3" src="./assets/images/dealers/autodealer.jpg" alt="Service image">
                 </div>
             </div>
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="text-block">
                     <h3>{{ 'customers.auto.dealership.sub-title4' | translate }}</h3>
                     <p>{{ 'customers.auto.dealership.paragraph4' | translate }}</p>
@@ -264,12 +278,15 @@
         </div>
 
         <div class="row">
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="img-block">
-                    <img class="img-fluid rounded-3" src="./assets/images/dealers/dealership.jpg" alt="Service image">
+                    <img class="img-fluid rounded-3"
+                        src="./assets/images/dealers/portrait-of-salesman-in-car-dealership.jpg" alt="Service image">
                 </div>
             </div>
-            <div data-aos="flip-up" data-aos-duration="2000" class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="flip-up" data-aos-duration="2000"
+                class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="text-block">
                     <h3>{{ 'customers.auto.dealership.sub-title5' | translate }}</h3>
                     <p>{{ 'customers.auto.dealership.paragraph5' | translate }}</p>
@@ -295,7 +312,8 @@
                             <div class="mx-auto col-11 col-sm-10 col-md-9 col-lg-7 col-xl-6">
 
                                 <form #fm="ngForm" (submit)="send(fm)">
-                                    <h3 class="text-center">{{ 'customers.auto.dealership.title1' | translate }} form</h3>
+                                    <h3 class="text-center">{{ 'customers.auto.dealership.title1' | translate }} form
+                                    </h3>
 
 
                                     <mat-form-field class="w-100">

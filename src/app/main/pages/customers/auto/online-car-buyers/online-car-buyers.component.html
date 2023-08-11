@@ -1,44 +1,42 @@
 <app-bread-crumbs [img_url]="'intermodal.jpg'">
-    <div class="d-flex align-items-center h-100">
-        <div class="w-100 d-block">
-            <h1 class="text-light">
-                {{ 'customers.auto.online-auto.title1' | translate }}
-            </h1>
+    <div>
+        <h1 class="text-light">
+            {{ 'customers.auto.online-auto.title1' | translate }}
+        </h1>
 
-            <div class="g-container">
-                <ul id="list-example" class="list-unstyled" style="--s: 4">
-                    <li>
-                        <div (click)="goTo('block-1')" class="text-light">
-                            {{ 'customers.auto.online-auto.text1' | translate }}
-                            <i class="fa fa-arrow-right ms-3"></i>
-                        </div>
-                    </li>
-                    <li>
-                        <div (click)="goTo('block-2')" class="text-light">
-                            {{ 'customers.auto.online-auto.text2' | translate }}
-                            <i class="fa fa-arrow-right ms-3"></i>
-                        </div>
-                    </li>
-                    <li>
-                        <div (click)="goTo('block-3')" class="text-light">
-                            {{ 'customers.auto.online-auto.text3' | translate }}
-                            <i class="fa fa-arrow-right ms-3"></i>
-                        </div>
-                    </li>
-                    <li>
-                        <div (click)="goTo('block-4')" class="text-light">
-                            {{ 'customers.auto.online-auto.text4' | translate }}
-                            <i class="fa fa-arrow-right ms-3"></i>
-                        </div>
-                    </li>
-                    <li>
-                        <div (click)="goTo('block-1')" class="text-light">
-                            {{ 'customers.auto.online-auto.text1' | translate }}
-                            <i class="fa fa-arrow-right ms-3"></i>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+        <div class="g-container">
+            <ul id="list-example" class="list-unstyled" style="--s: 4">
+                <li>
+                    <div (click)="goTo('block-1')" class="text-light">
+                        {{ 'customers.auto.online-auto.text1' | translate }}
+                        <i class="fa fa-arrow-right ms-3"></i>
+                    </div>
+                </li>
+                <li>
+                    <div (click)="goTo('block-2')" class="text-light">
+                        {{ 'customers.auto.online-auto.text2' | translate }}
+                        <i class="fa fa-arrow-right ms-3"></i>
+                    </div>
+                </li>
+                <li>
+                    <div (click)="goTo('block-3')" class="text-light">
+                        {{ 'customers.auto.online-auto.text3' | translate }}
+                        <i class="fa fa-arrow-right ms-3"></i>
+                    </div>
+                </li>
+                <li>
+                    <div (click)="goTo('block-4')" class="text-light">
+                        {{ 'customers.auto.online-auto.text4' | translate }}
+                        <i class="fa fa-arrow-right ms-3"></i>
+                    </div>
+                </li>
+                <li>
+                    <div (click)="goTo('block-1')" class="text-light">
+                        {{ 'customers.auto.online-auto.text1' | translate }}
+                        <i class="fa fa-arrow-right ms-3"></i>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </app-bread-crumbs>
@@ -47,9 +45,11 @@
 
 <div class="container">
     <app-section-title [title]="'customers.auto.online-auto.title2' | translate"></app-section-title>
-    <p data-aos="fade-up" data-aos-duration="2000" class="text-center">{{ 'customers.auto.online-auto.paragraph1' | translate }}</p>
+    <p data-aos="fade-up" data-aos-duration="2000" class="text-center">{{ 'customers.auto.online-auto.paragraph1' |
+        translate }}</p>
 
-    <img data-aos="fade-up" data-aos-duration="2000" src="./assets/images/2.jpg" class="w-100 my-4 rounded" alt="Service image">
+    <img data-aos="fade-up" data-aos-duration="2000" src="./assets/images/2.jpg" class="w-100 my-4 rounded"
+        alt="Service image">
 </div>
 
 
@@ -57,7 +57,8 @@
 <div class="container mb-5 pb-5">
     <app-section-title [title]="'customers.auto.online-auto.title3' | translate"></app-section-title>
 
-    <p data-aos="fade-up" data-aos-duration="2000" class="text-center">{{ 'customers.auto.online-auto.paragraph2' | translate }}</p>
+    <p data-aos="fade-up" data-aos-duration="2000" class="text-center">{{ 'customers.auto.online-auto.paragraph2' |
+        translate }}</p>
 
 
     <div class="row mt-5" id="block-1">
@@ -135,7 +136,8 @@
     <div class="container">
 
         <div class="row">
-            <div data-aos="fade-up" data-aos-duration="2000" class="col-11 col-sm-8 col-md-6 mx-auto py-4 d-flex align-items-center">
+            <div data-aos="fade-up" data-aos-duration="2000"
+                class="col-11 col-sm-8 col-md-6 mx-auto py-4 d-flex align-items-center">
                 <img src="./assets/images/dashboard.jpg" class="w-100 rounded" alt="Service image">
             </div>
             <div data-aos="fade-up" data-aos-duration="2000" class="col-11 col-sm-8 col-md-6 mx-auto p-5 ms-auto">

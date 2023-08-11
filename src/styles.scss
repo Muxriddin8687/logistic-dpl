@@ -137,6 +137,7 @@ strong span {
 
 .overflow-x-hidden {
     overflow-x: hidden;
+    overflow-y: clip;
 }
 
 
@@ -257,64 +258,72 @@ strong span {
 
 .btn-theme {
     position: relative;
-    display: inherit;
     border: none;
     outline: none;
     box-shadow: none;
+    color: transparent;
+    background: transparent;
+    padding: 8px 25px;
+    z-index: 0;
 
     span {
-        display: block;
         position: absolute;
-        width: max-content;
-        height: max-content;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border-radius: 5px;
-        padding: 8px 25px;
-        margin: 0;
         text-align: center;
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
+        color: var(--light);
+        -webkit-transform-origin: 50% 50% -20px;
+        -moz-transform-origin: 50% 50% -20px;
+        transform-origin: 50% 50% -20px;
         -webkit-transition: all .3s;
         transition: all .3s;
     }
 
     span:nth-child(1) {
         background: var(--theme-1);
-        color: var(--light);
         -webkit-transform: rotateX(90deg);
         -moz-transform: rotateX(90deg);
         transform: rotateX(90deg);
-        -webkit-transform-origin: 50% 50% -20px;
-        -moz-transform-origin: 50% 50% -20px;
-        transform-origin: 50% 50% -20px;
     }
 
     span:nth-child(2) {
         background: var(--theme-2);
-        color: var(--light);
-        -webkit-transform: rotateX(0deg);
-        -moz-transform: rotateX(0deg);
-        transform: rotateX(0deg);
-        -webkit-transform-origin: 50% 50% -20px;
-        -moz-transform-origin: 50% 50% -20px;
-        transform-origin: 50% 50% -20px;
-    }
-
-    &:hover span:nth-child(1) {
         -webkit-transform: rotateX(0deg);
         -moz-transform: rotateX(0deg);
         transform: rotateX(0deg);
     }
 
-    &:hover span:nth-child(2) {
-        color: transparent;
-        background: transparent;
-        -webkit-transform: rotateX(-90deg);
-        -moz-transform: rotateX(-90deg);
-        transform: rotateX(-90deg);
-        z-index: 0;
+    &:hover {
+        cursor: pointer;
+
+        span {
+            &:nth-child(1) {
+                -webkit-transform: rotateX(0deg);
+                -moz-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+            }
+
+            &:nth-child(2) {
+                color: transparent;
+                background: transparent;
+                -webkit-transform: rotateX(-90deg);
+                -moz-transform: rotateX(-90deg);
+                transform: rotateX(-90deg);
+                z-index: 0;
+            }
+        }
     }
 }
+
 // .btn-theme {
 //     position: relative;
 //     display: inline-block;
@@ -364,7 +373,11 @@ strong span {
 
 
 
-.btn { padding-top: 11px; padding-bottom: 11px; }
+.btn {
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
 .btn-primary {
     --mdb-btn-bg: var(--theme-2);
     --mdb-btn-box-shadow: 0 4px 9px -4px var(--theme-2);
@@ -576,14 +589,15 @@ strong span {
     ul {
         position: relative;
         margin-bottom: 0;
+        padding-left: 1rem;
 
         &::before {
             content: '';
             position: absolute;
             height: 110%;
-            width: 10px;
+            width: 1px;
             top: 50%;
-            left: 0;
+            left: 1.2rem;
             border-radius: 10px;
             transform: translateY(-50%);
             background-color: var(--theme-1);
@@ -591,23 +605,23 @@ strong span {
 
         li {
             position: relative;
-            list-style: none;
+            list-style-type: decimal;
             font-size: 18px;
             margin-bottom: 18px;
             cursor: pointer;
+            padding-left: 2rem;
             color: var(--theme-1);
 
-            &::before {
-                content: '●';
-                position: absolute;
+            &::marker {
+                position: absolute !important;
                 color: var(--theme-2);
-                top: 0px;
-                left: -2rem;
-                transition: all .3s;
+                top: 0px !important;
+                left: calc(-2rem - 5px) !important;
+                transition: all .3s !important;
             }
 
-            &:hover::before {
-                color: var(--white);
+            &:hover::marker {
+                color: var(--theme-1);
             }
         }
     }

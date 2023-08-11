@@ -1,10 +1,14 @@
 <app-bread-crumbs img_url="enclosed.jpg">
     <div class="container">
         <div class="h-100 d-f-a-c-j-c flex-column text-center">
-            <h2 class="text-light">{{ 'carriers.auto.enclosed-car.title1' | translate }}</h2>
-            <p class="text-light w-50">{{ 'carriers.auto.enclosed-car.text1' | translate }}</p>
+            <h2 data-aos="fade-up" data-aos-duration="2000" class="text-light">{{ 'carriers.auto.enclosed-car.title1' | translate }}</h2>
+            <p data-aos="fade-up" data-aos-duration="2300" class="text-light w-50">{{ 'carriers.auto.enclosed-car.text1' | translate }}</p>
 
-            <a routerLink="/app/services/auto/how-much-does-it-cost" class="btn-theme">Get a free quote</a>
+            <a data-aos="fade-up" data-aos-duration="2600" routerLink="/app/services/auto/how-much-does-it-cost" class="btn-theme">
+                <span>{{ 'form.click' | translate }}</span>
+                <span>Get a free quote</span>
+                Get a free quote
+            </a>
         </div>
     </div>
 </app-bread-crumbs>
@@ -18,12 +22,12 @@
     <app-section-title title="{{ 'carriers.auto.enclosed-car.title2' | translate }}"></app-section-title>
     <div class="text-list">
         <ul>
-            <li>{{ 'carriers.auto.enclosed-car.text2' | translate }}</li>
-            <li>{{ 'carriers.auto.enclosed-car.text3' | translate }}</li>
-            <li>{{ 'carriers.auto.enclosed-car.text4' | translate }}</li>
-            <li>{{ 'carriers.auto.enclosed-car.text5' | translate }}</li>
-            <li>{{ 'carriers.auto.enclosed-car.text6' | translate }}</li>
-            <li>{{ 'carriers.auto.enclosed-car.text7' | translate }}</li>
+            <li data-aos="fade-left" data-aos-duration="1000">{{ 'carriers.auto.enclosed-car.text2' | translate }}</li>
+            <li data-aos="fade-left" data-aos-duration="1300">{{ 'carriers.auto.enclosed-car.text3' | translate }}</li>
+            <li data-aos="fade-left" data-aos-duration="1700">{{ 'carriers.auto.enclosed-car.text4' | translate }}</li>
+            <li data-aos="fade-left" data-aos-duration="2000">{{ 'carriers.auto.enclosed-car.text5' | translate }}</li>
+            <li data-aos="fade-left" data-aos-duration="2300">{{ 'carriers.auto.enclosed-car.text6' | translate }}</li>
+            <li data-aos="fade-left" data-aos-duration="2600">{{ 'carriers.auto.enclosed-car.text7' | translate }}</li>
         </ul>
     </div>
 </div>

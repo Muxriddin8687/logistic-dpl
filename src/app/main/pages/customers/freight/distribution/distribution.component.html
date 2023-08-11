@@ -1,9 +1,18 @@
 <app-bread-crumbs [img_url]="'john-simmons.jpg'">
-    <div class="d-flex align-items-center h-100">
-        <div>
-            <h1 data-aos="fade-up" data-aos-duration="2000" class="text-light">{{ 'customers.freight.distributors.title' | translate }}</h1>
-            <p data-aos="fade-up" data-aos-duration="2500" class="text-light my-4">{{ 'customers.freight.distributors.text1' | translate }}</p>
-            <a data-aos="fade-up" data-aos-duration="3000" routerLink="/app/services/freight/how-much-does-it-cost/products" class="btn-theme">Become a carrier</a>
+    <div class="row w-100">
+        <div class="col-11 col-10 col-md-9 col-lg-8">
+            <h1 data-aos="fade-up" data-aos-duration="2000" class="text-light">
+                {{ 'customers.freight.distributors.title' | translate }}
+            </h1>
+            <p data-aos="fade-up" data-aos-duration="2500" class="text-light my-4">
+                {{ 'customers.freight.distributors.text1' | translate }}
+            </p>
+            <a data-aos="fade-up" data-aos-duration="3000"
+                routerLink="/app/services/freight/how-much-does-it-cost/products" class="btn-theme">
+                <span>{{ 'form.click' | translate }}</span>
+                <span>Become a carrier</span>
+                Become a carrier
+            </a>
         </div>
     </div>
 </app-bread-crumbs>
@@ -20,13 +29,15 @@
     <div class="container pb-5">
         <div class="card">
             <div class="row w-100">
-                <div data-aos="fade-right" data-aos-duration="1000" class="col-12 col-sm-10 col-md-9 col-lg-6 mx-auto py-4 px-5 mt-4">
+                <div data-aos="fade-right" data-aos-duration="1000"
+                    class="col-12 col-sm-10 col-md-9 col-lg-6 mx-auto py-4 px-5 mt-4">
                     <i class="fa fa-road fa-3x text-theme"></i>
                     <h3 class="my-4">{{ 'customers.freight.distributors.title1' | translate }}.</h3>
                     <p>{{ 'customers.freight.distributors.text2' | translate }}</p>
                 </div>
 
-                <div data-aos="fade-left" data-aos-duration="1000" class="col-12 col-sm-10 col-md-9 col-lg-6 mx-auto py-4 px-5 mt-4">
+                <div data-aos="fade-left" data-aos-duration="1000"
+                    class="col-12 col-sm-10 col-md-9 col-lg-6 mx-auto py-4 px-5 mt-4">
                     <i class="fa fa-ship fa-3x text-theme"></i>
                     <h3 class="my-4">{{ 'customers.freight.distributors.title2' | translate }}.</h3>
                     <p>{{ 'customers.freight.distributors.text3' | translate }}</p>
@@ -82,7 +93,8 @@
     <div class="container">
 
         <div class="row">
-            <div data-aos="fade-up" data-aos-duration="2000" class="col-11 col-sm-8 col-md-6 mx-auto py-4 d-flex align-items-center">
+            <div data-aos="fade-up" data-aos-duration="2000"
+                class="col-11 col-sm-8 col-md-6 mx-auto py-4 d-flex align-items-center">
                 <img src="./assets/images/delivery_by_truck.jpg" class="w-100 rounded" alt="Service image">
             </div>
             <div data-aos="fade-up" data-aos-duration="2500" class="col-11 col-sm-8 col-md-6 mx-auto p-5 ms-auto">

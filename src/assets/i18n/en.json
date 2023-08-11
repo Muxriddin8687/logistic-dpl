@@ -487,6 +487,8 @@
         "text4": "We are a team-based 3PL, and each team has its own mission and goals. Highly qualified and experienced members serve each customer in accordance with their needs and requirements, and we have already covered the two main transportation industries: auto shipping and freight shipment. As a result, each team member is responsible for carrying out their assigned tasks."
     },
     "form": {
+        "sendMessage": "Send Message",
+        "click": "Click!",
         "from": "From (Zip code)",
         "to": "To (Zip code)",
         "open": "Open",
