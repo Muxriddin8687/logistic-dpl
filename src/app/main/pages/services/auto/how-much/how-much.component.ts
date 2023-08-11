@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, signal } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CarModel } from 'src/app/core/models/car.model';
@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HowMuchComponent {
+  @ViewChild('videoRef', { static: true }) videoRef!: ElementRef;
   one: boolean = true;
   two: boolean = false;
   three: boolean = false;
@@ -33,6 +34,24 @@ export class HowMuchComponent {
   constructor(private http: HttpClient, private carService: CarsService, private smsService: MessageService) {
     this.load();
   }
+
+
+
+
+  ngAfterViewInit(): void {
+    const media = this.videoRef.nativeElement;
+
+    try {
+      media.muted = true;
+      media.play();
+    } catch (err) {
+      setTimeout(() => {
+        media.muted = true;
+        media.play();
+      }, 500);
+    }
+  }
+
 
 
   load() {

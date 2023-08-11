@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, ViewEncapsulation, signal } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CarModel } from 'src/app/core/models/car.model';
 import { CarsService } from 'src/app/core/services/cars.service';
 import { MessageService } from 'src/app/core/services/message.service';
 import Swal from 'sweetalert2';
+declare let $: any;
 
 
 @Component({
@@ -13,8 +14,11 @@ import Swal from 'sweetalert2';
   templateUrl: './main-bar.component.html',
   styleUrls: ['./main-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class MainBarComponent {
+  @ViewChild('videoRef', { static: true }) videoRef!: ElementRef;
+
   one: boolean = true;
   two: boolean = false;
   three: boolean = false;
@@ -38,6 +42,25 @@ export class MainBarComponent {
   ) {
     this.load();
   }
+
+
+
+
+  ngAfterViewInit(): void {
+    const media = this.videoRef.nativeElement;
+
+    try {
+      media.muted = true;
+      media.play();
+    } catch {
+      setTimeout(() => {
+        media.muted = true;
+        media.play();
+      }, 500);
+    }
+  }
+
+
 
   load() {
     this.car = this.carService.getCars();
