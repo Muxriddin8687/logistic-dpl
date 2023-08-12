@@ -12,7 +12,9 @@
     }
 
     &.active {
-        border: 1.5px solid var(--theme-1);
+        background: var(--theme-1);
+
+        h6 { color: var(--light); }
     }
 
     img {

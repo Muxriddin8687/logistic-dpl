@@ -40,16 +40,11 @@ export class HowMuchComponent {
 
   ngAfterViewInit(): void {
     const media = this.videoRef.nativeElement;
-
-    try {
-      media.muted = true;
-      media.play();
-    } catch (err) {
-      setTimeout(() => {
-        media.muted = true;
-        media.play();
-      }, 500);
-    }
+    media.muted = true;
+    media.play();
+    setInterval(() => {
+      media.play()
+    }, 2000);
   }
 
 

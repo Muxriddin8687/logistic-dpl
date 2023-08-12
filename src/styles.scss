@@ -149,9 +149,24 @@ strong span {
 
 
 
-.nav-tabs .nav-link.active {
-    color: var(--theme-1);
-    border-color: var(--theme-1);
+.nav-tabs.tab-list {
+    width: fit-content;
+    padding: 9px 20px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 8px 0px #ddd;
+
+    .nav-link {
+        --mdb-nav-tabs-link-color: var(--theme-1);
+        border: none;
+
+        &.active {
+            border: none !important;
+            box-shadow: 0 0 5px 0 #ddd;
+            color: var(--theme-1);
+            padding: 15px 20px;
+        }
+    }
 }
 
 

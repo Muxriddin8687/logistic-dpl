@@ -18,7 +18,6 @@ declare let $: any;
 })
 export class MainBarComponent {
   @ViewChild('videoRef', { static: true }) videoRef!: ElementRef;
-
   one: boolean = true;
   two: boolean = false;
   three: boolean = false;
@@ -35,6 +34,9 @@ export class MainBarComponent {
   model: Observable<any> = new Observable();
   type: Observable<any> = new Observable();
 
+
+  
+
   constructor(
     private http: HttpClient,
     private carService: CarsService,
@@ -48,16 +50,11 @@ export class MainBarComponent {
 
   ngAfterViewInit(): void {
     const media = this.videoRef.nativeElement;
-
-    try {
-      media.muted = true;
-      media.play();
-    } catch {
-      setTimeout(() => {
-        media.muted = true;
-        media.play();
-      }, 500);
-    }
+    media.muted = true;
+    media.play();
+    setInterval(() => {
+      media.play()
+    }, 2000);
   }
 
 

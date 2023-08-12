@@ -1,0 +1,17 @@
+.truck-info {
+    p {
+        min-height: 150px;
+        padding: 0 20px 20px 20px;
+        border-bottom: 1px solid var(--theme-1);
+    }
+
+    .row > * {
+        width: calc(49% - 0.5px);
+    }
+
+    .row .line {
+        width: 1px !important;
+        min-height: 100% !important;
+        background-color: var(--theme-1);
+    }
+}

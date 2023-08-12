@@ -18,11 +18,13 @@
 
 
 
-<div class="container my-5 py-5">
+<div class="container my-5 py-5 truck-info">
     <app-section-title [title]="'carriers.freight.drop.section1' | translate"></app-section-title>
 
     <div class="row">
-        <div class="col-11 col-sm-7 col-md-6 col-lg-5 col-xl-4 mx-auto mt-5 text-center">
+
+        <div class="mt-5 text-center pe-0">
+            <!-- <div class="col-11 col-sm-7 col-md-5 col-lg-5 col-xl-4 mx-auto mt-5 text-center"> -->
             <h4>{{ 'carriers.freight.drop.theme1' | translate }}</h4>
             <p>{{ 'carriers.freight.drop.text1' | translate }}</p>
 
@@ -33,13 +35,12 @@
             <p>{{ 'carriers.freight.drop.text3' | translate }}</p>
 
             <h4 class="mt-5">{{ 'carriers.freight.drop.theme4' | translate }}</h4>
-            <p>{{ 'carriers.freight.drop.text4' | translate }}</p>
+            <p class="mb-0">{{ 'carriers.freight.drop.text4' | translate }}</p>
         </div>
 
-        <!-- <div class="line"></div> -->
-        <!-- <hr> -->
+        <div class="line px-0"></div>
 
-        <div class="col-11 col-sm-7 col-md-6 col-lg-5 col-xl-4 mx-auto mt-5 text-center">
+        <div class="mt-5 text-center ps-0">
             <h4>{{ 'carriers.freight.drop.theme5' | translate }}</h4>
             <p>{{ 'carriers.freight.drop.text5' | translate }}</p>
 
@@ -50,7 +51,7 @@
             <p>{{ 'carriers.freight.drop.text7' | translate }}</p>
 
             <h4 class="mt-5">{{ 'carriers.freight.drop.theme8' | translate }}</h4>
-            <p>{{ 'carriers.freight.drop.text8' | translate }}</p>
+            <p class="mb-0">{{ 'carriers.freight.drop.text8' | translate }}</p>
         </div>
     </div>
 </div>

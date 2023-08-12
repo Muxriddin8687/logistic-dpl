@@ -155,9 +155,9 @@
 
                 <mat-form-field class="w-100">
                     <mat-label>Company name</mat-label>
-                    <input type="text" placeholder="City or ZIP" aria-label="Number" matInput ngModel #inputFromCompany
-                        (input)="findCompany(inputFromCompany.value)" [matAutocomplete]="company_name"
-                        name="company_name" required minlength="5">
+                    <input type="text" placeholder="City or ZIP" aria-label="Number" matInput ngModel
+                        (input)="findCompany(f.value.company_name)" [matAutocomplete]="company_name" name="company_name"
+                        required minlength="5">
 
                     <mat-autocomplete #company_name="matAutocomplete">
                         <mat-option *ngFor="let item of companies" [value]="item.name">
@@ -319,8 +319,8 @@
                                     <mat-form-field class="w-100">
                                         <mat-label>Company name</mat-label>
                                         <input type="text" placeholder="City or ZIP" aria-label="Number" matInput
-                                            ngModel #inputFromCompany (input)="findCompany(inputFromCompany.value)"
-                                            [matAutocomplete]="company_name" name="company_name" required minlength="5">
+                                            ngModel (input)="findCompany(fm.value.company_name)" name="company_name"
+                                            [matAutocomplete]="company_name" required minlength="5">
 
                                         <mat-autocomplete #company_name="matAutocomplete">
                                             <mat-option *ngFor="let item of companies" [value]="item.name">
