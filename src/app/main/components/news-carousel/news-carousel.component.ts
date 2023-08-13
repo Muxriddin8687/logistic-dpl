@@ -25,6 +25,7 @@ export class NewsCarouselComponent implements AfterViewInit {
       centeredSlides: false,
       grabCursor: true,
       spaceBetween: 30,
+      // slidesPerView: 1,
       speed: 2000,
       autoplay: {
         delay: 3000,
