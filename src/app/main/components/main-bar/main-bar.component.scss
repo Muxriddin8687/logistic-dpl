@@ -68,10 +68,11 @@
     // background video
     #main-bar-video {
         position: absolute;
-        width: 100%;
+        width: auto;
         height: 100%;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         object-fit: cover;
         z-index: -1;
     }
@@ -154,7 +155,7 @@
                     transform: translateY(-50%);
 
                     .mat-mdc-icon-button.mat-mdc-button-base {
-                        padding-left: 0 !important;
+                        // padding-left: 0 !important;
                         width: auto !important;
                     }
                 }

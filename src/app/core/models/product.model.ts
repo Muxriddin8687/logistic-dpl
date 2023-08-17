@@ -1,3 +1,11 @@
+export interface UserProductModel {
+    id: number,
+    name: string,
+    product: ProductModel[]
+}
+
+
+
 export interface ProductModel {
     id: number,
     name: string,
@@ -14,13 +22,3 @@ export interface ProductParametrModel {
     unity: string | undefined,
     value: number | undefined
 }
-
-
-
-
-export interface UserProductModel {
-    id: number,
-    name: string,
-    product: ProductModel[]
-}
-

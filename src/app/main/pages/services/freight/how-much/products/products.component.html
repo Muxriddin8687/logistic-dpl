@@ -89,7 +89,7 @@
 
                             <td class="d-flex">
                                 <button (click)="editProduct(item.id)" class="btn btn-sm btn-secondary btn-rounded px-3"
-                                    data-mdb-toggle="modal" type="button" data-mdb-target="#editProductModal">
+                                    data-mdb-toggle="modal" type="button" data-mdb-target="#addProductModal">
                                     <i class="fa fa-pencil"></i>
                                 </button>
                                 <button (click)="deleteProduct(item.id)" type="button"
@@ -103,7 +103,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="8" class="border-bottom-0 ps-0">
-                                <button class="btn btn-secondary" data-mdb-toggle="modal" type="button"
+                                <button (click)="selectEvet = true" class="btn btn-secondary" data-mdb-toggle="modal" type="button"
                                     data-mdb-target="#addProductModal">
                                     <i class="fa fa-plus me-2"></i> {{ 'form.addProduct' | translate }}
                                 </button>
@@ -133,7 +133,8 @@
                 <div class="modal-body">
                     <div id="product-form" class="container py-4">
 
-                        <h3 class="text-center mb-3">{{ 'form.addProduct' | translate }}</h3>
+                        <h3 [class.d-none]="selectEvet == false" class="text-center mb-3">{{ 'form.addProduct' | translate }}</h3>
+                        <h3 [class.d-none]="selectEvet == true" class="text-center mb-3">Edit product details</h3>
 
                         <div class="row">
                             <ng-container *ngFor="let item of productList">
@@ -190,7 +191,12 @@
                                         <button class="btn-secondary btn w-100 me-3" (click)="selectedProduct(1)" type="button"
                                             data-mdb-dismiss="modal">{{ 'form.cancel' | translate }}</button>
                                         <button data-mdb-dismiss="modal" (click)="addProduct(prodForm)" type="button"
-                                            class="btn-theme w-100">{{ 'form.send' | translate }}</button>
+                                            class="btn-theme w-100">
+                                            <span>{{ 'form.send' | translate }}</span>
+                                            <span>{{ 'form.send' | translate }}</span>
+                                            {{ 'form.send' | translate }}
+                                        
+                                        </button>
                                     </div>
 
                                 </form>

@@ -1,12 +1,21 @@
-<app-bread-crumbs img_url="warehouse.webp">
-    <div class="row">
-        <div class="col-11 col-sm-10 col-md-6 mx-auto text-center">
-            <h2 data-aos="flip-up" data-aos-duration="1800" class="text-light">{{ 'customers.freight.recyclers.title1' | translate }}</h2>
-            <p data-aos="flip-up" data-aos-duration="2300" class="text-light">{{ 'customers.freight.recyclers.text1' | translate }}</p>
-            <p data-aos="flip-up" data-aos-duration="2500" class="text-light">{{ 'customers.freight.recyclers.text2' | translate }}</p>
+<section id="main-bar">
+
+    <div class="form-block flex-column">
+        <div class="row">
+            <div class="col-11 col-sm-10 col-md-6 mx-auto text-center">
+                <h2 data-aos="flip-up" data-aos-duration="1800" class="fw-bold">{{ 'customers.freight.recyclers.title1' | translate }}</h2>
+                <p data-aos="flip-up" data-aos-duration="2300"  class="fw-bold">{{ 'customers.freight.recyclers.text1' | translate }}</p>
+                <p data-aos="flip-up" data-aos-duration="2500"  class="fw-bold">{{ 'customers.freight.recyclers.text2' | translate }}</p>
+            </div>
         </div>
     </div>
-</app-bread-crumbs>
+
+    <video id="main-bar-video" #videoRef preload autoplay playsinline loop muted>
+        <source src="./assets/recycles.mp4" type="video/mp4">
+    </video>
+
+</section>
+
 
 
 
