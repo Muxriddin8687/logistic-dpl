@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, signal } from '@angular/core';
+import { Component, ElementRef, ViewChild, signal, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CarModel } from 'src/app/core/models/car.model';
@@ -11,7 +11,8 @@ import Swal from 'sweetalert2';
   selector: 'app-how-much-auto',
   templateUrl: './how-much.component.html',
   styleUrls: ['./how-much.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class HowMuchComponent {
   @ViewChild('videoRef', { static: true }) videoRef!: ElementRef;

@@ -28,7 +28,7 @@
                         <tr *ngFor="let item of userProducts; trackBy: trackByFn">
 
                             <td>
-                                <img [src]="item.product[0]['icon']" class="h-100" alt="Product icon">
+                                <img loading="lazy" [src]="item.product[0]['icon']" class="h-100" alt="Product icon">
                             </td>
 
                             <td>
@@ -140,7 +140,7 @@
                             <ng-container *ngFor="let item of productList">
                                 <div class="col" (click)="selectedProduct(item.id)">
                                     <div class="product-item" [class.active]="selectedProductNumber == item.id">
-                                        <img [src]="item.icon" alt="product icon">
+                                        <img loading="lazy" [src]="item.icon" alt="product icon">
                                         <h6 class="text-center">{{ item.name }}</h6>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@
 
                             <div class="col-12 col-sm-10 col-md-4 mx-auto me-md-auto">
                                 <div class="p-4">
-                                    <img [src]="item['product'][0]['image']" class="w-100" alt="product-img">
+                                    <img loading="lazy" [src]="item['product'][0]['image']" class="w-100" alt="product-img">
                                 </div>
                             </div>
 

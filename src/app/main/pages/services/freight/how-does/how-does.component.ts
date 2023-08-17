@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 declare let Swiper: any;
 
 @Component({
   selector: 'app-how-does',
   templateUrl: './how-does.component.html',
-  styleUrls: ['./how-does.component.scss']
+  styleUrls: ['./how-does.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class HowDoesComponent {
 

@@ -1,9 +1,11 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-recyclers',
   templateUrl: './recyclers.component.html',
-  styleUrls: ['./recyclers.component.scss']
+  styleUrls: ['./recyclers.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class RecyclersComponent {
   @ViewChild('videoRef', { static: true }) videoRef!: ElementRef;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 declare let Swiper: any;
@@ -6,7 +6,9 @@ declare let Swiper: any;
 @Component({
   selector: 'app-how-does-auto',
   templateUrl: './how-does.component.html',
-  styleUrls: ['./how-does.component.scss']
+  styleUrls: ['./how-does.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class HowDoesComponent {
 

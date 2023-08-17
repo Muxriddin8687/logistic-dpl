@@ -1,11 +1,13 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 declare let Swiper: any;
 
 @Component({
   selector: 'app-news-carousel',
   templateUrl: './news-carousel.component.html',
-  styleUrls: ['./news-carousel.component.scss']
+  styleUrls: ['./news-carousel.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class NewsCarouselComponent implements AfterViewInit {
 

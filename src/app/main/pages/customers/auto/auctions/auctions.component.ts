@@ -1,10 +1,11 @@
 import { ViewportScroller } from '@angular/common';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-auctions',
   templateUrl: './auctions.component.html',
   styleUrls: ['./auctions.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
 export class AuctionsComponent {

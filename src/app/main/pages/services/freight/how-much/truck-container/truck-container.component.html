@@ -7,7 +7,7 @@
             <ng-container *ngFor="let item of truck_list">
                 <div class="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-auto mb-4">
                     <div class="select-truck" [class.active]="item.id == user_truck[0]['id']" (click)="selectedTruck(item.id)">
-                        <img [src]="'./assets/images/fright-form/' + item.image" alt="Container img">
+                        <img loading="lazy" [src]="'./assets/images/fright-form/' + item.image" alt="Container img">
                         <h6>{{ item.type }}</h6>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <ng-container *ngFor="let item of container_list">
                 <div class="col-11 col-sm-6 col-md-4 col-lg-3 col-xl-2 mx-auto mb-4">
                     <div class="select-truck" [class.active]="item.id == user_truck[0]['id']" (click)="selectedTruck(item.id)">
-                        <img [src]="'./assets/images/fright-form/' + item.image" alt="Container img">
+                        <img loading="lazy" [src]="'./assets/images/fright-form/' + item.image" alt="Container img">
                         <h6>{{ item.type }}</h6>
                     </div>
                 </div>

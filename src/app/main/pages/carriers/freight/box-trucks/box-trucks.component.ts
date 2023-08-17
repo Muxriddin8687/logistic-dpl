@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 declare let Swiper: any;
 
 @Component({
   selector: 'app-box-trucks',
   templateUrl: './box-trucks.component.html',
-  styleUrls: ['./box-trucks.component.scss']
+  styleUrls: ['./box-trucks.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class BoxTrucksComponent {
 

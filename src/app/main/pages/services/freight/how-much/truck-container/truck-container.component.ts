@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-truck-container',
   templateUrl: './truck-container.component.html',
-  styleUrls: ['./truck-container.component.scss']
+  styleUrls: ['./truck-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class TruckContainerComponent {
   user_truck: TruckModel[] = [{ id: 1, image: "20st.svg", type: "20' STANDART" }];

@@ -1,11 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-client-form',
   templateUrl: './client-form.component.html',
-  styleUrls: ['./client-form.component.scss']
+  styleUrls: ['./client-form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ClientFormComponent {
 

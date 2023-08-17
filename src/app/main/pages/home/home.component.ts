@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewEncapsulation, signal } from '@angular/core';
-import { FormControl, NgForm } from '@angular/forms';
+import { Component, signal, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent {

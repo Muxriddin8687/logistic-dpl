@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MessageService } from 'src/app/core/services/message.service';
 import { environment } from 'src/environments/environment.development';
@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   selector: 'app-dealarships',
   templateUrl: './dealarships.component.html',
   styleUrls: ['./dealarships.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
 export class DealarshipsComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductModel } from 'src/app/core/models/product.model';
 import { MessageService } from 'src/app/core/services/message.service';
@@ -7,7 +7,9 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
-  styleUrls: ['./result.component.scss']
+  styleUrls: ['./result.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class ResultComponent {
   products: any;
