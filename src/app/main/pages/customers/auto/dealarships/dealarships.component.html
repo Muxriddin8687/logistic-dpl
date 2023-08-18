@@ -154,19 +154,6 @@
                 <h3 class="text-center">Dealerships form</h3>
 
                 <mat-form-field class="w-100">
-                    <mat-label>Company name</mat-label>
-                    <input type="text" placeholder="City or ZIP" aria-label="Number" matInput ngModel
-                        (input)="findCompany(f.value.company_name)" [matAutocomplete]="company_name" name="company_name"
-                        required minlength="5">
-
-                    <mat-autocomplete #company_name="matAutocomplete">
-                        <mat-option *ngFor="let item of companies" [value]="item.name">
-                            {{ item['name'] }}
-                        </mat-option>
-                    </mat-autocomplete>
-                </mat-form-field>
-
-                <mat-form-field class="w-100">
                     <mat-label>First name</mat-label>
                     <input type="text" matInput ngModel name="first_name" required minlength="3">
                 </mat-form-field>
@@ -184,6 +171,19 @@
                 <mat-form-field class="w-100">
                     <mat-label>Email</mat-label>
                     <input type="email" matInput ngModel name="email" required minlength="6">
+                </mat-form-field>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Company name</mat-label>
+                    <input type="text" placeholder="City or ZIP" aria-label="Number" matInput ngModel
+                        (input)="findCompany(f.value.company_name)" [matAutocomplete]="company_name" name="company_name"
+                        required minlength="5">
+
+                    <mat-autocomplete #company_name="matAutocomplete">
+                        <mat-option *ngFor="let item of companies" [value]="item.name">
+                            {{ item['name'] }}
+                        </mat-option>
+                    </mat-autocomplete>
                 </mat-form-field>
 
                 <mat-form-field class="w-100">
@@ -315,20 +315,6 @@
                                     <h3 class="text-center">{{ 'customers.auto.dealership.title1' | translate }} form
                                     </h3>
 
-
-                                    <mat-form-field class="w-100">
-                                        <mat-label>Company name</mat-label>
-                                        <input type="text" placeholder="City or ZIP" aria-label="Number" matInput
-                                            ngModel (input)="findCompany(fm.value.company_name)" name="company_name"
-                                            [matAutocomplete]="company_name" required minlength="5">
-
-                                        <mat-autocomplete #company_name="matAutocomplete">
-                                            <mat-option *ngFor="let item of companies" [value]="item.name">
-                                                {{ item['name'] }}
-                                            </mat-option>
-                                        </mat-autocomplete>
-                                    </mat-form-field>
-
                                     <mat-form-field class="w-100">
                                         <mat-label>First name</mat-label>
                                         <input type="text" matInput ngModel name="first_name" required minlength="3">
@@ -347,6 +333,20 @@
                                     <mat-form-field class="w-100">
                                         <mat-label>Email</mat-label>
                                         <input type="email" matInput ngModel name="email" required minlength="6">
+                                    </mat-form-field>
+
+
+                                    <mat-form-field class="w-100">
+                                        <mat-label>Company name</mat-label>
+                                        <input type="text" placeholder="City or ZIP" aria-label="Number" matInput
+                                            ngModel (input)="findCompany(fm.value.company_name)" name="company_name"
+                                            [matAutocomplete]="company_name" required minlength="5">
+
+                                        <mat-autocomplete #company_name="matAutocomplete">
+                                            <mat-option *ngFor="let item of companies" [value]="item.name">
+                                                {{ item['name'] }}
+                                            </mat-option>
+                                        </mat-autocomplete>
                                     </mat-form-field>
 
                                     <mat-form-field class="w-100">

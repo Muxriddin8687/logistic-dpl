@@ -26,3 +26,12 @@
         justify-content: center;
     }
 }
+
+
+
+
+@media screen and (max-width: 576px) {
+    #main-bar #main-bar-video {
+        height: 70%;
+    }
+}

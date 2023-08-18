@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment';
 })
 export class MessageService {
 
-  private api = environment.telegram_api;
+  private telegram_api = environment.telegram_api;
+  private email_api = environment.email_api;
   private headers = new HttpHeaders()
     .set('content-type', 'application/x-www-form-urlencoded')
     .set('Access-Control-Allow-Origin', '*');
@@ -16,11 +17,19 @@ export class MessageService {
   constructor(private _http: HttpClient) { }
 
   sendSms(data: any, chanel: string): Observable<any> {
-    return this._http.get<any>(`${this.api}${chanel}&text=${data}`, {'headers': this.headers})
-                      .pipe(
-                        debounceTime(5000),
-                        distinctUntilChanged()
-                      );
+    return this._http.get<any>(`${this.telegram_api}${chanel}&text=${data}`, { 'headers': this.headers })
+      .pipe(
+        debounceTime(5000),
+        distinctUntilChanged()
+      );
   }
 
+
+  sendEmail(subject: any, text: string): Observable<any> {
+    return this._http.get<any>(`${this.email_api}&subject=${subject}&bodyText=${text}`)
+      .pipe(
+        debounceTime(5000),
+        distinctUntilChanged()
+      );
+  }
 }

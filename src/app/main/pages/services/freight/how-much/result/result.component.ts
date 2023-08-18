@@ -62,12 +62,18 @@ export class ResultComponent {
       });
     });
 
-
     data = encodeURI(data);
 
-    this.smsService.sendSms(data, chanel_name).subscribe(() => {
-      Swal.fire('Thank you', 'Your message has been sent successfully and we will contact you shortly.', 'success');
-    });
+    this.smsService.sendEmail('Freight Form', data).subscribe(
+      (res) => {
+        if (res.success == true) {
+          this.smsService.sendSms(data, chanel_name).subscribe();
+          Swal.fire('Thank you', 'Your message has been sent successfully and we will contact you shortly.', 'success');
+        } else
+          Swal.fire('Error', 'Please try again', 'warning');
+      },
+      (err) => console.log(err.message)
+    );
 
     setTimeout(() => {
       localStorage.clear();

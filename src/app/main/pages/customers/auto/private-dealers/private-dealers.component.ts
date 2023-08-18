@@ -40,10 +40,17 @@ export class PrivateDealersComponent {
 
       data = encodeURI(data);
 
-      this.smsService.sendSms(data, chanel_name).subscribe(() => {
-        form.onReset();
-        Swal.fire('Thank you', 'Your message has been sent successfully and we will contact you shortly.', 'success');
-      });
+      this.smsService.sendEmail('Private dealers Form', data).subscribe(
+        (res) => {
+          if (res.success == true) {
+            this.smsService.sendSms(data, chanel_name).subscribe();
+            Swal.fire('Thank you', 'Your message has been sent successfully and we will contact you shortly.', 'success');
+            form.onReset();
+          } else
+            Swal.fire('Error', 'Please try again', 'warning');
+        },
+        (err) => console.log(err.message)
+      );
     }
   }
 

@@ -33,6 +33,6 @@ export class AdminComponent {
         this.router.navigateByUrl('admin');
       } else
         Swal.fire('Error', 'Try again!', 'warning');
-    });
+    }, (err) => Swal.fire('Error', 'Try again!', 'warning'));
   }
 }

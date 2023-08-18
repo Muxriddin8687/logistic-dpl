@@ -9,6 +9,7 @@ import { UserGuard } from './core/guards/user.guard';
 import { AdminGuard } from './core/guards/admin.guard';
 import { LoaderSpinnerComponent } from './main/components/loader-spinner/loader-spinner.component';
 
+
 @NgModule({ 
   declarations: [
     AppComponent,
