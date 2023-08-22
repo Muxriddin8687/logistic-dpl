@@ -2,13 +2,38 @@
 
     <app-section-title title="{{ 'home.section1' | translate }}"></app-section-title>
 
+    <div class="container">
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <div *ngFor="let item of [1,2,3,4,5,6,7]" class="swiper-slide">
+                        <a routerLink="/app/customers/auto/online-car-buyers" class="w-100">
+                            <img loading="lazy" src="./assets/images/e.png" class="w-100" alt="Add images">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <section id="reviews">
+
+    <app-section-title title="{{ 'home.section1' | translate }}"></app-section-title>
+
     <div data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
         <div class="swiper">
             <div class="swiper-wrapper">
 
-                <div *ngFor="let item of [1,2,3,4,5,6,7]" class="swiper-slide">
+                <div *ngFor="let item of newsList" class="swiper-slide">
                     <a routerLink="/app/customers/auto/online-car-buyers" class="w-100">
-                        <img loading="lazy" src="../../../../assets/images/e.png" class="w-100" alt="Add images">
+                        <img [class.desktop]="item.mobile_image.lenght > 5" [src]="path + item.desktop_image" class="w-100" alt="News images" loading="lazy">
+                        <img *ngIf="item.mobile_image.lenght > 5" [src]="path + item.mobile_image" loading="lazy" class="mobile w-100" alt="News images">
                     </a>
                 </div>
 
@@ -17,4 +42,4 @@
 
         <div class="swiper-pagination"></div>
     </div>
-</section>
+</section> -->

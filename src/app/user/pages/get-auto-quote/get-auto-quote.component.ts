@@ -28,10 +28,9 @@ export class GetAutoQuoteComponent {
   type: Observable<any> = new Observable();
 
   constructor(private http: HttpClient,
-              private carService: CarsService,
-              private _authService: AuthService,
-              private _autoQuote: AutoQuoteService)
-  {
+    private carService: CarsService,
+    private _authService: AuthService,
+    private _autoQuote: AutoQuoteService) {
     this.load();
   }
 
@@ -51,7 +50,7 @@ export class GetAutoQuoteComponent {
       let data = {
         from: form.value.from,
         to: form.value.to,
-        truck_type: form.value.type,
+        truck_type: form.value.truck_type,
         pickup_date: form.value.date,
         make: form.value.make,
         model: form.value.model,

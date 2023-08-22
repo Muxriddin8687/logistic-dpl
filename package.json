@@ -23,6 +23,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "firebase": "^10.1.0",
+    "jspdf": "^2.5.1",
     "mat-select-search": "^1.2.21",
     "ngx-gallery": "^5.10.0",
     "rxjs": "~7.8.0",

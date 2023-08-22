@@ -12,19 +12,21 @@ import { MyOrderComponent } from './pages/my-order/my-order.component';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
 
 const routes: Routes = [
-  { path: '', component: UserComponent, children: [
-    { path: 'dashboard', component: DashboardComponent },
-    { path: 'get-auto-quote', component: GetAutoQuoteComponent },
-    { path: 'get-freight-quote', component: GetFreightQuoteComponent },
-    { path: 'schedules', component: SchedulesComponent },
-    { path: 'my-freight-quote', component: MyFreightQuoteComponent },
-    { path: 'my-auto-quote', component: MyAutoQuoteComponent },
-    { path: 'accepted', component: AcceptedOrderComponent },
-    { path: 'my-order', component: MyOrderComponent },
-    { path: 'invoice', component: InvoiceComponent },
+  {
+    path: '', component: UserComponent, children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'blogs', component: SchedulesComponent },
+      { path: 'get-auto-quote', component: GetAutoQuoteComponent },
+      { path: 'get-freight-quote', component: GetFreightQuoteComponent },
+      { path: 'my-auto-quote', component: MyAutoQuoteComponent },
+      { path: 'my-freight-quote', component: MyFreightQuoteComponent },
+      { path: 'accepted', component: AcceptedOrderComponent },
+      { path: 'orders', component: MyOrderComponent },
+      { path: 'invoice', component: InvoiceComponent },
 
-    { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
-  ]}
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+    ]
+  }
 ];
 
 @NgModule({

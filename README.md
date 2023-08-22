@@ -27,3 +27,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+0 -> client get
+0 -> admin get
+1 -> client my quotes
+2 -> admin my quotes
+3 -> client accepted
+4 -> admin accepted
+5 -> client my order(tasdiqlandi, send email, archive)
+6 -> client my orders(done invoice)

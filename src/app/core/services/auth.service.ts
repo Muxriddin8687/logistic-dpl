@@ -8,8 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
   private url: string = environment.api;
-  user_id: any = undefined;
-  user: any;
+
 
   constructor(private _http: HttpClient, private _router: Router) { }
 

@@ -3,7 +3,6 @@ import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CarModel } from 'src/app/core/models/car.model';
-import { AuthService } from 'src/app/core/services/auth.service';
 import { AutoQuoteService } from 'src/app/core/services/auto-quote.service';
 import { CarsService } from 'src/app/core/services/cars.service';
 import { environment } from 'src/environments/environment';
@@ -17,7 +16,6 @@ import Swal from 'sweetalert2';
 export class MyAutoQuoteComponent {
   api = environment.api + 'auto/';
   quoteList: any = signal([]);
-  user_id = this._authService.getUserId();
 
   autoForm: FormGroup = this._fb.group({
     id: ['', Validators.required],
@@ -38,9 +36,9 @@ export class MyAutoQuoteComponent {
     email: [''],
     phone: [''],
     address: [''],
-    client_comment: ['', Validators.required],
+    client_comment: ['', [Validators.required, Validators.minLength(2)]],
+    admin_comment: ['', [Validators.required, Validators.minLength(2)]],
 
-    admin_comment: [''],
     pickup_address: [''],
     delivery_address: [''],
     person_1: [''],
@@ -65,7 +63,6 @@ export class MyAutoQuoteComponent {
   constructor(
     private _http: HttpClient,
     private _fb: FormBuilder,
-    private _authService: AuthService,
     private _carService: CarsService,
     private _autoQuote: AutoQuoteService) {
 
@@ -95,7 +92,8 @@ export class MyAutoQuoteComponent {
       email: find['email'],
       phone: find['phone'],
       address: find['address'],
-      client_comment: find['client_comment']
+      client_comment: find['client_comment'],
+      admin_comment: find['admin_comment']
     });
   }
 
@@ -105,16 +103,7 @@ export class MyAutoQuoteComponent {
       .update(this.autoForm.value)
       .subscribe((res) => this.load());
 
-    this._autoQuote
-      .setStatus(this.autoForm.value.id, 2)
-      .subscribe();
-
-    Swal.fire({
-      icon: 'success',
-      title: 'Your order has been saved',
-      showConfirmButton: false,
-      timer: 1500
-    })
+    this._autoQuote.setStatus(this.autoForm.value.id, 3).subscribe();
   }
 
 
@@ -129,8 +118,8 @@ export class MyAutoQuoteComponent {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this._autoQuote
-          .delete(id)
+        this._http
+          .delete(this.api + 'delete.php?id=' + id)
           .subscribe(() => this.load());
         Swal.fire(
           'Deleted!',
@@ -145,7 +134,7 @@ export class MyAutoQuoteComponent {
 
   load() {
     this._autoQuote
-      .getStatus_0_1_byId(this.user_id)
+      .getStatus_2_3()
       .subscribe(res => this.quoteList.set(res));
     this.car = this._carService.getCars();
     this.model = this._carService.getModels();

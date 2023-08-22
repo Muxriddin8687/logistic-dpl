@@ -1,24 +1,26 @@
 <div class="container">
-    <h4 class="mt-4 mb-3">Get auto quotes</h4>
+    <h4 class="mt-4 mb-3">Accepted orders</h4>
     <hr>
 
     <ul class="quote-list">
         <li>
             <div class="row w-100">
-                <div class="col-md-3">From</div>
-                <div class="col-md-3">To</div>
+                <div class="col-md-3">Client</div>
+                <div class="col-md-2">From</div>
+                <div class="col-md-2">To</div>
                 <div class="col-md-2">Make</div>
-                <div class="col-md-2">Model</div>
+                <div class="col-md-1">Model</div>
                 <div class="col-md-2">Pickup date</div>
             </div>
         </li>
         <ng-container *ngFor="let item of quoteList(); let i=index;">
             <li (click)="selectQuote(item.id)" data-mdb-toggle="modal" data-mdb-target="#quoteModal">
                 <div class="row w-100">
-                    <div class="col-md-3">{{ i + 1 + '.&nbsp;&nbsp;' + item.from }}</div>
-                    <div class="col-md-3">{{ item.to }}</div>
+                    <div class="col-md-3">{{ i + 1 + '.&nbsp;&nbsp;' + item.first_name }}</div>
+                    <div class="col-md-2">{{ item.from }}</div>
+                    <div class="col-md-2">{{ item.to }}</div>
                     <div class="col-md-2">{{ item.make }}</div>
-                    <div class="col-md-2">{{ item.model }}</div>
+                    <div class="col-md-1">{{ item.model }}</div>
                     <div class="col-md-2">{{ item.pickup_date }}</div>
                 </div>
             </li>
@@ -35,7 +37,7 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <h3 class="text-center">Get Auto Quote</h3>
+                    <h3 class="text-center">Accepted orders</h3>
 
                     <form [formGroup]="autoForm" (ngSubmit)="send()">
                         <div class="row mt-5">
@@ -58,13 +60,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.from' | translate }}</mat-label>
-                                    <input type="text" matInput formControlName="from" #inputFrom (input)="findCityByZipCodeFrom(inputFrom.value)" [matAutocomplete]="from">
-
-                                    <mat-autocomplete #from="matAutocomplete">
-                                        <mat-option [value]="searchResultFrom().city + ', ' + searchResultFrom().state + ' ' + inputFrom.value">
-                                            {{ searchResultFrom().city }}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input type="text" matInput formControlName="from">
                                 </mat-form-field>
                             </div>
 
@@ -72,13 +68,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.to' | translate }}</mat-label>
-                                    <input type="text" matInput formControlName="to" #inputTo (input)="findCityByZipCodeTo(inputTo.value)" [matAutocomplete]="to">
-
-                                    <mat-autocomplete #to="matAutocomplete">
-                                        <mat-option [value]="searchResultTo().city + ', ' + searchResultTo().state + ' ' + inputTo.value">
-                                            {{ searchResultTo().city }}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input type="text" matInput formControlName="to">
                                 </mat-form-field>
                             </div>
 
@@ -120,13 +110,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.make' | translate }}</mat-label>
-                                    <input type="text" matInput formControlName="make" #makeInput [matAutocomplete]="makeSelect">
-
-                                    <mat-autocomplete #makeSelect="matAutocomplete">
-                                        <mat-option *ngFor="let option of (model | async) | search:makeInput.value" [value]="option.name">
-                                            {{option.name}}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input type="text" matInput formControlName="make">
                                 </mat-form-field>
                             </div>
 
@@ -134,13 +118,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.model' | translate }}</mat-label>
-                                    <input type="text" matInput formControlName="model" #modelInput [matAutocomplete]="carSelect">
-
-                                    <mat-autocomplete #carSelect="matAutocomplete">
-                                        <mat-option *ngFor="let option of (car | async) | search:modelInput.value" [value]="option.Model">
-                                            {{option.Model}}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input type="text" matInput formControlName="model">
                                 </mat-form-field>
                             </div>
 
@@ -148,13 +126,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.type' | translate }}</mat-label>
-                                    <input type="text" matInput formControlName="type" #typeInput [matAutocomplete]="typeSelect">
-
-                                    <mat-autocomplete #typeSelect="matAutocomplete">
-                                        <mat-option *ngFor="let option of (type | async) | search:typeInput.value" [value]="option.name">
-                                            {{option.name}}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input type="text" matInput formControlName="type">
                                 </mat-form-field>
                             </div>
 
@@ -205,6 +177,76 @@
                                     <input type="text" matInput formControlName="client_comment">
                                 </mat-form-field>
                             </div>
+
+                            <hr class="mb-4">
+
+                            <!-- admin commentary -->
+                            <div class="col-11 col-sm-10 col-md-12 mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Admin comment</mat-label>
+                                    <input type="text" matInput formControlName="admin_comment">
+                                </mat-form-field>
+                            </div>
+
+
+                            <hr class="my-4">
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Pickup full address</mat-label>
+                                    <input type="text" matInput formControlName="pickup_address">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Delivery full address</mat-label>
+                                    <input type="text" matInput formControlName="delivery_address">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person full name (Pickup place)</mat-label>
+                                    <input type="text" matInput formControlName="person_1">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person phone (Pickup place)</mat-label>
+                                    <input type="text" matInput formControlName="phone_1">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person full name (Delivery place)</mat-label>
+                                    <input type="text" matInput formControlName="person_2">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person phone (Delivery place)</mat-label>
+                                    <input type="text" matInput formControlName="phone_2">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>#VIN</mat-label>
+                                    <input type="text" matInput formControlName="vin">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>#LOT</mat-label>
+                                    <input type="text" matInput formControlName="lot">
+                                </mat-form-field>
+                            </div>
+
 
 
                             <div class="col-11 col-sm-10 col-md-12 text-center mt-3">

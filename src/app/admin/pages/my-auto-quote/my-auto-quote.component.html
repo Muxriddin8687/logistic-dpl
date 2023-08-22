@@ -1,24 +1,26 @@
 <div class="container">
-    <h4 class="mt-4 mb-3">Get auto quotes</h4>
+    <h4 class="mt-4 mb-3">My auto quote</h4>
     <hr>
 
     <ul class="quote-list">
         <li>
             <div class="row w-100">
-                <div class="col-md-3">From</div>
-                <div class="col-md-3">To</div>
+                <div class="col-md-3">Client</div>
+                <div class="col-md-2">From</div>
+                <div class="col-md-2">To</div>
                 <div class="col-md-2">Make</div>
-                <div class="col-md-2">Model</div>
+                <div class="col-md-1">Model</div>
                 <div class="col-md-2">Pickup date</div>
             </div>
         </li>
         <ng-container *ngFor="let item of quoteList(); let i=index;">
             <li (click)="selectQuote(item.id)" data-mdb-toggle="modal" data-mdb-target="#quoteModal">
                 <div class="row w-100">
-                    <div class="col-md-3">{{ i + 1 + '.&nbsp;&nbsp;' + item.from }}</div>
-                    <div class="col-md-3">{{ item.to }}</div>
+                    <div class="col-md-3">{{ i + 1 + '.&nbsp;&nbsp;' + item.first_name }}</div>
+                    <div class="col-md-2">{{ item.from }}</div>
+                    <div class="col-md-2">{{ item.to }}</div>
                     <div class="col-md-2">{{ item.make }}</div>
-                    <div class="col-md-2">{{ item.model }}</div>
+                    <div class="col-md-1">{{ item.model }}</div>
                     <div class="col-md-2">{{ item.pickup_date }}</div>
                 </div>
             </li>
@@ -203,6 +205,16 @@
                                 <mat-form-field class="w-100">
                                     <mat-label>Write a comment on the terms of service</mat-label>
                                     <input type="text" matInput formControlName="client_comment">
+                                </mat-form-field>
+                            </div>
+
+                            <hr class="mb-4">
+
+                            <!-- admin commentary -->
+                            <div class="col-11 col-sm-10 col-md-12 mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Admin comment</mat-label>
+                                    <input type="text" matInput formControlName="admin_comment">
                                 </mat-form-field>
                             </div>
 

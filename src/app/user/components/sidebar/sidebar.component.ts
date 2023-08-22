@@ -8,6 +8,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class SidebarComponent {
 
-  // styleUrls: ['./sidebar.component.scss',
-  //   '../../../../assets/css/custom.css'],
 }
