@@ -262,6 +262,7 @@
 
 
                             <div class="col-11 col-sm-10 col-md-12 text-center mt-3">
+                                <button (click)="exportToPDF()" class="btn btn-secondary me-2" data-mdb-dismiss="modal" type="button">Invoice</button>
                                 <button class="btn btn-secondary me-2" data-mdb-dismiss="modal" type="button">Close</button>
                                 <button [disabled]="autoForm.invalid" class="btn btn-warning" type="submit" data-mdb-dismiss="modal">Ready</button>
                             </div>
@@ -271,6 +272,57 @@
 
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="-none">
+    <div id="invoice">
+        <div class="container py-5">
+            <div class="d-flex align-items-center justify-content-between mb-5">
+                <img style="width: 80px;" src="./assets/logo.svg" alt="">
+                <h2 class="mb-0">INVOICE</h2>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-6">
+                    <h4><b>BILLED TO:</b></h4>
+                    <p class="mb-0">Diamond Pro Logistics</p>
+                    <p class="mb-0">info@dplinc.co</p>
+                    <p class="mb-0">+1 (800) 728-1735</p>
+                    <p class="mb-0">1310 Turk St, San Francisco, CA 94115, USA</p>
+                </div>
+
+                <div class="col-6 text-end">
+                    <p class="mb-0">Invoice No: {{ autoForm.value.custom_id }}</p>
+                    <p>{{ today | date:'dd.mm.YYYY' }}</p>
+                </div>
+            </div>
+
+            <table class="table table-bordered table-striped mb-5">
+                <thead>
+                    <tr>
+                        <th>Auto</th>
+                        <th>Make</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ autoForm.value.model }}</td>
+                        <td>{{ autoForm.value.make }}</td>
+                        <td>{{ autoForm.value.type }}</td>
+                        <td>{{ autoForm.value.total_price }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="text-center mb-5">Thank you!</h2>
         </div>
     </div>
 </div>

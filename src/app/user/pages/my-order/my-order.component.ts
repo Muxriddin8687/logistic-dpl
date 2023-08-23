@@ -8,6 +8,8 @@ import { AutoQuoteService } from 'src/app/core/services/auto-quote.service';
 import { CarsService } from 'src/app/core/services/cars.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-my-order',
@@ -15,6 +17,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./my-order.component.scss']
 })
 export class MyOrderComponent {
+  today = new Date();
   api = environment.api + 'auto/';
   quoteList: any = signal([]);
   user_id = this._authService.getUserId();
@@ -123,6 +126,21 @@ export class MyOrderComponent {
       showConfirmButton: false,
       timer: 1500
     })
+  }
+
+
+
+  exportToPDF() {
+    let DATA: any = document.getElementById('invoice');
+    html2canvas(DATA).then((canvas) => {
+      let fileWidth = 208;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+      const FILEURI = canvas.toDataURL('image/png');
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+      PDF.save('invoice.pdf');
+    });
   }
 
 

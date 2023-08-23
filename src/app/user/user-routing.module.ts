@@ -24,7 +24,7 @@ const routes: Routes = [
       { path: 'orders', component: MyOrderComponent },
       { path: 'invoice', component: InvoiceComponent },
 
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+      { path: '', redirectTo: 'get-auto-quote', pathMatch: 'full' }
     ]
   }
 ];

@@ -2,7 +2,6 @@ import { Component, signal, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AutoQuoteService } from 'src/app/core/services/auto-quote.service';
 import { environment } from 'src/environments/environment';
-// import jsPDF from 'jspdf';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
