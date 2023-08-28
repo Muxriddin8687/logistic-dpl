@@ -1,18 +1,16 @@
-import { Component, signal, ViewEncapsulation } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AutoQuoteService } from 'src/app/core/services/auto-quote.service';
 import { environment } from 'src/environments/environment';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 
 @Component({
-  selector: 'app-my-orders',
-  templateUrl: './my-orders.component.html',
-  styleUrls: ['./my-orders.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-archive',
+  templateUrl: './archive.component.html',
+  styleUrls: ['./archive.component.scss']
 })
-export class MyOrdersComponent {
-  today = new Date();
+export class ArchiveComponent {
   api = environment.api + 'auto/';
   quoteList: any = signal([]);
 
@@ -35,32 +33,44 @@ export class MyOrdersComponent {
     email: [''],
     phone: [''],
     address: [''],
-    client_comment: ['', Validators.required],
-    admin_comment: ['', [Validators.required, Validators.minLength(2)]],
-    pickup_address: ['', [Validators.required, Validators.minLength(2)]],
-    delivery_address: ['', [Validators.required, Validators.minLength(2)]],
-    person_1: ['', [Validators.required, Validators.minLength(2)]],
-    phone_1: ['', [Validators.required, Validators.minLength(2)]],
-    person_2: ['', [Validators.required, Validators.minLength(2)]],
-    phone_2: ['', [Validators.required, Validators.minLength(2)]],
-    vin: ['', [Validators.required, Validators.minLength(2)]],
-    lot: ['', [Validators.required, Validators.minLength(2)]],
-  });
+    admin_comment: [''],
 
+    client_comment: [''],
+    pickup_address: ['', Validators.required],
+    delivery_address: ['', Validators.required],
+    person_1: ['', Validators.required],
+    phone_1: ['', Validators.required],
+    person_2: ['', Validators.required],
+    phone_2: ['', Validators.required],
+    vin: [''],
+    lot: [''],
+  });
+  defult = {
+    "country": ".",
+    "state": ".",
+    "city": "Loading..."
+  };
 
   constructor(
     private _fb: FormBuilder,
-    private _autoQuote: AutoQuoteService) {
+    private _router: Router,
+    private _autoQuote: AutoQuoteService) { }
 
+
+  ngOnInit() {
     this.load();
+
+    setInterval(() => this.load(), 3000);
   }
 
 
   selectQuote(id: number) {
     let find = this.quoteList().find((item: any) => item.id == id);
+    this._autoQuote.selectedOrder.set(find);
 
     this.autoForm.patchValue({
       id: find['id'],
+      status: find['status'],
       from: find['from'],
       to: find['to'],
       truck_type: find['truck_type'],
@@ -78,8 +88,8 @@ export class MyOrdersComponent {
       email: find['email'],
       phone: find['phone'],
       address: find['address'],
-      client_comment: find['client_comment'],
       admin_comment: find['admin_comment'],
+      client_comment: find['client_comment'],
       pickup_address: find['pickup_address'],
       delivery_address: find['delivery_address'],
       person_1: find['person_1'],
@@ -92,30 +102,17 @@ export class MyOrdersComponent {
   }
 
 
-  send() {
-    this._autoQuote.setStatus(this.autoForm.value.id, 6).subscribe();
-  }
-
-
-
-  exportToPDF() {
-    let DATA: any = document.getElementById('invoice');
-    html2canvas(DATA).then((canvas) => {
-      let fileWidth = 208;
-      let fileHeight = (canvas.height * fileWidth) / canvas.width;
-      const FILEURI = canvas.toDataURL('image/png');
-      let PDF = new jsPDF('p', 'mm', 'a4');
-      let position = 0;
-      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
-      PDF.save('invoice.pdf');
-    });
-  }
-
-
 
   load() {
     this._autoQuote
-      .getStatus_5()
+      .getStatus_3()
       .subscribe(res => this.quoteList.set(res));
   }
+
+
+
+  goToInvoicePage() {
+    this._router.navigateByUrl('/admin/invoice');
+  }
+
 }

@@ -20,14 +20,13 @@ import { UserComponent } from './user.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SchedulesComponent } from './pages/schedules/schedules.component';
-import { AcceptedOrderComponent } from './pages/accepted-order/accepted-order.component';
-import { MyOrderComponent } from './pages/my-order/my-order.component';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
 import { GetAutoQuoteComponent } from './pages/get-auto-quote/get-auto-quote.component';
 import { GetFreightQuoteComponent } from './pages/get-freight-quote/get-freight-quote.component';
 import { MyAutoQuoteComponent } from './pages/my-auto-quote/my-auto-quote.component';
 import { MyFreightQuoteComponent } from './pages/my-freight-quote/my-freight-quote.component';
 import { SearchPipe } from '../core/pipes/search.pipe';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -36,13 +35,12 @@ import { SearchPipe } from '../core/pipes/search.pipe';
     SidebarComponent,
     DashboardComponent,
     SchedulesComponent,
-    AcceptedOrderComponent,
-    MyOrderComponent,
     InvoiceComponent,
     GetAutoQuoteComponent,
     GetFreightQuoteComponent,
     MyAutoQuoteComponent,
     MyFreightQuoteComponent,
+    ProfileComponent,
   ],
   imports: [
     UserRoutingModule,
@@ -61,9 +59,9 @@ import { SearchPipe } from '../core/pipes/search.pipe';
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [ HttpClient ]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
     }),
   ]

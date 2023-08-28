@@ -1,5 +1,5 @@
-<div class="container">
-    <h4 class="mt-4 mb-3">Get auto quotes</h4>
+<div class="container-fluid">
+    <h4 class="mt-4 mb-3">My accepted orders</h4>
     <hr>
 
     <ul class="quote-list">
@@ -9,17 +9,50 @@
                 <div class="col-md-3">To</div>
                 <div class="col-md-2">Make</div>
                 <div class="col-md-2">Model</div>
-                <div class="col-md-2">Pickup date</div>
+                <div class="col-md-1">Pickup date</div>
+                <div class="col-md-1">Status</div>
             </div>
         </li>
         <ng-container *ngFor="let item of quoteList(); let i=index;">
             <li (click)="selectQuote(item.id)" data-mdb-toggle="modal" data-mdb-target="#quoteModal">
                 <div class="row w-100">
-                    <div class="col-md-3">{{ i + 1 + '.&nbsp;&nbsp;' + item.from }}</div>
-                    <div class="col-md-3">{{ item.to }}</div>
-                    <div class="col-md-2">{{ item.make }}</div>
-                    <div class="col-md-2">{{ item.model }}</div>
-                    <div class="col-md-2">{{ item.pickup_date }}</div>
+                    <div class="col-12 col-md-3 first-column">
+
+                        <ng-container *ngIf="item.client_read == 0">
+                            <div class="blob"></div>
+                        </ng-container>
+
+                        {{ i + 1 + '.&nbsp;&nbsp;' }}
+                        <div class="mobile">From: </div>
+                        {{ item.from }}
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="mobile">To: </div>
+                        {{ item.to }}
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <div class="mobile">Make: </div>
+                        {{ item.make }}
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <div class="mobile">Model: </div>
+                        {{ item.model }}
+                    </div>
+                    <div class="col-12 col-md-1">
+                        <div class="mobile">Pickup date: </div>
+                        {{ item.pickup_date | date:'dd.MM.YYYY' }}
+                    </div>
+                    <div class="col-12 col-md-1">
+                        <div class="mobile">Status: </div>
+                        <ng-container [ngSwitch]="item.status">
+                            <div *ngSwitchCase="0" class="text-warning d-inline">Pending</div>
+                            <div *ngSwitchCase="1" class="text-primary d-inline">Answered</div>
+                            <div *ngSwitchCase="2" class="text-success d-inline">Pending</div>
+                            <div *ngSwitchCase="3" class="text-success d-inline">Success</div>
+                            <div *ngSwitchDefault class="d-inline">Success</div>
+                        </ng-container>
+                    </div>
+
                 </div>
             </li>
         </ng-container>
@@ -35,7 +68,7 @@
             <div class="modal-body">
 
                 <div class="container">
-                    <h3 class="text-center">Get Auto Quote</h3>
+                    <h3 class="text-center">Order</h3>
 
                     <form [formGroup]="autoForm" (ngSubmit)="send()">
                         <div class="row mt-5">
@@ -46,25 +79,13 @@
                                 <h5 class="d-inline">{{ autoForm.value.first_name + ' ' + autoForm.value.last_name }}</h5>
                             </div>
 
-                            <!-- phone -->
-                            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-6 mx-auto mt-3">
-                                <span>Contact: </span>
-                                <h5 class="d-inline">{{ autoForm.value.phone + ' ' + autoForm.value.email }}</h5>
-                            </div>
-
                             <hr>
 
                             <!-- from -->
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.from' | translate }}</mat-label>
-                                    <input readonly type="text" matInput formControlName="from" #inputFrom (input)="findCityByZipCodeFrom(inputFrom.value)" [matAutocomplete]="from">
-
-                                    <mat-autocomplete #from="matAutocomplete">
-                                        <mat-option [value]="searchResultFrom().city + ', ' + searchResultFrom().state + ' ' + inputFrom.value">
-                                            {{ searchResultFrom().city }}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input readonly type="text" matInput formControlName="from">
                                 </mat-form-field>
                             </div>
 
@@ -72,13 +93,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.to' | translate }}</mat-label>
-                                    <input readonly type="text" matInput formControlName="to" #inputTo (input)="findCityByZipCodeTo(inputTo.value)" [matAutocomplete]="to">
-
-                                    <mat-autocomplete #to="matAutocomplete">
-                                        <mat-option [value]="searchResultTo().city + ', ' + searchResultTo().state + ' ' + inputTo.value">
-                                            {{ searchResultTo().city }}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input readonly type="text" matInput formControlName="to">
                                 </mat-form-field>
                             </div>
 
@@ -120,13 +135,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.make' | translate }}</mat-label>
-                                    <input readonly type="text" matInput formControlName="make" #makeInput [matAutocomplete]="makeSelect">
-
-                                    <mat-autocomplete #makeSelect="matAutocomplete">
-                                        <mat-option *ngFor="let option of (model | async) | search:makeInput.value" [value]="option.name">
-                                            {{option.name}}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input readonly type="text" matInput formControlName="make">
                                 </mat-form-field>
                             </div>
 
@@ -134,13 +143,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.model' | translate }}</mat-label>
-                                    <input readonly type="text" matInput formControlName="model" #modelInput [matAutocomplete]="carSelect">
-
-                                    <mat-autocomplete #carSelect="matAutocomplete">
-                                        <mat-option *ngFor="let option of (car | async) | search:modelInput.value" [value]="option.Model">
-                                            {{option.Model}}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input readonly type="text" matInput formControlName="model">
                                 </mat-form-field>
                             </div>
 
@@ -148,13 +151,7 @@
                             <div class="col-11 col-sm-10 col-md-6 col-lg-4 col-xl-3 mx-auto mt-3">
                                 <mat-form-field class="w-100">
                                     <mat-label>{{ 'form.type' | translate }}</mat-label>
-                                    <input readonly type="text" matInput formControlName="type" #typeInput [matAutocomplete]="typeSelect">
-
-                                    <mat-autocomplete #typeSelect="matAutocomplete">
-                                        <mat-option *ngFor="let option of (type | async) | search:typeInput.value" [value]="option.name">
-                                            {{option.name}}
-                                        </mat-option>
-                                    </mat-autocomplete>
+                                    <input readonly type="text" matInput formControlName="type">
                                 </mat-form-field>
                             </div>
 
@@ -196,21 +193,86 @@
                                 </mat-form-field>
                             </div>
 
+                            <!-- admin commentary -->
+                            <div class="col-11 col-sm-10 col-md-12 mt-3 mx-auto">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Admin comment</mat-label>
+                                    <input readonly type="text" matInput formControlName="admin_comment">
+                                </mat-form-field>
+                            </div>
+
                             <hr class="mb-4">
 
+                            <div class="col-11 col-sm-10 col-md-12 col-lg-6 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Pickup full address</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="pickup_address">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-12 col-lg-6 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Delivery full address</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="delivery_address">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person full name (Pickup place)</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="person_1">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person phone (Pickup place)</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="phone_1">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person full name (Delivery place)</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="person_2">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-6 col-lg-6 col-xl-3 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Person phone (Delivery place)</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="phone_2">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-12 col-lg-6 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>#VIN</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="vin">
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-11 col-sm-10 col-md-12 col-lg-6 mx-auto mt-3">
+                                <mat-form-field class="w-100">
+                                    <mat-label>#LOT</mat-label>
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="lot">
+                                </mat-form-field>
+                            </div>
+
                             <!-- client commentary -->
-                            <div class="col-11 col-sm-10 col-md-12 mt-3">
+                            <div class="col-11 col-sm-10 col-md-12 mt-3 mx-auto">
                                 <mat-form-field class="w-100">
                                     <mat-label>Write a comment on the terms of service</mat-label>
-                                    <input type="text" matInput formControlName="client_comment">
+                                    <input [readonly]="autoForm.value.status > 1" type="text" matInput formControlName="client_comment">
                                 </mat-form-field>
                             </div>
 
 
-                            <div class="col-11 col-sm-10 col-md-12 text-center mt-3">
-                                <button class="btn btn-danger me-2" data-mdb-dismiss="modal" (click)="delete(autoForm.value.id)" type="button">Delete</button>
-                                <button class="btn btn-secondary me-2" data-mdb-dismiss="modal" type="button">Close</button>
-                                <button [disabled]="autoForm.invalid" class="btn btn-warning" type="submit" data-mdb-dismiss="modal">Save and Send</button>
+                            <div class="col-11 col-sm-10 col-md-12 text-end mx-auto mt-3">
+                                <button *ngIf="autoForm.value.status < 3" class="btn btn-danger" data-mdb-dismiss="modal" (click)="delete(autoForm.value.id)" type="button">Delete</button>
+                                <button class="btn btn-secondary ms-2" data-mdb-dismiss="modal" type="button">Close</button>
+                                <button *ngIf="autoForm.value.status > 2" class="btn btn-primary ms-2" (click)="goToInvoicePage()" data-mdb-dismiss="modal" type="button">Invoice</button>
+                                <button *ngIf="autoForm.value.status < 3" [disabled]="autoForm.invalid" class="btn btn-warning ms-2" type="submit" data-mdb-dismiss="modal">Save and Send</button>
                             </div>
 
                         </div>

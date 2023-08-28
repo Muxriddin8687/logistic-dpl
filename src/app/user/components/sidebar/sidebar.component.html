@@ -27,13 +27,13 @@
 				</a>
 
 				<ul class="navbar-nav mb-2 mb-lg-0">
-					<!-- <li class="nav-item">
-						<a class="nav-link" routerLink="dashboard">Dashboard</a>
+					<li class="nav-item">
+						<!-- <a class="nav-link" routerLink="dashboard">Dashboard</a> -->
 					</li>
 
 					<li class="nav-item">
 						<a class="nav-link" routerLink="blogs">Blogs</a>
-					</li> -->
+					</li>
 
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" routerLinkActive="active" id="dropdown1" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Get a quote</a>
@@ -45,8 +45,8 @@
 											<a class="navbar-dropdown-link" routerLink="get-auto-quote" routerLinkActive="active">Auto quote</a>
 										</li>
 										<li>
-											<!-- <a class="navbar-dropdown-link" routerLink="get-freight-quote" routerLinkActive="active">Freight quote</a> -->
 											<a class="navbar-dropdown-link">Freight quote</a>
+											<!-- <a class="navbar-dropdown-link" routerLink="get-freight-quote" routerLinkActive="active">Freight quote</a> -->
 										</li>
 									</ul>
 								</div>
@@ -55,17 +55,17 @@
 					</li>
 
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" routerLinkActive="active" id="dropdown2" role="button" data-mdb-toggle="dropdown" aria-expanded="false">My quotes</a>
+						<a class="nav-link dropdown-toggle" routerLinkActive="active" id="dropdown2" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Orders</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown2">
 							<div class="navbar-dropdown">
 								<div class="navbar-dropdown-item">
 									<ul class="list-unstyled">
 										<li>
-											<a class="navbar-dropdown-link" routerLink="my-auto-quote" routerLinkActive="active">Auto quote</a>
+											<a class="navbar-dropdown-link" routerLink="my-auto-order" routerLinkActive="active">Auto orders</a>
 										</li>
 										<li>
-											<a class="navbar-dropdown-link">Freight quote</a>
-											<!-- <a class="navbar-dropdown-link" routerLink="my-freight-quote" routerLinkActive="active">Freight quote</a> -->
+											<a class="navbar-dropdown-link">Freight orders</a>
+											<!-- <a class="navbar-dropdown-link" routerLink="my-freight-order" routerLinkActive="active">Freight orders</a> -->
 										</li>
 									</ul>
 								</div>
@@ -74,16 +74,8 @@
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" routerLink="accepted">Accepted orders</a>
+						<a class="nav-link" routerLink="profile">Profile</a>
 					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" routerLink="orders">My orders</a>
-					</li>
-
-					<!-- <li class="nav-item">
-						<a class="nav-link" routerLink="invoice">Invoice</a>
-					</li> -->
 				</ul>
 
 			</div>
@@ -96,14 +88,13 @@
 		<div class="mobile-navbar" id="navbarId">
 			<div class="container-fluid">
 
-
-				<!-- <div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
+				<div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
 					<a routerLink="dashboard" routerLinkActive="active" class="navbar-dropdown-link">Dashboard</a>
 				</div>
 
 				<div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
 					<a routerLink="blogs" routerLinkActive="active" class="navbar-dropdown-link">Blogs</a>
-				</div> -->
+				</div>
 
 				<div class="accordion" id="accordionNavbar">
 					<div class="accordion-item">
@@ -131,18 +122,18 @@
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="menuTwo">
 								<button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#menuTwoCollapse" aria-expanded="false" aria-controls="menuTwoCollapse">
-									My quotes
+									Orders
 								</button>
 							</h2>
 							<div id="menuTwoCollapse" class="accordion-collapse collapse" aria-labelledby="menuTwo" data-mdb-parent="#accordionNavbar">
 								<div class="accordion-body">
 									<ul class="list-unstyled">
 										<li data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
-											<a class="navbar-dropdown-link" routerLink="my-auto-quote" routerLinkActive="active">Auto quote</a>
+											<a class="navbar-dropdown-link" routerLink="my-auto-order" routerLinkActive="active">Auto orders</a>
 										</li>
 										<li data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
-											<a class="navbar-dropdown-link" routerLink="my-freight-quote" routerLinkActive="active">Freight quote</a>
-											<a class="navbar-dropdown-link">Freight quote</a>
+											<a class="navbar-dropdown-link">Freight orders</a>
+											<!-- <a class="navbar-dropdown-link" routerLink="my-freight-order" routerLinkActive="active">Freight orders</a> -->
 										</li>
 									</ul>
 								</div>
@@ -150,20 +141,12 @@
 						</div>
 					</div>
 
-					<div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
-						<a routerLink="accepted" routerLinkActive="active" class="navbar-dropdown-link">Accepted
-							orders</a>
-					</div>
-
-					<div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
-						<a routerLink="orders" routerLinkActive="active" class="navbar-dropdown-link">My order</a>
-					</div>
-
-					<!-- <div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
-						<a routerLink="invoice" routerLinkActive="active" class="navbar-dropdown-link">Invoice</a>
-					</div> -->
-
 				</div>
+
+				<div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
+					<a routerLink="profile" routerLinkActive="active" class="navbar-dropdown-link">Profile</a>
+				</div>
+
 			</div>
 		</div>
 

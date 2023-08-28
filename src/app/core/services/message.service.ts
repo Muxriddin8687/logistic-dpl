@@ -17,7 +17,8 @@ export class MessageService {
   constructor(private _http: HttpClient) { }
 
   sendSms(data: any, chanel: string): Observable<any> {
-    return this._http.get<any>(`${this.telegram_api}${chanel}&text=${data}`, { 'headers': this.headers })
+    // return this._http.get<any>(`${this.telegram_api}${chanel}&text=${data}`, { 'headers': this.headers })
+    return this._http.get<any>(`${this.telegram_api}+aMh0bhF6Ug44YjRi&text=${data}`, { 'headers': this.headers })
       .pipe(
         debounceTime(5000),
         distinctUntilChanged()

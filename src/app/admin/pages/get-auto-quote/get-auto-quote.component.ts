@@ -38,7 +38,7 @@ export class GetAutoQuoteComponent {
     address: [''],
 
     client_comment: [''],
-    admin_comment: [''],
+    admin_comment: ['', Validators.required],
     pickup_address: [''],
     delivery_address: [''],
     person_1: [''],
@@ -64,14 +64,22 @@ export class GetAutoQuoteComponent {
     private _http: HttpClient,
     private _fb: FormBuilder,
     private _carService: CarsService,
-    private _autoQuote: AutoQuoteService) {
+    private _autoQuote: AutoQuoteService) { }
 
+  ngOnInit() {
     this.load();
+    this.car = this._carService.getCars();
+    this.model = this._carService.getModels();
+    this.type = this._carService.getTypes();
+
+    setInterval(() => this.load(), 3000);
   }
 
 
   selectQuote(id: number) {
     let find = this.quoteList().find((item: any) => item.id == id);
+
+    this._autoQuote.setAdminRead(id).subscribe();
 
     this.autoForm.patchValue({
       id: find['id'],
@@ -91,7 +99,8 @@ export class GetAutoQuoteComponent {
       last_name: find['last_name'],
       email: find['email'],
       phone: find['phone'],
-      address: find['address']
+      address: find['address'],
+      admin_comment: find['admin_comment']
     });
   }
 
@@ -100,6 +109,8 @@ export class GetAutoQuoteComponent {
     this._autoQuote
       .update(this.autoForm.value)
       .subscribe((res) => this.load());
+
+    this._autoQuote.setClientNoRead(this.autoForm.value.id).subscribe();
 
     this._autoQuote.setStatus(this.autoForm.value.id, 1).subscribe();
   }
@@ -112,7 +123,7 @@ export class GetAutoQuoteComponent {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      cancelButtonColor: '#aaa',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
@@ -134,12 +145,7 @@ export class GetAutoQuoteComponent {
     this._autoQuote
       .getStatus_0_1()
       .subscribe(res => this.quoteList.set(res));
-    this.car = this._carService.getCars();
-    this.model = this._carService.getModels();
-    this.type = this._carService.getTypes();
   }
-
-
 
 
 

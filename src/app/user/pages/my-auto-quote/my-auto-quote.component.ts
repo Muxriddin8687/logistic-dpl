@@ -1,11 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, signal } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { CarModel } from 'src/app/core/models/car.model';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { AutoQuoteService } from 'src/app/core/services/auto-quote.service';
-import { CarsService } from 'src/app/core/services/cars.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 
@@ -21,6 +18,8 @@ export class MyAutoQuoteComponent {
 
   autoForm: FormGroup = this._fb.group({
     id: ['', Validators.required],
+    status: [0],
+
     from: ['', Validators.required],
     to: ['', Validators.required],
     truck_type: ['', Validators.required],
@@ -29,6 +28,7 @@ export class MyAutoQuoteComponent {
     model: ['', Validators.required],
     type: ['', Validators.required],
     year: ['', Validators.required],
+
     custom_id: ['', [Validators.required, Validators.minLength(2)]],
     delivery_date: ['', Validators.required],
     total_price: ['', [Validators.required, Validators.minLength(2)]],
@@ -38,46 +38,40 @@ export class MyAutoQuoteComponent {
     email: [''],
     phone: [''],
     address: [''],
-    client_comment: ['', Validators.required],
-
     admin_comment: [''],
-    pickup_address: [''],
-    delivery_address: [''],
-    person_1: [''],
-    phone_1: [''],
-    person_2: [''],
-    phone_2: [''],
+
+    client_comment: [''],
+    pickup_address: ['', Validators.required],
+    delivery_address: ['', Validators.required],
+    person_1: ['', Validators.required],
+    phone_1: ['', Validators.required],
+    person_2: ['', Validators.required],
+    phone_2: ['', Validators.required],
     vin: [''],
     lot: [''],
   });
-  defult = {
-    "country": ".",
-    "state": ".",
-    "city": "Loading..."
-  };
 
-  searchResultFrom: any = signal(this.defult);
-  searchResultTo: any = signal(this.defult);
-  car: Observable<CarModel[]> = new Observable<CarModel[]>();
-  model: Observable<any> = new Observable();
-  type: Observable<any> = new Observable();
 
   constructor(
-    private _http: HttpClient,
+    private _router: Router,
     private _fb: FormBuilder,
     private _authService: AuthService,
-    private _carService: CarsService,
     private _autoQuote: AutoQuoteService) {
 
     this.load();
+
+    setInterval(() => this.load(), 5000);
   }
 
 
   selectQuote(id: number) {
     let find = this.quoteList().find((item: any) => item.id == id);
+    this._autoQuote.selectedOrder.set(find);
+    this._autoQuote.setClientRead(id).subscribe();
 
     this.autoForm.patchValue({
       id: find['id'],
+      status: find['status'],
       from: find['from'],
       to: find['to'],
       truck_type: find['truck_type'],
@@ -95,7 +89,16 @@ export class MyAutoQuoteComponent {
       email: find['email'],
       phone: find['phone'],
       address: find['address'],
-      client_comment: find['client_comment']
+      admin_comment: find['admin_comment'],
+      client_comment: find['client_comment'],
+      pickup_address: find['pickup_address'],
+      delivery_address: find['delivery_address'],
+      person_1: find['person_1'],
+      phone_1: find['phone_1'],
+      person_2: find['person_2'],
+      phone_2: find['phone_2'],
+      vin: find['vin'],
+      lot: find['lot']
     });
   }
 
@@ -108,6 +111,8 @@ export class MyAutoQuoteComponent {
     this._autoQuote
       .setStatus(this.autoForm.value.id, 2)
       .subscribe();
+
+    this._autoQuote.setAdminNoRead(this.autoForm.value.id).subscribe();
 
     Swal.fire({
       icon: 'success',
@@ -125,7 +130,7 @@ export class MyAutoQuoteComponent {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      cancelButtonColor: '#aaa',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
@@ -142,44 +147,15 @@ export class MyAutoQuoteComponent {
   }
 
 
-
   load() {
     this._autoQuote
-      .getStatus_0_1_byId(this.user_id)
+      .getOrderById(this.user_id)
       .subscribe(res => this.quoteList.set(res));
-    this.car = this._carService.getCars();
-    this.model = this._carService.getModels();
-    this.type = this._carService.getTypes();
   }
 
 
-
-
-
-  findCityByZipCodeFrom(zip_code: string) {
-    this._http.get('https://ziptasticapi.com/' + zip_code)
-      .subscribe(
-        (res: any) => {
-          if (res.error)
-            this.searchResultFrom.set(this.defult);
-          else
-            this.searchResultFrom.set(res);
-        },
-        (err) => { }
-      );
+  goToInvoicePage() {
+    this._router.navigateByUrl('/user/invoice');
   }
 
-
-  findCityByZipCodeTo(zip_code: string) {
-    this._http.get('https://ziptasticapi.com/' + zip_code)
-      .subscribe(
-        (res: any) => {
-          if (res.error)
-            this.searchResultTo.set(this.defult);
-          else
-            this.searchResultTo.set(res);
-        },
-        (err) => { }
-      );
-  }
 }

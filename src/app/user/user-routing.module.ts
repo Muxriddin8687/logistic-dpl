@@ -7,9 +7,8 @@ import { GetFreightQuoteComponent } from './pages/get-freight-quote/get-freight-
 import { SchedulesComponent } from './pages/schedules/schedules.component';
 import { MyAutoQuoteComponent } from './pages/my-auto-quote/my-auto-quote.component';
 import { MyFreightQuoteComponent } from './pages/my-freight-quote/my-freight-quote.component';
-import { AcceptedOrderComponent } from './pages/accepted-order/accepted-order.component';
-import { MyOrderComponent } from './pages/my-order/my-order.component';
 import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -18,13 +17,12 @@ const routes: Routes = [
       { path: 'blogs', component: SchedulesComponent },
       { path: 'get-auto-quote', component: GetAutoQuoteComponent },
       { path: 'get-freight-quote', component: GetFreightQuoteComponent },
-      { path: 'my-auto-quote', component: MyAutoQuoteComponent },
-      { path: 'my-freight-quote', component: MyFreightQuoteComponent },
-      { path: 'accepted', component: AcceptedOrderComponent },
-      { path: 'orders', component: MyOrderComponent },
+      { path: 'my-auto-order', component: MyAutoQuoteComponent },
+      { path: 'my-freight-order', component: MyFreightQuoteComponent },
       { path: 'invoice', component: InvoiceComponent },
+      { path: 'profile', component: ProfileComponent },
 
-      { path: '', redirectTo: 'get-auto-quote', pathMatch: 'full' }
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   }
 ];

@@ -19,7 +19,7 @@ export class InvoiceComponent {
     this.orderInvoice.set(this._autoQuoteService.selectedOrder());
 
     if (this.orderInvoice().client_id == undefined)
-      this._router.navigateByUrl('/user/dashboard');
+      this._router.navigateByUrl('/admin/get-auto-quote');
   }
 
 

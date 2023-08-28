@@ -14,7 +14,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NewsComponent } from './pages/news/news.component';
 import { GetAutoQuoteComponent } from './pages/get-auto-quote/get-auto-quote.component';
 import { GetFreightQuoteComponent } from './pages/get-freight-quote/get-freight-quote.component';
@@ -25,23 +24,23 @@ import { HttpClient } from '@angular/common/http';
 import { SearchPipe } from '../core/pipes/search.pipe';
 import { MyAutoQuoteComponent } from './pages/my-auto-quote/my-auto-quote.component';
 import { MyFreightQuoteComponent } from './pages/my-freight-quote/my-freight-quote.component';
-import { AcceptedOrderComponent } from './pages/accepted-order/accepted-order.component';
-import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { InvoiceComponent } from './pages/invoice/invoice.component';
+import { ArchiveComponent } from './pages/archive/archive.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     SidebarComponent,
-    DashboardComponent,
     NewsComponent,
     GetAutoQuoteComponent,
     GetFreightQuoteComponent,
     BlogsComponent,
     MyAutoQuoteComponent,
     MyFreightQuoteComponent,
-    AcceptedOrderComponent,
-    MyOrdersComponent,
+    InvoiceComponent,
+    ArchiveComponent,
   ],
   imports: [
     CommonModule,
@@ -56,6 +55,7 @@ import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
     MatSelectSearchModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule,
     MatCheckboxModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',

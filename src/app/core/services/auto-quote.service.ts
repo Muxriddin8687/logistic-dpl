@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AutoQuoteService {
   private api: string = environment.api + 'auto/';
+  public selectedOrder = signal([]);
 
   constructor(private _http: HttpClient) { }
 
@@ -18,40 +19,16 @@ export class AutoQuoteService {
     return this._http.get(this.api + 'getStatus_0_1.php');
   }
 
-  getStatus_0_1_byId(id: number) {
-    return this._http.get(this.api + 'getStatus_0_1_byId.php?id=' + id);
+  getStatus_2() {
+    return this._http.get(this.api + 'getStatus_2.php');
   }
 
-  getStatus_2_3() {
-    return this._http.get(this.api + 'getStatus_2_3.php');
+  getStatus_3() {
+    return this._http.get(this.api + 'getStatus_3.php');
   }
 
-  getStatus_2_3_byId(id: number) {
-    return this._http.get(this.api + 'getStatus_2_3_byId.php?id=' + id);
-  }
-
-  getStatus_4() {
-    return this._http.get(this.api + 'getStatus_4.php');
-  }
-
-  getStatus_4_byId(id: number) {
-    return this._http.get(this.api + 'getStatus_4_byId.php?id=' + id);
-  }
-
-  getStatus_5() {
-    return this._http.get(this.api + 'getStatus_5.php');
-  }
-
-  getStatus_5_byId(id: number) {
-    return this._http.get(this.api + 'getStatus_5_byId.php?id=' + id);
-  }
-
-  getStatus_6() {
-    return this._http.get(this.api + 'getStatus_6.php');
-  }
-
-  getStatus_6_byId(id: number) {
-    return this._http.get(this.api + 'getStatus_6_byId.php?id=' + id);
+  getOrderById(id: number) {
+    return this._http.get(this.api + 'getOrderById.php?id=' + id);
   }
 
   delete(id: number) {
@@ -64,6 +41,22 @@ export class AutoQuoteService {
 
   setStatus(id: number, status: number) {
     return this._http.get(this.api + 'setStatus.php?id=' + id + '&status=' + status);
+  }
+
+  setClientRead(order_id: number) {
+    return this._http.get(this.api + 'setClientRead.php?id=' + order_id);
+  }
+
+  setAdminRead(order_id: number) {
+    return this._http.get(this.api + 'setAdminRead.php?id=' + order_id);
+  }
+
+  setClientNoRead(order_id: number) {
+    return this._http.get(this.api + 'setClientNoRead.php?id=' + order_id);
+  }
+
+  setAdminNoRead(order_id: number) {
+    return this._http.get(this.api + 'setAdminNoRead.php?id=' + order_id);
   }
 
 }

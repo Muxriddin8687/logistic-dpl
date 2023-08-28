@@ -14,5 +14,3 @@ export const environment = {
     telegram_api: 'https://api.telegram.org/bot5201252679:AAEqE5sjhIL94ajvc04nwDJIIVR3H2m30I8/sendMessage?chat_id=@',
     email_api: "https://api.elasticemail.com/v2/email/send?apikey=87F8B53815E5574A680C0D9060186A43FBCCC3EBBA1D6E9019DF06D6CEBDC1807F0CF3C0414AB2EB6ACCE9796FB2A72A&from=info@dplinc.co&fromName=Diamond%20Pro%20Logistics&to=b.johnson@dplinc.co&charset=utf-8",
 };
-
-// api: 'http://localhost/dpl-logistic/',
