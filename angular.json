@@ -60,6 +60,7 @@
               "./src/styles.scss"
             ],
             "scripts": [
+              "./src/assets/js/apexchart.min.js",
               "./src/assets/js/lightbox/spotlight.bundle.js"
             ]
           },
