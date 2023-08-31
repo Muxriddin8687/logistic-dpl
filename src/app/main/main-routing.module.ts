@@ -28,6 +28,7 @@ import { ProductsComponent } from './pages/services/freight/how-much/products/pr
 import { TruckContainerComponent } from './pages/services/freight/how-much/truck-container/truck-container.component';
 import { ClientFormComponent } from './pages/services/freight/how-much/client-form/client-form.component';
 import { ResultComponent } from './pages/services/freight/how-much/result/result.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'about-us', component: AboutUsComponent },
+      { path: 'blogs', component: BlogsComponent },
 
       // customers routers
       {

@@ -1,15 +1,29 @@
 <header class="py-1 border-bottom">
-	<div class="container">
-		<div class="d-flex align-items-center justify-content-end">
+	<div class="container-fluid pe-5">
+		<div class="d-flex align-items-center justify-content-end pe-3">
 			<div class="d-flex me-5">
 				<a routerLink="/auth/login">Login</a>
 				<span class="mx-2">|</span>
 				<a routerLink="/auth/sign-up">Sign up</a>
 			</div>
-			<div class="d-flex">
-				<button type="button" (click)="selectLanguage('en')" class="btn p-0 nav-link shadow-0">ENG</button>
-				<span class="mx-2">|</span>
-				<button type="button" (click)="selectLanguage('es')" class="btn p-0 nav-link shadow-0">ESP</button>
+			<div class="dropdown">
+				<a class="dropdown-toggle" href="#" id="lang" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+					<i class="fa fa-globe"></i>
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="lang" style="z-index: 9999 !important; right: 0 !important; min-width: fit-content !important;">
+					<li (click)="selectLanguage('en')">
+						<div class="dropdown-item" href="#">
+							<img src="./assets/eng.png" alt="Language icon" width="20px">
+							English
+						</div>
+					</li>
+					<li (click)="selectLanguage('es')">
+						<div class="dropdown-item" href="#">
+							<img src="./assets/esp.png" alt="Language icon" width="20px">
+							Spanish
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

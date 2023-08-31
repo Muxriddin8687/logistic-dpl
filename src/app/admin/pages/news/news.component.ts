@@ -15,6 +15,8 @@ export class NewsComponent {
 
   imageList: any;
   selectItemId: number = 0;
+  selectedImage: string = '';
+  selectedUrl: number = 0;
 
 
   load() {
@@ -24,7 +26,19 @@ export class NewsComponent {
   }
 
   selectItem(id: number) {
-    this.selectItemId = id;
+    this.imageList.forEach((item: any) => {
+      if (item.id == id) {
+        this.selectItemId = item.id;
+        this.selectedImage = item.mobile_image;
+        this.selectedUrl = item.url_id;
+      }
+    });
+  }
+
+  selectUrl(event: any) {
+    this.http
+      .get(this.api + 'setUrl.php?id=' + this.selectItemId + '&url_id=' + event.value)
+      .subscribe(() => this.load());
   }
 
   onFileChange(event: any) {
@@ -44,8 +58,8 @@ export class NewsComponent {
 
     this.http
       .post(this.api + 'insertMobile.php?id=' + this.selectItemId, formData)
-      .subscribe(res => {
-        this.load();
+      .subscribe((res: any) => {
+        this.selectedImage = res;
       });
   }
 

@@ -141,8 +141,22 @@
 							</div>
 						</div>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" routerLink="about-us">About&nbsp;Us</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" link="" id="dropdown3" role="button" data-mdb-toggle="dropdown" aria-expanded="false">Company</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown3">
+							<div class="navbar-dropdown">
+								<div class="navbar-dropdown-item w-100">
+									<ul class="list-unstyled">
+										<li>
+											<a class="navbar-dropdown-link" routerLink="about-us" routerLinkActive="active">About&nbsp;Us</a>
+										</li>
+										<li>
+											<a class="navbar-dropdown-link" routerLink="blogs" routerLinkActive="active">Blogs</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</li>
 				</ul>
 
@@ -284,23 +298,45 @@
 							</div>
 						</div>
 					</div>
-					<div class="nav-item accordion-item px-4" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
-						<a routerLink="about-us" routerLinkActive="active" class="navbar-dropdown-link">About Us</a>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="menuFour">
+							<button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#menuFourCollapse" aria-expanded="false" aria-controls="menuFourCollapse">
+								Company
+							</button>
+						</h2>
+						<div id="menuFourCollapse" class="accordion-collapse collapse" aria-labelledby="menuFour" data-mdb-parent="#accordionNavbar">
+							<div class="accordion-body">
+								<ul class="list-unstyled">
+									<li data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
+										<a class="navbar-dropdown-link" routerLink="about-us" routerLinkActive="active">About Us</a>
+									</li>
+									<li data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
+										<a class="navbar-dropdown-link" routerLink="blogs" routerLinkActive="active">Blogs</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 
 				<hr>
 
-				<div class="mt-5 px-4 d-flex align-items-center justify-content-between">
+				<div class="mt-5 px-4">
 					<div class="d-flex">
 						<a routerLink="/auth/login">Login</a>
 						<span class="mx-2">|</span>
 						<a routerLink="/auth/sign-up">Sign up</a>
 					</div>
-					<div class="d-flex">
-						<button type="button" (click)="selectLanguage('en')" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId" class="btn p-0 nav-link shadow-0">ENG</button>
+					<div class="d-flex mt-4">
+						<button type="button" (click)="selectLanguage('en')" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId" class="btn p-0 nav-link shadow-0">
+							<img src="./assets/eng.png" alt="Language icon" width="20px">
+							ENG
+						</button>
 						<span class="mx-2">|</span>
-						<button type="button" (click)="selectLanguage('es')" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId" class="btn p-0 nav-link shadow-0">ESP</button>
+						<button type="button" (click)="selectLanguage('es')" data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId" class="btn p-0 nav-link shadow-0">
+							<img src="./assets/esp.png" alt="Language icon" width="20px">
+							ESP
+						</button>
 					</div>
 				</div>
 

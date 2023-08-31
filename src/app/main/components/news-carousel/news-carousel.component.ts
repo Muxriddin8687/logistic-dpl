@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectionStrategy, ViewEncapsulation, signal } from '@angular/core';
+import { ActivityService } from 'src/app/core/services/activity.service';
 import { environment } from 'src/environments/environment';
-
 declare let Swiper: any;
 
 @Component({
@@ -12,41 +11,33 @@ declare let Swiper: any;
   encapsulation: ViewEncapsulation.None
 })
 export class NewsCarouselComponent implements AfterViewInit {
-  newsList: any;
-  api = environment.api + 'news/getAll.php';
+  newsList = signal<Array<any>>([]);
   path = environment.api + 'assets/images/news/';
 
-
-  constructor(private _http: HttpClient) { }
-
+  constructor(private _newsService: ActivityService) { }
 
   ngOnInit() {
-    this._http.get(this.api).subscribe((res) => this.newsList = res);
+    this.newsList = this._newsService.news;
   }
 
-
   ngAfterViewInit(): void {
-    let inter = setInterval(() => {
-      if (this.newsList.length > 1) {
-        let swiper = new Swiper('#reviews .swiper', {
-          loop: true,
-          centeredSlides: false,
-          grabCursor: true,
-          spaceBetween: 30,
-          slidesPerView: 1,
-          // speed: 2000,
-          // autoplay: {
-          //   delay: 3000,
-          //   disableOnInteraction: false,
-          // },
-          pagination: {
-            el: '#reviews .swiper-pagination',
-            type: 'bullets',
-          }
-        });
-
-        clearInterval(inter);
-      }
-    }, 1000);
+    setTimeout(() => {
+      let swiper = new Swiper('#reviews .swiper', {
+        loop: true,
+        centeredSlides: false,
+        grabCursor: true,
+        spaceBetween: 30,
+        slidesPerView: 1,
+        speed: 2000,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '#reviews .swiper-pagination',
+          type: 'bullets',
+        }
+      });
+    }, 2000);
   }
 }

@@ -1,4 +1,7 @@
 nav {
+    &.sticky-top {
+        z-index: 1000 !important;
+    }
 
     .navbar-dropdown {
         display: flex;

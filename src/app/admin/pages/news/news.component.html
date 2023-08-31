@@ -5,7 +5,7 @@
     <div class="row">
         <ng-container *ngFor="let item of imageList">
             <div class="mx-auto gallery-img col-11 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-2">
-                <img [src]="imgUrl + item.desktop_image" loading="lazy" priority class="img-fluid" alt="Gallery image">
+                <img [src]="imgUrl + item.desktop_image" loading="lazy" priority alt="Gallery image">
                 <button class="btn btn-warning add-mobile" (click)="selectItem(item.id)" data-mdb-toggle="modal" data-mdb-target="#mobileImageModal">
                     <i class="fa fa-plus"></i>
                 </button>
@@ -35,12 +35,31 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="container h-100 d-flex align-items-center">
+                <div class="container h-100 d-flex align-items-center flex-column">
+
+                    <div class="mb-4" style="width: 70%;">
+                        <img *ngIf="selectedImage.length > 5" [src]="imgUrl + selectedImage" class="img-fluid" alt="Mobile image">
+                    </div>
+
                     <div class="h-100 border py-3 text-center rounded w-100">
                         <p>File turi: JPG, JPEG, PNG</p>
                         <p>Hajmi: 0 ~ 5 MB</p>
                         <input type="file" (change)="addMobileImage($event)" accept=".png,.jpeg,.jpg" #mobile class="d-none">
                         <button class="btn btn-warning" (click)="mobile.click()">Rasm tanlash</button>
+                    </div>
+
+                    <div class="w-100 my-4">
+                        <mat-form-field class="w-100">
+                            <mat-label>Volume</mat-label>
+                            <mat-select [(ngModel)]="selectedUrl" (selectionChange)="selectUrl($event)">
+                                <mat-option value="1">Auto form</mat-option>
+                                <mat-option value="2">Freight form</mat-option>
+                                <mat-option value="3">twitter</mat-option>
+                                <mat-option value="4">facebook</mat-option>
+                                <mat-option value="5">instagram</mat-option>
+                                <mat-option value="6">youtube</mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
                 </div>
             </div>
