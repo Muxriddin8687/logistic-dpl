@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ChangeDetectionStrategy, ViewEncapsulation, signal } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectionStrategy, ViewEncapsulation, computed } from '@angular/core';
 import { ActivityService } from 'src/app/core/services/activity.service';
 import { environment } from 'src/environments/environment';
 declare let Swiper: any;
@@ -11,14 +11,10 @@ declare let Swiper: any;
   encapsulation: ViewEncapsulation.None
 })
 export class NewsCarouselComponent implements AfterViewInit {
-  newsList = signal<Array<any>>([]);
+  newsList = computed(() => this._newsService.news());
   path = environment.api + 'assets/images/news/';
 
   constructor(private _newsService: ActivityService) { }
-
-  ngOnInit() {
-    this.newsList = this._newsService.news;
-  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {

@@ -1,11 +1,11 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
-    chart1();
-    chart2();
-    chart3();
-    chart4();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     chart1();
+//     chart2();
+//     chart3();
+//     chart4();
+// });
 
 
 
