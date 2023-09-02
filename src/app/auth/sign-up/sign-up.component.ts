@@ -39,8 +39,21 @@ export class SignUpComponent {
 
     this._auth.signUp(newUser).subscribe((res) => {
       if (res == true) {
+        // set mock user data
+        sessionStorage.setItem('dpl_client', JSON.stringify(newUser));
         Swal.fire('Thank you', 'You have successfully registered', 'success');
-        setTimeout(() => this.router.navigateByUrl('/auth/login'), 1500);
+        setTimeout(() => this.router.navigateByUrl('/user/dashboard'), 1500);
+
+        setTimeout(() => {
+          this._auth
+            .login({ 'first_name': newUser.first_name, "email": newUser.email })
+            .subscribe((res: any) => {
+              if (res.length != 0) {
+                sessionStorage.setItem('dpl_client', JSON.stringify(res[0]));
+              } else
+                sessionStorage.clear();
+            });
+        }, 2000);
       } else
         Swal.fire('Error', 'Try again!', 'warning');
     });

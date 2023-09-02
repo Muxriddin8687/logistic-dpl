@@ -268,7 +268,7 @@
                             </div>
 
 
-                            <div class="col-11 col-sm-10 col-md-12 text-end mx-auto mt-3">
+                            <div class="col-11 col-sm-10 col-md-12 text-center mx-auto mt-3">
                                 <button *ngIf="autoForm.value.status < 3" class="btn btn-danger" data-mdb-dismiss="modal" (click)="delete(autoForm.value.id)" type="button">Delete</button>
                                 <button class="btn btn-secondary ms-2" data-mdb-dismiss="modal" type="button">Close</button>
                                 <button *ngIf="autoForm.value.status > 2" class="btn btn-primary ms-2" (click)="goToInvoicePage()" data-mdb-dismiss="modal" type="button">Invoice</button>

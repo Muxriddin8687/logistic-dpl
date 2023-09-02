@@ -1,11 +1,11 @@
 <div class="container py-4">
     <h3 class="text-center">Get Auto Quote</h3>
 
-    <form #f="ngForm" (submit)="send(f)">
-        <div class="row my-5">
+    <form #f="ngForm" (submit)="send(f)" class="py-4 bg-light shadow rounded" style="z-index: 1000;">
+        <div class="row my-2 w-100">
 
             <!-- from -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <div class="col-11 mx-auto mt-3">
                 <mat-form-field class="w-100">
                     <mat-label>{{ 'form.from' | translate }}</mat-label>
                     <input type="text" matInput ngModel name="from" #inputFrom (input)="findCityByZipCodeFrom(inputFrom.value)" [matAutocomplete]="from" required minlength="3">
@@ -19,7 +19,7 @@
             </div>
 
             <!-- to -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <div class="col-11 mx-auto mt-3">
                 <mat-form-field class="w-100">
                     <mat-label>{{ 'form.to' | translate }}</mat-label>
                     <input type="text" matInput ngModel name="to" #inputTo (input)="findCityByZipCodeTo(inputTo.value)" [matAutocomplete]="to" required minlength="3">
@@ -33,7 +33,7 @@
             </div>
 
             <!-- datepicker -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <div class="col-11 mx-auto mt-3">
                 <mat-form-field class="w-100">
                     <mat-label>Choose a date</mat-label>
                     <input matInput [matDatepicker]="picker" ngModel name="date">
@@ -43,7 +43,7 @@
             </div>
 
             <!-- truck type -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3 d-flex align-items-center justify-content-start">
+            <div class="col-11 mx-auto mt-3 d-flex align-items-center justify-content-start">
                 <div class="radio-btn">
                     <input ngModel type="radio" class="form-check-input" name="truck_type" value="open" id="open" required>
                     <label class="form-check-label" for="open">
@@ -59,7 +59,7 @@
             </div>
 
             <!-- car year -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <div class="col-11 mx-auto mt-3">
                 <mat-form-field class="w-100">
                     <mat-label>{{ 'form.year' | translate }}</mat-label>
                     <input type="text" matInput ngModel name="year" required minlength="3">
@@ -67,7 +67,7 @@
             </div>
 
             <!-- car make -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <div class="col-11 mx-auto mt-3">
                 <mat-form-field class="w-100">
                     <mat-label>{{ 'form.make' | translate }}</mat-label>
                     <input type="text" matInput ngModel name="make" #makeInput [matAutocomplete]="makeSelect" required minlength="3">
@@ -81,7 +81,7 @@
             </div>
 
             <!-- car model -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <div class="col-11 mx-auto mt-3">
                 <mat-form-field class="w-100">
                     <mat-label>{{ 'form.model' | translate }}</mat-label>
                     <input type="text" matInput ngModel name="model" #modelInput [matAutocomplete]="carSelect" required minlength="3">
@@ -95,7 +95,7 @@
             </div>
 
             <!-- car type -->
-            <div class="col-11 col-sm-10 col-md-4 col-lg-4 col-xl-3 mx-auto mt-3">
+            <div class="col-11 mx-auto mt-3">
                 <mat-form-field class="w-100">
                     <mat-label>{{ 'form.type' | translate }}</mat-label>
                     <input type="text" matInput ngModel name="type" #typeInput [matAutocomplete]="typeSelect" required minlength="3">
@@ -108,8 +108,7 @@
                 </mat-form-field>
             </div>
 
-            <div class="col-11 col-sm-10 col-md-12 text-center mt-3">
-                <!-- <a routerLink="/user/dashboard" class="btn">CANCEL</a> -->
+            <div class="col-11 mx-auto text-center mt-3">
                 <button class="btn btn-secondary me-2" type="reset">Reset</button>
                 <button class="btn btn-warning" type="submit">Submit</button>
             </div>
