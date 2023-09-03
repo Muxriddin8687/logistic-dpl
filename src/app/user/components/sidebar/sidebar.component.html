@@ -1,4 +1,4 @@
-<div class="sidebar" [class.show]="!sidebarToggle" [class.hide]="sidebarToggle">
+<div class="sidebar" [ngClass]="{'show': !sidebarToggle, 'hide': sidebarToggle}">
 
 	<a class="navbar-brand mb-5" routerLink="home">
 		<img class="mx-auto" src="./assets/logo.svg" loading="lazy" width="70px" />
@@ -63,24 +63,24 @@
 <div class="sidebar-backdrop" [class.show]="!sidebarToggle" (click)="sidebarToggle = true;">
 </div>
 
-<div class="profile-content" [class.show]="!sidebarToggle" [class.hide]="sidebarToggle">
+<div class="profile-content" [ngClass]="{'show': !sidebarToggle, 'hide': sidebarToggle}">
 
 	<div class="container">
 		<nav class="navbar navbar-expand-lg pe-3 navbar-light rounded shadow mt-3" style="background-color: #faaf19;">
 
-			<ul class="list-unstyled d-flex align-items-center mb-0">
+			<ul class="list-unstyled text-light d-flex align-items-center mb-0">
 				<li class="p-3">
-					<div (click)="sidebarToggle = !sidebarToggle">
+					<div (click)="sidebarToggle = !sidebarToggle" class="cursor-pointer">
 						<i class="fa fa-align-justify"></i>
 					</div>
 				</li>
 				<li *ngIf="!fullScreenMode" class="p-3">
-					<div (click)="openFullscreen()">
+					<div (click)="openFullscreen()" class="cursor-pointer">
 						<i class="fa fa-maximize"></i>
 					</div>
 				</li>
 				<li *ngIf="fullScreenMode" class=" p-3">
-					<div (click)="closeFullscreen()">
+					<div (click)="closeFullscreen()" class="cursor-pointer">
 						<i class="fa fa-minimize"></i>
 					</div>
 				</li>
@@ -89,7 +89,7 @@
 			<ul class="navbar-nav navbar-right ms-auto">
 				<li class="dropdown">
 					<a class="nav-link dropdown-toggle nav-link-lg nav-link-user" href="#" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-						<img alt="image" src="./assets/images/user.png" width="30px" class="rounded">
+						<img alt="image" src="./assets/images/user.png" width="30px" style="filter: invert(1);" class="rounded">
 						<span class="d-sm-none d-lg-inline-block"></span>
 					</a>
 					<div class="dropdown-menu pullDown" style="min-width: auto !important;">
@@ -97,7 +97,7 @@
 							<i class="fas fa-user me-1"></i>
 							Profile
 						</a>
-						<a (click)="logout()" class="dropdown-item has-icon text-danger">
+						<a (click)="logout()" class="dropdown-item has-icon text-danger cursor-pointer">
 							<i class="fas fa-sign-out-alt"></i>
 							Logout
 						</a>

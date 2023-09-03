@@ -15,6 +15,14 @@ export class SidebarComponent {
 
   constructor(@Inject(DOCUMENT) private document: any, private router: Router) { }
 
+  ngOnInit() {
+    if (window.innerWidth < 992) {
+      this.sidebarToggle = true;
+    } else {
+      this.sidebarToggle = false;
+    }
+  }
+
   @HostListener('window:resize', ['$event'])
   onWindowScroll() {
     if (window.innerWidth < 992) {

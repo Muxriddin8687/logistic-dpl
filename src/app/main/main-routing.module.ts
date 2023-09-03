@@ -29,6 +29,7 @@ import { TruckContainerComponent } from './pages/services/freight/how-much/truck
 import { ClientFormComponent } from './pages/services/freight/how-much/client-form/client-form.component';
 import { ResultComponent } from './pages/services/freight/how-much/result/result.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'about-us', component: AboutUsComponent },
       { path: 'blogs', component: BlogsComponent },
+      { path: 'contact-us', component: ContactUsComponent },
 
       // customers routers
       {

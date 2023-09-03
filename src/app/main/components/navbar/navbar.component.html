@@ -153,6 +153,9 @@
 										<li>
 											<a class="navbar-dropdown-link" routerLink="blogs" routerLinkActive="active">Blogs</a>
 										</li>
+										<li>
+											<a class="navbar-dropdown-link" routerLink="contact-us" routerLinkActive="active">Contact&nbsp;Us</a>
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -162,10 +165,17 @@
 
 
 				<div class="search-bar">
-					<input type="text" class="input" placeholder="&nbsp;">
+					<input type="text" class="input" (input)="search(searchInput.value)" (focusout)="focusOut()" (keypress)="searchEvent = true" #searchInput placeholder="&nbsp;">
 					<span class="label">Search</span>
 					<div class="search-btn d-flex align-items-center justify-content-center text-light">
 						<i class="fa fa-search"></i>
+					</div>
+					<div class="search-result" [ngClass]="searchEvent ? 'd-block': 'd-none'">
+						<ul>
+							<li *ngFor="let item of searchResult">
+								<div [innerHTML]="item.value"></div>
+							</li>
+						</ul>
 					</div>
 				</div>
 
@@ -312,6 +322,9 @@
 									</li>
 									<li data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
 										<a class="navbar-dropdown-link" routerLink="blogs" routerLinkActive="active">Blogs</a>
+									</li>
+									<li data-mdb-toggle="collapse" data-mdb-target="#navbarId" aria-controls="navbarId">
+										<a class="navbar-dropdown-link" routerLink="contact-us" routerLinkActive="active">Contact Us</a>
 									</li>
 								</ul>
 							</div>

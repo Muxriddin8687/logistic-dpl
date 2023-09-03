@@ -6,8 +6,7 @@
             <p data-aos="fade-up" data-aos-duration="2300" class="text-light my-4">{{
                 'customers.auto.private-dealers.text1' | translate }}</p>
 
-            <a data-aos="fade-up" data-aos-duration="2600" href="#" class="btn-theme mt-4" role="button"
-                data-mdb-toggle="modal" data-mdb-target="#privateFormModal">
+            <a data-aos="fade-up" data-aos-duration="2600" href="#" class="btn-theme mt-4" role="button" data-mdb-toggle="modal" data-mdb-target="#privateFormModal">
                 <span>{{ 'form.click' | translate }}</span>
                 <span>{{ 'form.sendMessage' | translate }}</span>
                 {{ 'form.sendMessage' | translate }}
@@ -148,7 +147,7 @@
                     </mat-select>
                 </mat-form-field>
 
-                <button [disabled]="f.invalid" type="submit" class="btn-theme w-100">
+                <button [disabled]="f.invalid" type="submit" class="btn-theme w-100" data-mdb-dismiss="modal">
                     <span>{{ 'form.click' | translate }}</span>
                     <span class="w-100">{{ 'form.send' |translate }}</span>
                     {{ 'form.send' |translate }}
@@ -168,14 +167,12 @@
     <div class="container mt-5 py-5">
 
         <div class="row">
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="fade-up" data-aos-duration="2000" class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="img-block">
                     <img loading="lazy" class="img-fluid rounded-3" src="./assets/images/dealers/dealership.jpg" alt="Service image">
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="fade-up" data-aos-duration="2000" class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="text-block">
                     <h3>{{ 'customers.auto.private-dealers.title4' | translate }}</h3>
                     <p>{{ 'customers.auto.private-dealers.paragraph2' | translate }}</p>
@@ -184,14 +181,12 @@
         </div>
 
         <div class="row sm-reverse">
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="fade-up" data-aos-duration="2000" class="mx-auto me-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="img-block">
                     <img loading="lazy" class="img-fluid rounded-3" src="./assets/images/dealers/carhauler.jpg" alt="Service image">
                 </div>
             </div>
-            <div data-aos="fade-up" data-aos-duration="2000"
-                class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
+            <div data-aos="fade-up" data-aos-duration="2000" class="mx-auto ms-md-0 mb-5 mt-3 col-11 col-sm-10 col-md-5">
                 <div class="text-block">
                     <h3>{{ 'customers.auto.private-dealers.title5' | translate }}</h3>
                     <p>{{ 'customers.auto.private-dealers.paragraph3' | translate }}</p>
@@ -253,8 +248,7 @@
 
 
                                     <div class="d-flex">
-                                        <button type="reset" class="btn-secondary btn w-100 me-3"
-                                            data-mdb-dismiss="modal">
+                                        <button type="reset" class="btn-secondary btn w-100 me-3" data-mdb-dismiss="modal">
                                             <span>{{ 'form.cancel' |translate }}</span>
                                         </button>
                                         <button [disabled]="fm.invalid" type="submit" class="btn-theme w-100">

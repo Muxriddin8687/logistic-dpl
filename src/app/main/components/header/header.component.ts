@@ -12,7 +12,6 @@ export class HeaderComponent {
 
   constructor(private translate: TranslateService) { }
 
-
   selectLanguage(lang: string) {
     this.translate.use(lang);
   }

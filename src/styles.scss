@@ -399,6 +399,14 @@ strong span {
 }
 
 
+// hover cursor
+.cursor-pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
 
 
 .form-outline .form-control {

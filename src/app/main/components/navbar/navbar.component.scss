@@ -115,6 +115,45 @@ nav {
                 background: var(--theme-2);
             }
         }
+
+        .search-result {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            height: auto;
+            overflow: auto;
+            z-index: 1000;
+            border-radius: 10px;
+            background: var(--white);
+            box-shadow: 0 0 10px 0 #aaa;
+            padding: 10px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+
+                li {
+                    margin: 0;
+                    padding: 10px;
+
+                    &:hover {
+                        background: #ccc;
+                        cursor: pointer;
+                    }
+
+                    a {
+                        width: 100%;
+                        color: var(--theme-1);
+                    }
+                }
+            }
+        }
     }
 
 

@@ -56,6 +56,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { SearchPipe } from '../core/pipes/search.pipe';
 import { BlogsComponent } from './pages/blogs/blogs.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
     ClientFormComponent,
     ResultComponent,
     BlogsComponent,
+    ContactUsComponent,
   ],
   imports: [
     MainRoutingModule,

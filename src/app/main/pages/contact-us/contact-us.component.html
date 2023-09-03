@@ -1,0 +1,74 @@
+<app-bread-crumbs [img_url]="'operator.jpg'">
+    <div class="w-100">
+        <h1 data-aos="fade-up" data-aos-duration="2000" class="text-light">
+            Contact DPL
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="2500" class="text-light my-4">
+            We'd love tp hear from you
+        </p>
+    </div>
+</app-bread-crumbs>
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-11 col-sm-10 col-md-6 mx-auto">
+
+            <form #f="ngForm" (submit)="send(f)" class="text-center">
+                <mat-form-field class="w-100">
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput ngModel name="name" required minlength="3">
+                </mat-form-field>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Phone</mat-label>
+                    <input type="text" matInput ngModel name="phone" required minlength="7">
+                </mat-form-field>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput ngModel name="email" required minlength="6">
+                </mat-form-field>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Subject</mat-label>
+                    <input type="text" matInput ngModel name="subject" required>
+                </mat-form-field>
+
+                <mat-form-field class="w-100">
+                    <mat-label>Message</mat-label>
+                    <textarea matInput required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"></textarea>
+                </mat-form-field>
+
+                <button [disabled]="f.invalid" class="btn-warning btn" type="submit">Send</button>
+            </form>
+        </div>
+        <div class="col-11 col-sm-10 col-md-5 mx-auto">
+            <h2>Diamond Pro Logistics</h2>
+            <p>
+                <i class="fa fa-map-marker-alt"></i>
+                1310 Turk St, San Francisco, CA 94115, USA
+            </p>
+            <p>
+                <i class="fa fa-phone"></i>
+                +1 (800) 728-1735
+            </p>
+            <p>
+                <i class="fa fa-phone"></i>
+                +1 (207) 776-7736
+            </p>
+            <p>
+                <i class="fa fa-envelope"></i>
+                accaunting@dplinc.co
+            </p>
+            <p>
+                <i class="fa fa-envelope"></i>
+                info@dplinc.co
+            </p>
+            <p>
+                <i class="fa fa-envelope"></i>
+                b.johnson@dplinc.co
+            </p>
+
+        </div>
+    </div>
+</div>
