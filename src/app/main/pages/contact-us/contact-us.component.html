@@ -36,7 +36,7 @@
 
                 <mat-form-field class="w-100">
                     <mat-label>Message</mat-label>
-                    <textarea matInput required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"></textarea>
+                    <textarea matInput ngModel name="message" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"></textarea>
                 </mat-form-field>
 
                 <button [disabled]="f.invalid" class="btn-warning btn" type="submit">Send</button>
