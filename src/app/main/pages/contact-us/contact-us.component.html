@@ -4,14 +4,14 @@
             Contact DPL
         </h1>
         <p data-aos="fade-up" data-aos-duration="2500" class="text-light my-4">
-            We'd love tp hear from you
+            We'd love to hear from you
         </p>
     </div>
 </app-bread-crumbs>
 
 <div class="container">
-    <div class="row my-5">
-        <div class="col-11 col-sm-10 col-md-6 mx-auto">
+    <div class="row mb-5">
+        <div class="col-11 col-sm-10 col-md-6 mt-5 mx-auto">
 
             <form #f="ngForm" (submit)="send(f)" class="text-center">
                 <mat-form-field class="w-100">
@@ -30,11 +30,6 @@
                 </mat-form-field>
 
                 <mat-form-field class="w-100">
-                    <mat-label>Subject</mat-label>
-                    <input type="text" matInput ngModel name="subject" required>
-                </mat-form-field>
-
-                <mat-form-field class="w-100">
                     <mat-label>Message</mat-label>
                     <textarea matInput ngModel name="message" required cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3"></textarea>
                 </mat-form-field>
@@ -42,33 +37,20 @@
                 <button [disabled]="f.invalid" class="btn-warning btn" type="submit">Send</button>
             </form>
         </div>
-        <div class="col-11 col-sm-10 col-md-5 mx-auto">
+        <div class="col-11 col-sm-10 col-md-5 mt-5 mx-auto contact-links">
             <h2>Diamond Pro Logistics</h2>
-            <p>
+            <a target="_blank" href="https://www.google.com/maps/place/1310+Turk+St+%23208,+San+Francisco,+CA+94115,+USA/@37.7808353,-122.4333834,17z/data=!3m1!4b1!4m6!3m5!1s0x808580bb99565951:0xccbca122559a363b!8m2!3d37.7808311!4d-122.4308085!16s%2Fg%2F11tmvl21mp?entry=ttu">
                 <i class="fa fa-map-marker-alt"></i>
                 1310 Turk St, San Francisco, CA 94115, USA
-            </p>
-            <p>
+            </a><br>
+            <a target="_blank" href="tel:+18007281735">
                 <i class="fa fa-phone"></i>
                 +1 (800) 728-1735
-            </p>
-            <p>
-                <i class="fa fa-phone"></i>
-                +1 (207) 776-7736
-            </p>
-            <p>
-                <i class="fa fa-envelope"></i>
-                accaunting@dplinc.co
-            </p>
-            <p>
+            </a><br>
+            <a target="_blank" href="mailto:info@dplinc.co">
                 <i class="fa fa-envelope"></i>
                 info@dplinc.co
-            </p>
-            <p>
-                <i class="fa fa-envelope"></i>
-                b.johnson@dplinc.co
-            </p>
-
+            </a>
         </div>
     </div>
 </div>

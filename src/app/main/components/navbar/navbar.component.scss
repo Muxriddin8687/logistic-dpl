@@ -163,6 +163,7 @@ nav {
         width: 100%;
         justify-content: space-between;
         align-items: center;
+        z-index: 1010 !important;
 
         .navbar-toggler {
 
@@ -224,7 +225,7 @@ nav {
         display: none;
         min-width: 300px;
         height: calc(100vh - 55px);
-        top: 54.3px;
+        top: 64.3px;
         left: 0;
         padding: 40px 0px 50px 0px;
         overflow-x: hidden;
@@ -232,6 +233,7 @@ nav {
         background: var(--white);
         transition: all .3s;
         transform: translateX(-100%);
+        z-index: 990 !important;
 
         &.show {
             transform: translateX(0);
@@ -296,6 +298,10 @@ nav {
         }
     }
 
+}
+
+nav.sticky-top.changeTheme {
+    background-color: var(--theme-2) !important;
 }
 
 

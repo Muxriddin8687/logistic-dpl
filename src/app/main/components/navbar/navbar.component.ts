@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation, HostListener } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,6 +9,21 @@ import { TranslateService } from '@ngx-translate/core';
   encapsulation: ViewEncapsulation.None
 })
 export class NavbarComponent {
+  toggleIcon: boolean = false;
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    let element = document.querySelector('nav.navbar.sticky-top') as HTMLElement;
+    if (window.pageYOffset > 50) {
+      element.classList.add('changeTheme');
+      this.toggleIcon = true;
+    } else {
+      element.classList.remove('changeTheme');
+      this.toggleIcon = false;
+    }
+  }
+
+
 
   searchList = [
     {
