@@ -28,9 +28,9 @@ export class FixedButtonsComponent {
     const myModalEl = document.getElementById('signUpModal');
     const modal = new mdb.Modal(myModalEl);
 
-    setTimeout(() => modal.show(), 10000);
+    setTimeout(() => modal.show(), 40000);
 
-    setInterval(() => modal.show(), 120000);
+    // setInterval(() => modal.show(), 120000);
   }
 
   send() {
