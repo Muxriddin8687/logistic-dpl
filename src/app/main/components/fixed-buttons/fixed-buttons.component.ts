@@ -30,21 +30,16 @@ export class FixedButtonsComponent {
 
     setTimeout(() => modal.show(), 10000);
 
-    setInterval(() => modal.show(), 60000);
+    setInterval(() => modal.show(), 120000);
   }
 
   send() {
-
-    console.log('click');
-
     const loginData = {
       first_name: this.loginFormGroup.value.first_name,
       email: this.loginFormGroup.value.email
     };
 
     this._auth.login(loginData).subscribe((res: any) => {
-      console.log(res);
-
       if (res.length != 0) {
         sessionStorage.setItem('dpl_client', JSON.stringify(res[0]));
         this.router.navigateByUrl('user');
