@@ -84,7 +84,6 @@ export class DashboardComponent {
       document.querySelector("#chart1"),
       options1
     );
-    chart1.render();
 
 
     var options2 = {
@@ -154,7 +153,6 @@ export class DashboardComponent {
       document.querySelector("#chart2"),
       options2
     );
-    chart2.render();
 
 
     let options3 = {
@@ -227,7 +225,6 @@ export class DashboardComponent {
       document.querySelector("#chart3"),
       options3
     );
-    chart3.render();
 
 
     let options4 = {
@@ -282,7 +279,12 @@ export class DashboardComponent {
       document.querySelector("#chart4"),
       options4
     );
-    chart4.render();
 
+    setTimeout(() => {
+      chart1.render();
+      chart2.render();
+      chart3.render();
+      chart4.render();
+    }, 800);
   }
 }

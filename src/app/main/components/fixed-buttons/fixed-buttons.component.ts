@@ -35,11 +35,10 @@ export class FixedButtonsComponent {
 
   send() {
     const loginData = {
-      first_name: this.loginFormGroup.value.first_name,
       email: this.loginFormGroup.value.email
     };
 
-    this._auth.login(loginData).subscribe((res: any) => {
+    this._auth.loginByEmail(loginData).subscribe((res: any) => {
       if (res.length != 0) {
         sessionStorage.setItem('dpl_client', JSON.stringify(res[0]));
         this.router.navigateByUrl('user');

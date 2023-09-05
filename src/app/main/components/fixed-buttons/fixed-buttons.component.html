@@ -20,46 +20,48 @@
 
 
 <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-xl ">
+	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body p-0">
 
-				<div class="signUp w-100" id="signUp">
-					<div class="form-container sign-in-container">
-						<form [formGroup]="loginFormGroup" (submit)="send()">
-							<h1>Sign in</h1>
-							<div class="social-container">
-								<a target="_blank" href="https://twitter.com/dplinco" class="twitter social">
-									<i class="fab fa-twitter"></i>
-								</a>
-								<a target="_blank" href="https://www.facebook.com/profile.php?id=100095577330257" class="facebook social">
-									<i class="fab fa-facebook"></i>
-								</a>
-								<a target="_blank" href="https://www.instagram.com/dplinc.co/" class="instagram social">
-									<i class="fab fa-instagram"></i>
-								</a>
-								<a target="_blank" href="https://www.youtube.com/channel/UC1pnuqU8XjYi5c8d3gv42GA" class="youtube social">
-									<i class="fab fa-youtube"></i>
-								</a>
-							</div>
-							<span>follow us</span>
+				<div class="signUp w-100">
+					<div class="text-center py-5">
 
-							<input formControlName="first_name" placeholder="First name" class="mt-5" />
-							<input formControlName="email" placeholder="Email" />
-							<button [disabled]="loginFormGroup.invalid" type="submit" data-mdb-dismiss="modal">Sign In</button>
-
-							<a class="mt-5 registr-link" routerLink="/auth/sign-up" data-mdb-dismiss="modal">Registration</a>
-						</form>
-
-					</div>
-					<div class="overlay-container">
-						<div class="overlay">
-							<div class="overlay-panel overlay-right">
-								<h1 class="text-light">Hello, Friend!</h1>
-								<p class="text-light fw-normal">Enter your personal details and start journey with us</p>
-								<button (click)="_router.navigateByUrl('/auth/sign-up')" class="ghost" data-mdb-dismiss="modal">Sign Up</button>
+						<div class="d-f-a-c-j-c">
+							<img width="80px" src="../../../../assets/logo.svg" alt="Diamond Pro Logistics logo">
+							<div class="ms-2 text-start">
+								<h4 class="mb-1 fw-bold">Diamond</h4>
+								<h4 class="mb-0 fw-bold">Pro Logistics</h4>
 							</div>
 						</div>
+
+						<h3 class="px-4 my-4">Save up to 5% on<br />your quote?</h3>
+
+						<form [formGroup]="loginFormGroup" (submit)="send()">
+							<input formControlName="email" placeholder="Email" />
+
+							<div class="d-flex align-items-center mt-3">
+								<button class="btn me-3 w-100" (click)="_router.navigateByUrl('/auth/sign-up')" type="button" data-mdb-dismiss="modal">Sign Up</button>
+								<button class="btn btn-warning w-100" type="submit" data-mdb-dismiss="modal">Sign In</button>
+							</div>
+						</form>
+
+						<div class="social-container mt-5 mb-2">
+							<a target="_blank" href="https://twitter.com/dplinco" class="twitter social">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a target="_blank" href="https://www.facebook.com/profile.php?id=100095577330257" class="facebook social">
+								<i class="fab fa-facebook"></i>
+							</a>
+							<a target="_blank" href="https://www.instagram.com/dplinc.co/" class="instagram social">
+								<i class="fab fa-instagram"></i>
+							</a>
+							<a target="_blank" href="https://www.youtube.com/channel/UC1pnuqU8XjYi5c8d3gv42GA" class="youtube social">
+								<i class="fab fa-youtube"></i>
+							</a>
+						</div>
+						<span>follow us</span>
+
 					</div>
 				</div>
 

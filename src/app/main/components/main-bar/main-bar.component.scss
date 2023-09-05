@@ -214,10 +214,13 @@
             align-items: unset;
             justify-content: unset;
             width: 80%;
+            padding: 1rem;
 
             .radio-btn {
                 margin-left: 1rem !important;
                 width: calc(50% - 50px);
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
 
             .form-btn {
@@ -229,6 +232,11 @@
 
             .form-outline {
                 width: 100%;
+                margin-bottom: 10px;
+
+                input {
+                    border: 1px solid var(--theme-1);
+                }
             }
 
             .pc-show {
@@ -250,6 +258,10 @@
         }
 
         .form-block {
+            background-image: url('../../../../assets/mobile.png');
+            background-repeat: no-repeat;
+            background-size: 100%;
+
             .form {
                 width: 90%;
 
@@ -260,7 +272,7 @@
         }
 
         #main-bar-video {
-            height: 70%;
+            display: none;
         }
     }
 }
@@ -270,12 +282,13 @@
 
 @keyframes zoom-in-zoom-out {
     0% {
-      transform: scale(.9);
+        transform: scale(.9);
     }
+
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
+}
 
 
 

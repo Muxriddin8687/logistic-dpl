@@ -24,6 +24,10 @@ export class AuthService {
     return this._http.post(this.url + 'auth/login.php', data);
   }
 
+  loginByEmail(data: any) {
+    return this._http.post(this.url + 'auth/signInByEmail.php', data);
+  }
+
   getUserData() {
     let data = sessionStorage.getItem('dpl_client');
 

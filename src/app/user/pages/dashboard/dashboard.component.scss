@@ -32,6 +32,9 @@
         border-radius: 3px;
         overflow: hidden;
 
+        .card-content h5 {
+            height: 35px;
+        }
 
         .card-icon-large {
             font-size: 110px;
